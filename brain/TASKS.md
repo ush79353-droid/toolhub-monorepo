@@ -26,6 +26,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-837` | IV Flow Rate Calculator (`IvFlowRateCalculator`); volume/time × drop factor → mL/h + gtts/min; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-11923) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/iv-flow-rate/*` | Mongo Atlas DNS |
 | `TOOL-835` | Total Body Water Calculator (`TotalBodyWaterCalculator`); Watson 1980; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (omega-220652) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/total-body-water/*` | Mongo Atlas DNS |
 | `TOOL-832` | Serum Osmolality Calculator (`SerumOsmolalityCalculator`); improved + ethanol + gap; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-83147) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/serum-osmolality/*` | Mongo Atlas DNS |
 | `TOOL-834` | Drip Rate Calculator (`DripRateCalculator`); weight-based mL/h + gtts/min; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-88447) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/drip-rate/*` | Mongo Atlas DNS |

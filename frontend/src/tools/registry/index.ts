@@ -3850,6 +3850,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IdealWeightCalculator,
     })),
   ),
+  IvFlowRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/iv-flow-rate/IvFlowRateCalculator'
+    ).then((mod) => ({
+      default: mod.IvFlowRateCalculator,
+    })),
+  ),
   BetaStockCalculator: lazyTool(() =>
     import('@/tools/calculators/beta-stock/BetaStockCalculator').then((mod) => ({
       default: mod.BetaStockCalculator,

@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — RBC Indices Calculator What is MCHC (TOOL-836)
+﻿## 2026-11-27 — IV Flow Rate Calculator (TOOL-837)
+
+- **Summary:** Screenshot-first IV volume/time flow (`IvFlowRateCalculator`, slug `iv-flow-rate-calculator`). Drop factor + volume + time; volume flow + gtts/min; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `caa5151e` / ENG `a4fbf384` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/iv-flow-rate/calculation.test.ts` → ok (500 mL / 4 h @ 20 → 125 mL/h · ≈41.67 gtts/min).
+
+## 2026-11-27 — RBC Indices Calculator What is MCHC (TOOL-836)
 
 - **Summary:** Screenshot-first CBC indices (`RbcIndicesCalculator`, slug `rbc-indices-calculator-what-is-mchc`). Female default; blank Hb/Hct/RBC; MCH=10Hb/RBC, MCHC=100Hb/Hct, MCV=10Hct/RBC; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.

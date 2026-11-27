@@ -366,6 +366,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ArterialBloodPhCalculator: () => import('@/tools/calculators/arterial-blood-ph/detail'),
   VenousBloodPhCalculator: () => import('@/tools/calculators/venous-blood-ph/detail'),
   BedriddenPatientHeightCalculator: () => import('@/tools/calculators/bedridden-patient-height/detail'),
+  PlasmaVolumeCalculator: () => import('@/tools/calculators/plasma-volume/detail'),
   BicarbonateDeficitCalculator: () =>
     import('@/tools/calculators/bicarbonate-deficit/detail'),
   AcidBaseCalculator: () => import('@/tools/calculators/acid-base/detail'),
@@ -947,6 +948,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/ich-volume/detail'),
   IdealWeightCalculator: () =>
     import('@/tools/calculators/ideal-weight/detail'),
+  IvFlowRateCalculator: () =>
+    import('@/tools/calculators/iv-flow-rate/detail'),
   BetaStockCalculator: () =>
     import('@/tools/calculators/beta-stock/detail'),
   BidensTaxPlanCalculator: () =>
