@@ -327,6 +327,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FeureaCalculator,
     })),
   ),
+  FfmiCalculator: lazyTool(() =>
+    import('@/tools/calculators/ffmi/FfmiCalculator').then((mod) => ({
+      default: mod.FfmiCalculator,
+    })),
+  ),
   FiberCalculator: lazyTool(() =>
     import('@/tools/calculators/fiber/FiberCalculator').then((mod) => ({
       default: mod.FiberCalculator,

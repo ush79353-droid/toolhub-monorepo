@@ -20,6 +20,13 @@
 - **Commits:** UI `3b54d44a` / ENG `da833a39` / REG (this commit; keys/index/details/tool.key also present via concurrent `fdecd5ee` BSA race). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/bri-body-roundness/calculation.test.ts` → ok (scale invariance; domain guard).
 
+## 2026-11-27 — Sodium Correction Rate Calculator (TOOL-840)
+
+- **Summary:** Screenshot-first Adrogué–Madias rate (`SodiumCorrectionRateCalculator`, slug `sodium-correction-rate-calculator-for-hypo-and-hypernatremia`). Age/sex radios; weight; serum Na; conditional fluid + aimed ΔNa/h; TBW + ΔNa/L + mL/h; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `4fd90985` / ENG `a51ddba0` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/sodium-correction-rate/calculation.test.ts` → ok (70 kg · 120 · 2% · 0.5 → ≈97 mL/h).
+
 ## 2026-11-27 — IV Flow Rate Calculator (TOOL-837)
 
 - **Summary:** Screenshot-first IV volume/time flow (`IvFlowRateCalculator`, slug `iv-flow-rate-calculator`). Drop factor + volume + time; volume flow + gtts/min; **No FX**; share URL only.

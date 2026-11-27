@@ -47,6 +47,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FenaCalculator',
   'FeureaCalculator',
   'Fev1FvcRatioCalculator',
+  'FfmiCalculator',
   'FiberCalculator',
   'FishOilCalculator',
   'FloridaOvertimeCalculator',

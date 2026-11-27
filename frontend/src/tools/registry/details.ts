@@ -93,6 +93,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/fat-intake/detail'),
   FenaCalculator: () => import('@/tools/calculators/fena/detail'),
   FeureaCalculator: () => import('@/tools/calculators/feurea/detail'),
+  FfmiCalculator: () => import('@/tools/calculators/ffmi/detail'),
   FiberCalculator: () => import('@/tools/calculators/fiber/detail'),
   FishOilCalculator: () => import('@/tools/calculators/fish-oil/detail'),
   FloridaOvertimeCalculator: () =>
