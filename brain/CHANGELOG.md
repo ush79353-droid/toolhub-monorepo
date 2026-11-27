@@ -1,4 +1,46 @@
-﻿## 2026-11-27 — Sodium Correction Calculator (TOOL-846)
+﻿## 2026-11-28 — Completed-queue repair (Urine registry + 47 Mongo assigns)
+
+- **Urine Anion Gap:** registered `UrineAnionGapCalculator` in frontend keys/index/details + backend `tool.key.ts`; local commit `017e3752`; Mongo `…02c6` assigned developed/active, `indexable` false.
+- **Mongo:** 47 Completed undeveloped/registry-gap rows assigned via `tool:assign` (direct-seedlist fallback); Health testing policy `isActive=true`; indexable preserved false.
+- **Quiz FFMI:** still no catalog row — `AWAITING_CATALOG_AUTHORIZATION` (no create).
+- **Final:** 55 PASS_STATIC / 1 warning / 0 FAIL among Completed; Issued 2 unchanged.
+- **Reports:** `OMEGA-56-COMPLETED-TOOLS-REPAIR-REPORT.md`, `OMEGA-COMPLETED-MONGODB-ASSIGNMENT-LEDGER.csv`, `OMEGA-56-COMPLETED-FINAL-VERIFICATION.csv`, `OMEGA-AFTER-REPAIR-LOCAL-GIT-READINESS.md`
+- **GitHub sync:** none
+
+## 2026-11-28 — One-go Final 7 recovery (5 completed, 2 blocked)
+
+- **Completed:** Alcohol Unit, CIWA, Quiz PCR (new catalog `_id` `6b09d760fe0c31bdba4798cc`), Body Shape (Lee/FFIT disclosed), Face Shape (Omega heuristic).
+- **Still Issued:** Addiction (evidence); Metastatic Prostate (clinical MODEL_APPROVAL).
+- **Queue:** Pending 0 / Progress 0 / Completed 56 / Issued 2.
+- **Mongo:** assign via direct-seedlist; `indexable` false preserved; `--set-active` where completed.
+- **HEAD:** `3de606f8`. GitHub sync: none.
+- **Report:** `brain/reports/OMEGA-ONE-GO-FINAL-7-CALCULATORS-DEVELOPMENT-REPORT.md`
+
+## 2026-11-28 — Quiz Protein Creatinine Ratio (Session 5 module + catalog block)
+
+- **Summary:** Built educational 5-question PCR quiz module on isolated branch `omega/issued/quiz-protein-creatinine-ratio-calculator` (worktree). Screenshot wording; score `/5` only when complete; separate from numeric PCR calculator. Live Mongo quiz row still **missing/unauthorized** — no invent `_id`, no registry/assign.
+- **Commits (local worktree only):** UI `69ae7a98` / ENG `fc691b50`. Integration commit pending catalog `_id`.
+- **Handoff:** `brain/reports/OMEGA-QUIZ-PCR-CATALOG-HANDOFF-composer-quiz-pcr-s5.md`
+- **Folder:** `Tools/Progress/Quiz Protein Creatinine Ratio Calculator`
+- **GitHub sync:** none
+
+## 2026-11-27 — Issued Tools Session 10 final integration coordinator
+
+- **Summary:** Truthful finalization of original 10 Issued recovery identities. **0** net-new integrations. **3** duplicates already in Completed (Adrenal / Albumin ACR / BUN). Alcohol Unit left in Progress (active claim + uncommitted worktree). **6** remain Issued. No registry/Mongo writes for unfinished tools. No GitHub sync.
+- **Report:** `brain/reports/OMEGA-ISSUED-TOOLS-FINAL-DEVELOPMENT-REPORT.md`
+- **Queue rescans:** Pending 0 / Progress 1 / Completed 51 / Issued 6
+- **Mongo:** Session 10 connect fail (`querySrv EBADRESP`)
+- **Commits:** none (would be artificial)
+
+## 2026-11-27 — Metastatic Prostate Cancer Prognosis (Session 9 clinical evidence)
+
+- **Summary:** Investigation-only. Omni composite (Zhang / Huncharek / Albertsen / Preston / SSA) is **incomplete** for implementation: Gleason mortality rates and smoking/obesity RRs are published, but SSA vintage, mets/health multipliers, hazard-merge equation, fixtures, and external validation of the composite are missing. Albertsen cohort is clinically localized — not metastatic-first. Secondary clones invent unsupported multipliers. Screenshot results blank; title vs mets=No conflict.
+- **Decision:** `EVIDENCE_INSUFFICIENT_KEEP_ISSUED` + `MODEL_APPROVAL_REQUIRED`. No UI/engine/registry/Mongo activation. Claim released.
+- **Evidence pack:** `brain/reports/OMEGA-METASTATIC-PROSTATE-CLINICAL-EVIDENCE-PACK-composer-mpc-s9.md`
+- **Mongo:** live re-verify failed (`querySrv EBADRESP`); historical `_id` `6af46f12a27d8d1d4e9902d7` unchanged.
+- **Commits:** none (no calculator delivery). GitHub sync: none.
+
+## 2026-11-27 — Sodium Correction Calculator (TOOL-846)
 
 - **Summary:** Screenshot-first hyperglycemia sodium correction (`SodiumCorrectionCalculator`, slug `sodium-correction-calculator`). Blank Na mEq/L; glucose mg/dL|mmol/L; Hillier 0.024 primary; collapsed Katz 0.016; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); `_id` not verified this session; activation pending; **indexable** false when assign retries.
