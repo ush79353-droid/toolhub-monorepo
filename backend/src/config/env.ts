@@ -37,6 +37,8 @@ const envSchema = z.object({
   DATAFORSEO_LANGUAGE_CODE: z.string().trim().min(2).max(8).default('en'),
   OPENAI_API_KEY: z.string().default(''),
   OPENAI_SEO_MODEL: z.string().default(''),
+  BULL_BOARD_USER: z.string().default('admin'),
+  BULL_BOARD_PASSWORD: z.string().default(''),
 });
 
 const parsed = envSchema.safeParse(process.env);

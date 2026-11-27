@@ -16,6 +16,8 @@ import { catalogRouter } from './modules/catalog/catalog.router';
 import { currencyRouter } from './modules/currency/currency.router';
 import { homeValueRouter } from './modules/home-value/home-value.router';
 import { seoRouter } from './modules/seo/seo.router';
+import { bullBoardBasePath, createBullBoardRouter } from './modules/seo/bull-board';
+import { logger } from './utils/logger';
 
 export function createApp(): Application {
   const app = express();
@@ -62,6 +64,12 @@ export function createApp(): Application {
 
   // Mount versioned API
   app.use(env.API_PREFIX, v1Router);
+
+  const bullBoard = createBullBoardRouter();
+  if (bullBoard) {
+    app.use(bullBoardBasePath(), bullBoard);
+    logger.info(`Bull Board mounted at ${bullBoardBasePath()}`);
+  }
 
   // 404 Handler
   app.use(notFoundHandler);

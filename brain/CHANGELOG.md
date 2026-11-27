@@ -1,3 +1,7 @@
+## 2026-11-27 — Bull Board for SEO queues
+
+The API mounts Bull Board at `/api/v1/admin/queues` when Redis and `BULL_BOARD_PASSWORD` are set. The page uses HTTP basic auth (`BULL_BOARD_USER`, default `admin`). An empty password leaves the dashboard off.
+
 ## 2026-11-27 — Frontend dev server uses Turbopack
 
 npm run dev in frontend now runs next dev --turbopack. The first tool page no longer compiles every calculator through Webpack.

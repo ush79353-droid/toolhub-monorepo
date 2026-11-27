@@ -195,7 +195,7 @@ Mounted at `/api/v1/currency` (`backend/src/modules/currency/currency.router.ts`
 
 ## 8. Admin SEO campaigns (ADR-027)
 
-All routes use `authenticateAdmin`. Browser code calls them through `frontend/src/server/seo/campaign-actions.ts`.
+Campaign routes use `authenticateAdmin`. Browser code calls them through `frontend/src/server/seo/campaign-actions.ts`. Bull Board is separate and uses HTTP basic auth.
 
 | Method | Path | Purpose |
 | :--- | :--- | :--- |
@@ -210,6 +210,7 @@ All routes use `authenticateAdmin`. Browser code calls them through `frontend/sr
 | `POST` | `/admin/seo/drafts/:id/unpublish` | Hide the published guide. The file guide returns. Meta fields already written stay. |
 | `POST` | `/admin/seo/drafts/:id/regenerate` | `{ researchAgain: boolean }`. Copy only, or keyword research again. |
 | `POST` | `/admin/seo/drafts/:id/retry` | Re-queue a failed step |
+| `GET` | `/admin/queues` | Bull Board UI for the SEO queues. HTTP basic auth (`BULL_BOARD_USER` / `BULL_BOARD_PASSWORD`). Mounted only when Redis and the password are set. Not the admin session cookie. |
 
 `503 SEO_NOT_CONFIGURED` when Redis, DataForSEO, or OpenAI env is missing. Public `GET /catalog/tools/:slug` adds `publishedGuide` (`null` when nothing is published).
 
