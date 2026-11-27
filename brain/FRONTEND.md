@@ -13,7 +13,7 @@ The frontend is an independent Next.js 15 App Router application (`omega-calcula
 
 ## 2. Public Website Routes (`src/app/(website)/`)
 
-Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">` + `Footer`).
+Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">` + `Footer`). A fixed primary bar at the top of the viewport (`NavigationProgress`) moves while a same-site navigation is waiting on the server, then finishes when the route changes. Instant navigations stay hidden.
 
 | Route | File | Rendering / Data Source | Implementation Status |
 | :--- | :--- | :--- | :--- |

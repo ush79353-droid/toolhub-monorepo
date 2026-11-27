@@ -1,3 +1,7 @@
+## 2026-11-27 — Top progress bar while a page is loading
+
+Public pages show a thin primary bar at the top when a link or search opens another page. The bar finishes when that route is ready. A fast transition does not flash it.
+
 ## 2026-11-26 — Parenthetical acronyms stay off the keyword seed
 
 Lost Wages Assistance (LWA) is searched as Lost Wages Assistance. The old seed glued on LWA, and DataForSEO returned no ideas. LWA alone is not searched, because those suggestions are unrelated.

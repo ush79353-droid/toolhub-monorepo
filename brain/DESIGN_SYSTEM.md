@@ -51,7 +51,7 @@ Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
 - **Base Radius:** `--radius: 0.5rem` (`rounded-lg`, `rounded-md`, `rounded-sm`). Cards typically use `rounded-xl` or `rounded-2xl`; pills use `rounded-full`; auth split container uses `rounded-[28px]`.
 - **Public Container (`Container.tsx`):** `mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8` (note `tailwind.config.ts` also sets `container.screens['2xl'] = '1400px'`).
 - **Ad placeholders (`AdSlot`):** Dashed `border-border`, `rounded-xl`, canvas `#F6F7FE`, centered muted “Advertisement” label; reserved min-heights for leaderboard (~90–100px) and rectangle (~250px). Never sticky; never inside calculator panels. See `AD_STANDARDS.md`.
-- **Public Header:** Sticky `h-16` (`top-0 z-40`), white translucent backdrop (`bg-white/95 backdrop-blur-md`).
+- **Public Header:** Sticky `h-16` (`top-0 z-40`), white translucent backdrop (`bg-white/95 backdrop-blur-md`). During a page change, a 2px primary bar sits above it (`z-[70]`).
 - **Calculator aside + sticky right rail:** `StickyCalculatorAside` is a plain flow `<aside>` landmark (no sticky/internal overflow). Desktop right `ToolDetailSidebar` uses `lg:sticky lg:top-[84px]` with viewport-capped max-height. Never used on `/embed/*`.
 - **Admin Shell (`AdminDashboardShell.tsx`):**
   - Desktop sidebar (`AdminSidebar`): Sticky full-height `bg-brand-darkAccent text-white`, collapsible between `w-64` (256px) and `w-[72px]`. Uses `.admin-scroll` custom thin scrollbar (`globals.css`).

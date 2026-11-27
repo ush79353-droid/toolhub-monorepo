@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
+import { startNavigationProgress } from '@/components/layout/NavigationProgress';
 import { Search, X, ArrowRight } from 'lucide-react';
 
 export interface SearchBarProps {
@@ -36,6 +37,7 @@ export function SearchBar({
       onSearch(trimmed);
     }
     if (autoNavigate) {
+      startNavigationProgress();
       router.push(`/tools?q=${encodeURIComponent(trimmed)}`);
     }
   };
