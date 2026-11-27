@@ -527,6 +527,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NaturalRateOfUnemploymentCalculator: () =>
     import('@/tools/calculators/natural-rate-of-unemployment/detail'),
   UnemploymentCalculator: () => import('@/tools/calculators/unemployment/detail'),
+  UrineAnionGapCalculator: () =>
+    import('@/tools/calculators/urine-anion-gap/detail'),
   UrineHomePregnancyTestCalculator: () =>
     import('@/tools/calculators/urine-home-pregnancy-test/detail'),
   UrineOutputCalculator: () =>

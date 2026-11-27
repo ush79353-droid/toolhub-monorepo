@@ -2131,6 +2131,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.UnemploymentCalculator,
     })),
   ),
+  UrineAnionGapCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/urine-anion-gap/UrineAnionGapCalculator'
+    ).then((mod) => ({
+      default: mod.UrineAnionGapCalculator,
+    })),
+  ),
   UrineHomePregnancyTestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/urine-home-pregnancy-test/UrineHomePregnancyTestCalculator'

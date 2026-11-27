@@ -344,6 +344,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NaturalGasConverter',
   'NaturalRateOfUnemploymentCalculator',
   'UnemploymentCalculator',
+  'UrineAnionGapCalculator',
   'UrineHomePregnancyTestCalculator',
   'UrineOutputCalculator',
   'UrrCalculator',
