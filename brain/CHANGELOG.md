@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Body Frame Size Calculator (TOOL-825)
+﻿## 2026-11-27 — Corrected Magnesium Calculator (TOOL-826)
+
+- **Summary:** Screenshot-first Kroll & Elin corrected Mg (`CorrectedMagnesiumCalculator`, slug `corrected-magnesium-calculator`). Mg mEq/L|mmol/L|mg/dL; albumin g/L|g/dL; corrected = Mg_mmol + 0.005×(40−alb_g/L); **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `5945a69f` / ENG `a39ba154` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/corrected-magnesium/calculation.test.ts` → ok (alb 40 unchanged; 0.70 mmol @ 30 g/L → 0.75 mmol / 1.50 mEq).
+
+## 2026-11-27 — Body Frame Size Calculator (TOOL-825)
 
 - **Summary:** Screenshot-first body frame index (`BodyFrameSizeCalculator`, slug `body-frame-size-calculator`). Female default; height m + wrist cm; index=height÷wrist; Omni/Grant sex bands; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.

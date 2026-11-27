@@ -39,8 +39,11 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/chances-of-having-twins/detail'),
   CorrectedCalciumCalculator: () =>
     import('@/tools/calculators/corrected-calcium/detail'),
+  CorrectedMagnesiumCalculator: () =>
+    import('@/tools/calculators/corrected-magnesium/detail'),
   CorrectedReticulocyteCountCalculator: () =>
     import('@/tools/calculators/corrected-reticulocyte-count/detail'),
+
 
   CreatinineClearanceCalculator: () =>
 

@@ -20,6 +20,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarboplatinCalculator',
   'CefdinirDoseCalculator',
   'CorrectedCalciumCalculator',
+  'CorrectedMagnesiumCalculator',
   'CorrectedReticulocyteCountCalculator',
   'CreatinineClearanceCalculator',
   'DaptCalculator',
