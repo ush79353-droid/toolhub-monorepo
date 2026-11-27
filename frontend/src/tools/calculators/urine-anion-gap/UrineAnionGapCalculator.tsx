@@ -14,21 +14,7 @@ import {
   type UrineAnionGapInput,
   type UrineAnionGapResult,
 } from './types';
-
-/** UI shell — calculation wiring lands in the engine commit. */
-function emptyUiResult(): UrineAnionGapResult {
-  return {
-    urineAnionGap: null,
-    formattedGap: '',
-    statusHeadline: 'Enter urinary Na⁺, K⁺, and Cl⁻.',
-    statusDetail: 'Urine anion gap updates when all three values are valid.',
-    unitNote:
-      'In this case, the values in mEq/L are equal to those in mmol/L. If you have values in mmol/L, type them in.',
-    sourceNote: 'UAG = (Na⁺ + K⁺) − Cl⁻ (urine). Educational only.',
-    disclaimer:
-      'Educational urine electrolyte worksheet — not a diagnosis or serum anion-gap report.',
-  };
-}
+import { validateUrineAnionGapInput } from './validation';
 
 export function UrineAnionGapCalculator({
   metadata,
@@ -41,8 +27,8 @@ export function UrineAnionGapCalculator({
   const [baseline, setBaseline] = React.useState(() => initial);
   const [input, setInput] = React.useState(() => initial);
   const [errors, setErrors] = React.useState<UrineAnionGapFieldErrors>({});
-  const [result, setResult] = React.useState<UrineAnionGapResult | null>(() =>
-    emptyUiResult(),
+  const [result, setResult] = React.useState<UrineAnionGapResult | null>(
+    () => validateUrineAnionGapInput(initial).result,
   );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
@@ -54,9 +40,10 @@ export function UrineAnionGapCalculator({
   }, []);
 
   const apply = (next: UrineAnionGapInput) => {
+    const validation = validateUrineAnionGapInput(next);
     setInput(next);
-    setErrors({});
-    setResult(emptyUiResult());
+    setErrors(validation.errors);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
@@ -64,7 +51,7 @@ export function UrineAnionGapCalculator({
     setInput(fresh);
     setBaseline(fresh);
     setErrors({});
-    setResult(emptyUiResult());
+    setResult(validateUrineAnionGapInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -74,7 +61,7 @@ export function UrineAnionGapCalculator({
     const fresh = createEmptyInput();
     setInput(fresh);
     setErrors({});
-    setResult(emptyUiResult());
+    setResult(validateUrineAnionGapInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
