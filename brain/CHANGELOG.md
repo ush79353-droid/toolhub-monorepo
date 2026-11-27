@@ -1,4 +1,10 @@
-﻿## 2026-11-27 — Bedridden Patient Height Calculator (TOOL-825)
+﻿## 2026-11-27 — Drops Per Minute Calculator (TOOL-826)
+
+- **Summary:** Screenshot-first IV gtts/min (DropsPerMinuteCalculator). volume×factor/time; drops/h + mL/h; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS).
+- **Commits:** UI 15798f87 / ENG 5dca1e5e / REG (this commit).
+- **Checks:** calculation.test.ts ok (100/60/15 → 25, 1500, 100).
+## 2026-11-27 — Bedridden Patient Height Calculator (TOOL-825)
 
 - **Summary:** Screenshot-first bedridden stature/weight (`BedriddenPatientHeightCalculator`, slug `bedridden-patient-height-calculator`). Height studies (Mitchell 2×semi-span, WHO, Rabito, Gray, Chumlea, Cereda, knee-height, demi-span, ulna chart); weight Chumlea/Rabito/Ross with conditional covariates; **No FX**.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
@@ -74,7 +80,7 @@ px tsx …/draw-length/calculation.test.ts → ok (70 in → 28 in; 1 m → 40 c
 - **Commits:** UI `5e3dc4db` / ENG `4311c0c0` / REG (this commit). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/nlr/calculation.test.ts` → ok (4/2 → 2; percent 70/20 → 3.5).
 
-## 2026-11-27 — Water Intake Calculator (TOOL-821)
+## 2026-11-27 — Water Intake Calculator (TOOL-822)
 
 - **Summary:** Screenshot-first water AI (`WaterIntakeCalculator`, slug `water-intake-calculator`). IOM 2005 tables; adult male 3.7 L / 3.0 L (~13 cups); child age bands; **No FX**.
 - **Mongo:** assign blocked or deferred (Atlas DNS historically); activation pending; **indexable** false when assign retries.
@@ -6646,5 +6652,6 @@ px tsx --test …/bladder-volume/calculation.test.ts → 5/5 (5×4×3×0.81=48.6
 - **Summary:** Shipped FENa on existing catalog slug `fena-calculator-fractional-excretion-of-sodium` (`FenaCalculator`, catalog `6af46f12a27d8d1d4e9902d0`). Screenshot-first blank serum/urine Cr+Na; FENa=100×(UNa×SCr)/(SNa×UCr); educational bands with diuretic/CKD limits; share URL only. **No FX**. Activated via `tool:assign --set-active`; **indexable** preserved false.
 - **Example:** SCr 2 · SNa 140 · UCr 100 · UNa 70 → FENa **1%**.
 - **Important Files:** `frontend/src/tools/calculators/fena/*`, registry keys/index/details, `tool.key.ts`, brain docs.
+
 
 

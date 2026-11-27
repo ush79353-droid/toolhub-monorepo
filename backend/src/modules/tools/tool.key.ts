@@ -38,6 +38,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DietRiskScoreCalculator',
   'DiffuseLargeBCellLymphomaPrognosisCalculator',
   'DrawLengthCalculator',
+  'DropsPerMinuteCalculator',
   'DrugHalfLifeCalculator',
   'DriCalculator',
   'EbitdaMarginCalculator',

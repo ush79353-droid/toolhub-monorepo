@@ -272,6 +272,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DrawLengthCalculator,
     })),
   ),
+  DropsPerMinuteCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/drops-per-minute/DropsPerMinuteCalculator'
+    ).then((mod) => ({
+      default: mod.DropsPerMinuteCalculator,
+    })),
+  ),
   DrugHalfLifeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/drug-half-life/DrugHalfLifeCalculator'

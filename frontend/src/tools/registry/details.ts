@@ -79,6 +79,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     ),
   DrawLengthCalculator: () =>
     import('@/tools/calculators/draw-length/detail'),
+  DropsPerMinuteCalculator: () =>
+    import('@/tools/calculators/drops-per-minute/detail'),
   DrugHalfLifeCalculator: () =>
     import('@/tools/calculators/drug-half-life/detail'),
   DriCalculator: () => import('@/tools/calculators/dri/detail'),

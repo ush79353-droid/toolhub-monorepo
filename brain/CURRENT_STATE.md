@@ -6,6 +6,7 @@
 ---
 
 ## 1. Snapshot Summary
+- **Drops Per Minute Calculator (/tools/drops-per-minute-calculator):** Educational IV gtts/min (componentKey: 'DropsPerMinuteCalculator'). Fixture **100** mL/**60** min/**15** → **25** gtts/min. Registry wired. **Mongo blocked**.
 - **Bedridden Patient Height Calculator (/tools/bedridden-patient-height-calculator):** Educational stature/weight estimates (`componentKey: 'BedriddenPatientHeightCalculator'`). Screenshot-first multi-study height + Chumlea/Rabito/Ross weight; Mitchell 85→170; Ross white male 1.19×KH+3.21×AC−86.82; **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS).
 - **Waist to Hip Ratio Calculator (/tools/waist-to-hip-ratio-calculator):** Educational WHR (componentKey: 'WaistToHipRatioCalculator'). Fixture **80**/**100** → **0.8**. Registry wired. **Mongo blocked**.
 - **Corrected Magnesium Calculator (/tools/corrected-magnesium-calculator):** Educational Kroll & Elin albumin-adjusted Mg (`componentKey: 'CorrectedMagnesiumCalculator'`). Screenshot-first (ADR-023): blank Mg (mEq/L|mmol/L|mg/dL) + albumin (g/L|g/dL); corrected = Mg_mmol + 0.005×(40−alb_g/L); share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS); **`indexable` left false** when assign retries. Fixture **0.70** mmol · alb **30** → **0.75** mmol / **1.50** mEq.
@@ -1079,6 +1080,7 @@
 - **Profitability Index Calculator (`/tools/profitability-index-calculator`):** Live client-side PI calculator (`componentKey: 'ProfitabilityIndexCalculator'`, catalog `6af46f0fa27d8d1d4e9900b2`). Initial investment + PV of future cash flow → PI = PV ÷ investment; compact interpretation (PI >, =, < 1). Optional “PV unknown” tip (no invented cash-flow schedule). Denomination currency (PKR). Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on.
 
 - **Rule of 72 Calculator (/tools/rule-of-72-calculator):** Live client-side doubling estimator (componentKey: 'RuleOf72Calculator', catalog 6af46f10a27d8d1d4e9901bc). Bidirectional Increase %/period ? Doubling time periods via Rule of 72; exact compound comparison; no FX. Activated; **`indexable` left false**. Example: **8%** ? **9** periods.
+
 
 
 
