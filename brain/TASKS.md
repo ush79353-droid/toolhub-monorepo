@@ -6,6 +6,7 @@
 - [x] PSI Calculator (psi-calculator) — developed + activated 2026-11-25 (`PsiPortCalculator`, indexable false).
 - [x] Light's Criteria Calculator for Pleural Effusion (lights-criteria-calculator-for-pleural-effusion) — developed + activated 2026-11-25 (indexable false).
 - [x] Tidal Volume Calculator (tidal-volume-calculator) — developed + activated 2026-11-25 (indexable false).
+- [x] RSBI Calculator - Rapid Shallow Breathing Index (rsbi-calculator-rapid-shallow-breathing-index) — developed + activated 2026-11-25 (`RsbiCalculator`, indexable false).
 - [x] Urine Output Calculator (urine-output-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] Vital Capacity Calculator (vital-capacity-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] FEV1/FVC Ratio Calculator (fev1fvc-ratio-calculator) — developed + activated 2026-11-25 (indexable false).

@@ -194,6 +194,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RmdCalculator',
   'RothIraCalculator',
   'RrefCalculator',
+  'RsbiCalculator',
   'ArmMortgageCalculator',
   'HundredDayCalculator',
   'SalaryWithOvertimeCalculator',

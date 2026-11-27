@@ -1,3 +1,7 @@
+## 2026-11-25 — RSBI Calculator - Rapid Shallow Breathing Index
+
+Screenshot-first educational RSBI (`RsbiCalculator`, slug `rsbi-calculator-rapid-shallow-breathing-index`, catalog `6af46f12a27d8d1d4e9902f0`). RSBI = f / VT(L); fixture 20/400 mL → 50; share URL only; **No FX**. Registry + backend allowlist; Mongo active/developed; **indexable** false.
+
 ## 2026-11-28 — Ultimate final completion (Quiz FFMI + builds + smoke)
 
 - **Quiz FFMI:** unique catalog `_id` `6b09e0f92c40547bdc543c2e` created+assigned; ordinary FFMI untouched; `indexable` false.

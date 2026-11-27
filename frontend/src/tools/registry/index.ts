@@ -1251,6 +1251,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RrefCalculator,
     })),
   ),
+  RsbiCalculator: lazyTool(() =>
+    import('@/tools/calculators/rsbi/RsbiCalculator').then((mod) => ({
+      default: mod.RsbiCalculator,
+    })),
+  ),
   ArmMortgageCalculator: lazyTool(() =>
     import('@/tools/calculators/arm-mortgage/ArmMortgageCalculator').then((mod) => ({
       default: mod.ArmMortgageCalculator,
@@ -6649,11 +6654,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/retirement/RetirementCalculator'
     ).then((mod) => ({
       default: mod.RetirementCalculator,
-    })),
-  ),
-  RsbiCalculator: lazyTool(() =>
-    import('@/tools/calculators/rsbi/RsbiCalculator').then((mod) => ({
-      default: mod.RsbiCalculator,
     })),
   ),
   Rule2836Calculator: lazyTool(() =>
