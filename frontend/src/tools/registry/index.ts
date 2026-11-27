@@ -1312,11 +1312,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnionGapCalculator,
     })),
   ),
-  AcidBaseCalculator: lazyTool(() =>
-    import('@/tools/calculators/acid-base/AcidBaseCalculator').then((mod) => ({
-      default: mod.AcidBaseCalculator,
-    })),
-  ),
   AltmanZScoreCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/altman-z-score/AltmanZScoreCalculator'
@@ -3619,6 +3614,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   NlrCalculator: lazyTool(() =>
     import('@/tools/calculators/nlr/NlrCalculator').then((mod) => ({
       default: mod.NlrCalculator,
+    })),
+  ),
+  TransferrinSaturationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/transferrin-saturation/TransferrinSaturationCalculator'
+    ).then((mod) => ({
+      default: mod.TransferrinSaturationCalculator,
     })),
   ),
   BeeCalculator: lazyTool(() =>

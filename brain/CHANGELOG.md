@@ -20,6 +20,13 @@
 - **Note:** Engine commit `64e5b397` also introduced Corrected Calcium UI files from a concurrent index race; peer agent owns that tool.
 - **Checks:** `npx tsx …/acid-base/calculation.test.ts` → ok (140/104/24 → AG 12; alb 2 → cAG 17).
 
+## 2026-11-27 — Transferrin Saturation Calculator (TOOL-822)
+
+- **Summary:** Screenshot-first TSAT (`TransferrinSaturationCalculator`, slug `transferrin-saturation-calculator`). Dual panels: 100×Fe/TIBC and 70.9×Fe/TF; unit menus; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `22ffd150` / ENG `a798213d` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/transferrin-saturation/calculation.test.ts` → ok (100/400 → 25%).
+
 ## 2026-11-27 — NLR Calculator (TOOL-821)
 
 - **Summary:** Screenshot-first NLR (`NlrCalculator`, slug `nlr-calculator`). Absolute ANC/ALC ×10³/µL or matching differential %; NLR = neutrophils÷lymphocytes; zero lymphocytes invalid; **No FX**; share URL only.

@@ -346,7 +346,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AncWithoutBandsCalculator: () =>
     import('@/tools/calculators/anc-without-bands/detail'),
   AnionGapCalculator: () => import('@/tools/calculators/anion-gap/detail'),
-  AcidBaseCalculator: () => import('@/tools/calculators/acid-base/detail'),
   AmtCalculator: () => import('@/tools/calculators/amt/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),
   FeetToInchesCalculator: () => import('@/tools/calculators/feet-to-inches/detail'),
@@ -886,6 +885,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   WeightLossPercentageCalculator: () =>
     import('@/tools/calculators/weight-loss-percentage/detail'),
   NlrCalculator: () => import('@/tools/calculators/nlr/detail'),
+  TransferrinSaturationCalculator: () =>
+    import('@/tools/calculators/transferrin-saturation/detail'),
   BeeCalculator: () => import('@/tools/calculators/bee-calculator/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),
