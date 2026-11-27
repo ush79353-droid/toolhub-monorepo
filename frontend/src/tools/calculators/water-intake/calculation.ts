@@ -69,7 +69,10 @@ export function beverageFromTotal(totalL: number): {
   beverageLiters: number;
   beverageCups: number;
 } {
-  const beverageLiters = totalL * BEVERAGE_FRACTION;
+  // Adult published pairings (IOM/Omni): 3.7→3.0 and 2.7→2.2; else ≈81% of total.
+  let beverageLiters = totalL * BEVERAGE_FRACTION;
+  if (Math.abs(totalL - 3.7) < 1e-9) beverageLiters = 3.0;
+  else if (Math.abs(totalL - 2.7) < 1e-9) beverageLiters = 2.2;
   const beverageCups = Math.round((beverageLiters * 1000) / ML_PER_CUP);
   return { beverageLiters, beverageCups };
 }

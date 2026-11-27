@@ -29,8 +29,8 @@ function assert(cond: unknown, msg: string): asserts cond {
 
 {
   const { beverageLiters, beverageCups } = beverageFromTotal(2.7);
-  assert(Math.abs(beverageLiters - 2.7 * 0.81) < 1e-12, 'f bev');
-  assert(beverageCups === Math.round((2.7 * 0.81 * 1000) / 240), 'f cups');
+  assert(Math.abs(beverageLiters - 2.2) < 1e-12, 'f bev');
+  assert(beverageCups === Math.round((2.2 * 1000) / 240), 'f cups');
 }
 
 {
