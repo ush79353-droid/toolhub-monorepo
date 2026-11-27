@@ -1,4 +1,4 @@
-﻿## 2026-11-28 — Ultimate final completion (Quiz FFMI + builds + smoke)
+## 2026-11-28 — Ultimate final completion (Quiz FFMI + builds + smoke)
 
 - **Quiz FFMI:** unique catalog `_id` `6b09e0f92c40547bdc543c2e` created+assigned; ordinary FFMI untouched; `indexable` false.
 - **Build:** Fixed `KetoCalculator` missing `),`, five `details.ts` loaders, ponderal apostrophe lint, BSA test typing (`dac877bd`). Frontend+backend type-check/build PASS.
@@ -33,6 +33,18 @@
 - **Handoff:** `brain/reports/OMEGA-QUIZ-PCR-CATALOG-HANDOFF-composer-quiz-pcr-s5.md`
 - **Folder:** `Tools/Progress/Quiz Protein Creatinine Ratio Calculator`
 - **GitHub sync:** none
+
+## 2026-11-27 — Bull Board for SEO queues
+
+The API mounts Bull Board at `/api/v1/admin/queues` when Redis and `BULL_BOARD_PASSWORD` are set. The page uses HTTP basic auth (`BULL_BOARD_USER`, default `admin`). An empty password leaves the dashboard off.
+
+## 2026-11-27 — Frontend dev server uses Turbopack
+
+npm run dev in frontend now runs next dev --turbopack. The first tool page no longer compiles every calculator through Webpack.
+
+## 2026-11-27 — Top progress bar while a page is loading
+
+Public pages show a thin primary bar at the top when a link or search opens another page. The bar finishes when that route is ready. A fast transition does not flash it.
 
 ## 2026-11-27 — Issued Tools Session 10 final integration coordinator
 
@@ -334,6 +346,34 @@ px tsx …/draw-length/calculation.test.ts → ok (70 in → 28 in; 1 m → 40 c
 - **Mongo:** assign blocked or deferred (Atlas DNS historically); activation pending; **indexable** false when assign retries.
 - **Commits:** UI `5565662a` / ENG `9958301f` / REG (this commit). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/water-intake/calculation.test.ts` → ok.
+## 2026-11-26 — Parenthetical acronyms stay off the keyword seed
+
+Lost Wages Assistance (LWA) is searched as Lost Wages Assistance. The old seed glued on LWA, and DataForSEO returned no ideas. LWA alone is not searched, because those suggestions are unrelated.
+
+## 2026-11-26 — Dashed tool names match on the distinctive suffix
+
+Keyword search uses the name after the dash. CARES Act no longer also requires unemployment benefit. LWA can stand for Lost Wages Assistance. HEALS and HEROES must both appear.
+
+## 2026-11-26 — Guide renders markdown headings
+
+Published guide copy turns ### titles into headings. A title glued to the next sentence is split, so the hashes are not shown as text.
+
+## 2026-11-26 — Short unit names match without the word converter
+
+Calculator and converter are no longer the required keyword tokens. mm to ATM Converter can match mm to atm. mmhg still does not count as mm.
+
+## 2026-11-26 — SEO drafts include field labels
+
+Content generation now sends the form input labels and result titles with the calculator source. The React component itself is not sent.
+
+## 2026-11-26 — SEO drafts read the calculator source
+
+Content generation sends the tool types.ts and calculation.ts to OpenAI. The guide may describe only inputs, formulas, and results in that source. A missing module leaves the source empty.
+
+## 2026-11-26 — Keyword seed keeps calculator when fewer than two words remain
+
+DataForSEO still drops calculator and converter from names such as 3x Rent Calculator. Meter Converter stays whole, because one leftover word returns no matching ideas.
+
 ## 2026-11-26 — Weight Loss Percentage Calculator (TOOL-820)
 
 - **Summary:** Screenshot-first WLP (`WeightLossPercentageCalculator`, slug `weight-loss-percentage-calculator`). past−current; % = 100×loss/past; **No FX**; outputs read-only.

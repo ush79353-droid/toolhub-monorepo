@@ -163,6 +163,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KetoCalculator: () => import('@/tools/calculators/keto/detail'),
   KidneyFailureRiskCalculator: () =>
     import('@/tools/calculators/kidney-failure-risk/detail'),
+  KidneyStonePcnlCalculator: () =>
+    import('@/tools/calculators/kidney-stone-pcnl/detail'),
   LidocaineDoseCalculator: () =>
     import('@/tools/calculators/lidocaine-dose/detail'),
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),
@@ -1756,6 +1758,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lifetime-earnings/detail'),
   LifoInventoryCalculator: () =>
     import('@/tools/calculators/lifo-inventory/detail'),
+  LightsCriteriaCalculator: () =>
+    import('@/tools/calculators/lights-criteria/detail'),
   LongTermCareCalculator: () =>
     import('@/tools/calculators/long-term-care/detail'),
   MegaMillionsPayoutCalculator: () =>

@@ -42,7 +42,7 @@ export function assertSeoConfigured(): void {
   }
 }
 
-function getQueue(name: SeoQueueName): Queue<SeoJobData> {
+export function getSeoQueue(name: SeoQueueName): Queue<SeoJobData> {
   if (!env.REDIS_HOST.trim()) {
     throw new AppError('REDIS_HOST is required before SEO work can be queued.', 503, 'SEO_NOT_CONFIGURED');
   }
@@ -63,7 +63,7 @@ function getQueue(name: SeoQueueName): Queue<SeoJobData> {
 }
 
 export async function enqueueSeoStep(name: SeoQueueName, draftId: string, delayMs = 0): Promise<void> {
-  await getQueue(name).add(
+  await getSeoQueue(name).add(
     'run',
     { draftId },
     { jobId: `${name}:${draftId}:${Date.now()}`, ...(delayMs > 0 ? { delay: delayMs } : {}) }

@@ -178,6 +178,7 @@ export interface PublicCategoryTool {
   name: string;
   slug: string;
   shortDescription: string;
+  componentKey: string;
   isActive: boolean;
 }
 
@@ -214,6 +215,7 @@ interface CategoryToolRow {
   name: string;
   slug: string;
   shortDescription?: string;
+  componentKey?: string;
   isActive?: boolean;
   pillar?: { toString(): string } | null;
   subPillar?: { toString(): string } | null;
@@ -225,6 +227,7 @@ function toCategoryTool(row: CategoryToolRow): PublicCategoryTool {
     name: row.name,
     slug: row.slug,
     shortDescription: row.shortDescription ?? '',
+    componentKey: row.componentKey ?? '',
     isActive: Boolean(row.isActive),
   };
 }
@@ -248,7 +251,7 @@ export async function getPublicCategoryBySlug(rawSlug: string): Promise<PublicCa
     isActive: true,
   }).sort({ sortOrder: 1, name: 1 });
   const tools = await Tool.find({ category: category._id, isActive: true })
-    .select('name slug shortDescription isActive pillar subPillar')
+    .select('name slug shortDescription componentKey isActive pillar subPillar')
     .sort({ name: 1 })
     .lean<CategoryToolRow[]>();
 

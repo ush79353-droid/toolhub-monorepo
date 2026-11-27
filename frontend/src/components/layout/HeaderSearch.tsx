@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { startNavigationProgress } from './NavigationProgress';
 import { Loader2, Search } from 'lucide-react';
 
 interface ToolSuggestion {
@@ -96,6 +97,7 @@ export function HeaderSearch({
   function goToDirectory() {
     const trimmed = query.trim();
     setOpen(false);
+    startNavigationProgress();
     router.push(trimmed ? `/tools?q=${encodeURIComponent(trimmed)}` : '/tools');
   }
 
@@ -121,6 +123,7 @@ export function HeaderSearch({
       const chosen = open ? items[active] : undefined;
       if (chosen) {
         setOpen(false);
+        startNavigationProgress();
         router.push(`/tools/${chosen.slug}`);
         return;
       }

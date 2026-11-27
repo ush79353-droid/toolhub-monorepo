@@ -32,7 +32,7 @@
 | `media` | `modules/media/` | Storage driver (`local` disk or S3), `MediaAsset` persistence, list/filter, file + DB delete | `/api/v1/admin/media` |
 | `tools` | `modules/tools/` | Admin tool catalog CRUD, placement options, media icon validation, allowlisted `componentKey` & `executionType`, unique name/slug enforcement, optional SEO fields, embed gates, and the development audit (`isDeveloped`, `ToolAudit`) | `/api/v1/admin/tools` |
 | `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation), featured tools, active tool directory, typeahead (`GET /tools/suggest`, 10 items), and active single tool detail by slug. Attaches a published SEO guide when one exists (ADR-027). | `/api/v1/catalog` |
-| `seo` | `modules/seo/` | Finance SEO campaigns: DataForSEO research, OpenAI drafts, validation, admin approve/publish. Does not flip `isActive` or `indexable`. | `/api/v1/admin/seo` |
+| `seo` | `modules/seo/` | Finance SEO campaigns: DataForSEO research, OpenAI drafts, validation, admin approve/publish. Bull Board at `/api/v1/admin/queues` when Redis and `BULL_BOARD_PASSWORD` are set. Does not flip `isActive` or `indexable`. | `/api/v1/admin/seo` |
 
 ### Planned / Placeholder Modules (`.gitkeep` only)
 
@@ -109,6 +109,8 @@ Validated at import via Zod (`dotenv.config()`):
 | `DATAFORSEO_LOCATION_CODE` | `2840` | DataForSEO location. 2840 is the United States. There is no single global location. |
 | `DATAFORSEO_LANGUAGE_CODE` | `en` | DataForSEO language. |
 | `OPENAI_API_KEY`, `OPENAI_SEO_MODEL` | `''` | OpenAI structured draft. Both required before enqueue. |
+| `BULL_BOARD_USER` | `admin` | Basic-auth user for `/api/v1/admin/queues`. |
+| `BULL_BOARD_PASSWORD` | `''` | Basic-auth password. Empty leaves Bull Board unmounted. |
 
 > **Config Drift Note:** `backend/.env.example` also lists `SESSION_TTL_HOURS=24` and `SESSION_REMEMBER_ME_DAYS=7`, but `env.ts` does not parse them and `admin-auth.service.ts` hardcodes `24h` and `7d`.
 

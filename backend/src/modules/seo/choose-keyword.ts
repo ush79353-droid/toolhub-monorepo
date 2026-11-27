@@ -21,21 +21,57 @@ export interface SuggestedLink {
 const BRAND_TOKENS = ['calculator.net', 'nerdwallet', 'bankrate', 'investopedia', 'wikipedia', 'omnicalculator'];
 const SEED_NOISE = new Set(['calculator', 'calculators', 'converter', 'converters']);
 
-/** Tool name with calculator/converter removed, for the DataForSEO seed. */
-export function keywordSeed(toolName: string): string {
-  const words = toolName
-    .trim()
-    .split(/[^A-Za-z0-9]+/)
-    .filter((word) => word.length > 0 && !SEED_NOISE.has(word.toLowerCase()));
-  const seed = words.join(' ');
-  return seed.length > 0 ? seed : toolName.trim();
+/** The part after " - " names the tool. The words before it are only the shared family. */
+function distinctiveName(toolName: string): string {
+  const parts = toolName.split(/\s+-\s+/);
+  return (parts.length > 1 ? parts[parts.length - 1] : toolName).trim();
 }
 
-/** Suggestion must contain every seed word, so a broad calculator keyword cannot be saved. */
+/** 2–3 letter all-caps tokens, such as LWA. Longer names such as CARES stay required words. */
+function shortAcronyms(name: string): string[] {
+  return name
+    .split(/[^A-Za-z0-9]+/)
+    .filter((token) => token.length >= 2 && token.length <= 3 && token === token.toUpperCase() && /[A-Z]/.test(token))
+    .map((token) => token.toLowerCase());
+}
+
+function contentTokens(name: string): string[] {
+  return name
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter((token) => token.length >= 2 && !STOP_TOKENS.has(token) && !SEED_NOISE.has(token));
+}
+
+/** "(LWA)" is for matching. Gluing it onto the phrase makes DataForSEO return nothing. */
+function withoutParentheticalAcronym(name: string): string {
+  const acronyms = shortAcronyms(name);
+  if (acronyms.length !== 1) return name;
+  const stripped = name.replace(/\s*\(([^)]+)\)\s*$/, (full, inner: string) => {
+    const tokens = inner.split(/[^A-Za-z0-9]+/).filter((token) => token.length > 0);
+    return tokens.length === 1 && tokens[0]?.toLowerCase() === acronyms[0] ? '' : full;
+  });
+  const next = stripped.trim();
+  return next.length > 0 ? next : name;
+}
+
+/**
+ * Tool name for the DataForSEO seed. A dashed suffix is the seed.
+ * Drop calculator/converter only when at least two words remain.
+ */
+export function keywordSeed(toolName: string): string {
+  const trimmed = withoutParentheticalAcronym(distinctiveName(toolName));
+  const words = trimmed.split(/[^A-Za-z0-9]+/).filter((word) => word.length > 0);
+  const kept = words.filter((word) => !SEED_NOISE.has(word.toLowerCase()));
+  return kept.length >= 2 ? kept.join(' ') : trimmed;
+}
+
+/**
+ * A suggestion matches when it contains every long distinctive word, or the one
+ * short acronym that stands for that phrase. "unemployment benefits" does not
+ * match CARES Act or LWA.
+ */
 export function keywordContainsSeed(keyword: string, seed: string): boolean {
-  const words = new Set(keyword.toLowerCase().split(/[^a-z0-9]+/).filter((word) => word.length > 0));
-  const required = seed.toLowerCase().split(/[^a-z0-9]+/).filter((word) => word.length >= 2);
-  return required.length > 0 && required.every((word) => words.has(word));
+  return coversDistinctive(keyword, seed);
 }
 const STOP_TOKENS = new Set(['calculator', 'calculators', 'the', 'and', 'for', 'with', 'from', 'vs', 'per']);
 
@@ -50,32 +86,25 @@ function usable(facts: readonly KeywordFact[]): KeywordFact[] {
   });
 }
 
-function tokensOf(toolName: string): string[] {
-  const tokens = toolName
-    .toLowerCase()
-    .split(/[^a-z0-9]+/)
-    .filter((token) => token.length >= 2 && !STOP_TOKENS.has(token));
-  return [...new Set(tokens)];
-}
-
 function wordsOf(keyword: string): Set<string> {
   return new Set(keyword.toLowerCase().split(/[^a-z0-9]+/).filter((word) => word.length > 0));
 }
 
-/** Tokens the keyword must contain as whole words. Numbers always count. Words of 4+ letters count when any exist. */
-function requiredTokens(toolName: string): string[] {
-  const tokens = tokensOf(toolName);
+function coversDistinctive(keyword: string, name: string): boolean {
+  const words = wordsOf(keyword);
+  const tokens = [...new Set(contentTokens(name))];
+  if (tokens.length === 0) return false;
   const numbers = tokens.filter((token) => /^\d+$/.test(token));
-  const specific = tokens.filter((token) => token.length >= 4);
-  const must = specific.length > 0 ? specific : tokens;
-  return [...new Set([...numbers, ...must])];
+  const longWords = tokens.filter((token) => token.length >= 4);
+  const hasNumbers = numbers.every((token) => words.has(token));
+  if (longWords.length > 0 && hasNumbers && longWords.every((token) => words.has(token))) return true;
+  const acronyms = shortAcronyms(name);
+  if (longWords.length > 0 && hasNumbers && acronyms.length === 1 && words.has(acronyms[0] ?? '')) return true;
+  return longWords.length === 0 && tokens.every((token) => words.has(token));
 }
 
 function matchesTool(keyword: string, toolName: string): boolean {
-  const must = requiredTokens(toolName);
-  if (must.length === 0) return false;
-  const words = wordsOf(keyword);
-  return must.every((token) => words.has(token));
+  return coversDistinctive(keyword, distinctiveName(toolName));
 }
 
 /**

@@ -47,7 +47,7 @@ export function Header() {
   const isHome = pathname === '/';
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur-md">
       <Container className="relative flex h-16 items-center gap-3">
         <Link href="/" className="group relative z-10 flex shrink-0 items-center">
           <img

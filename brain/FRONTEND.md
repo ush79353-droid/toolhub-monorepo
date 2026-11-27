@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-The frontend is an independent Next.js 15 App Router application (`omega-calculators-frontend`) using React 19, TypeScript (strict mode), Tailwind CSS 3.4, and `server-only` server actions to communicate with the Express backend.
+The frontend is an independent Next.js 15 App Router application (`omega-calculators-frontend`) using React 19, TypeScript (strict mode), Tailwind CSS 3.4, and `server-only` server actions to communicate with the Express backend. Local `npm run dev` uses Turbopack (`next dev --turbopack -p 3000`) so a tool page compiles that calculator instead of the whole registry. `npm run build` stays on the default production compiler.
 
 - **Entry Root Layout:** `frontend/src/app/layout.tsx` (sets default metadata `<title>` template `%s | Omega Calculators`, favicon/apple icon `/images/logo/icon-with-bg.png`, base body classes `bg-background font-sans text-foreground`).
 - **PWA Manifest:** `frontend/src/app/manifest.json` + icons in `frontend/public/`.
@@ -13,7 +13,7 @@ The frontend is an independent Next.js 15 App Router application (`omega-calcula
 
 ## 2. Public Website Routes (`src/app/(website)/`)
 
-Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">` + `Footer`).
+Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">` + `Footer`). A fixed primary bar at the top of the viewport (`NavigationProgress`) moves while a same-site navigation is waiting on the server, then finishes when the route changes. Instant navigations stay hidden.
 
 | Route | File | Rendering / Data Source | Implementation Status |
 | :--- | :--- | :--- | :--- |

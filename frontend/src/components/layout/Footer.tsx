@@ -74,7 +74,7 @@ export async function Footer() {
   const socialLinks = siteConfig.social.filter((item) => item.href.trim().length > 0);
 
   return (
-    <footer className="border-t border-border bg-white pt-14 pb-8 text-foreground">
+    <footer className="border-t border-border bg-background pt-14 pb-8 text-foreground">
       <Container>
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-3">

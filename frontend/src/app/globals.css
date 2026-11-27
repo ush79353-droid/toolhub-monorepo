@@ -5,8 +5,8 @@
 @layer base {
   :root {
     /* Locked Design System Color Palette */
-    /* Background: #F7F8F6 */
-    --background: 90 10% 97%;
+    /* Background: #F6F7FE */
+    --background: 233 80% 98%;
     /* Primary Text: #202B2D */
     --foreground: 189 17% 15%;
 
@@ -36,9 +36,9 @@
     --accent: 189 51% 17%;
     --accent-foreground: 0 0% 100%;
 
-    /* Border & Input: #DCE6E5 */
-    --border: 174 15% 88%;
-    --input: 174 15% 88%;
+    /* Border & Input: #C3C8D4 */
+    --border: 222 17% 80%;
+    --input: 222 17% 80%;
 
     /* Focus Ring: #087E8B */
     --ring: 186 89% 29%;
@@ -119,6 +119,31 @@
   display: none;
   width: 0;
   height: 0;
+}
+
+/* Empty bars only. No text and no image URL, so this is not an LCP candidate. */
+@keyframes tool-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+.tool-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 0%,
+    hsl(var(--background)) 45%,
+    hsl(var(--muted)) 100%
+  );
+  background-size: 200% 100%;
+  animation: tool-shimmer 1.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tool-shimmer {
+    animation: none;
+  }
 }
 
 /* Wins over Tailwind's default stacks when the config has not replaced them. */
