@@ -3672,8 +3672,16 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WeightLossPercentageCalculator,
     })),
   ),
+  WintersFormulaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/winters-formula/WintersFormulaCalculator'
+    ).then((mod) => ({
+      default: mod.WintersFormulaCalculator,
+    })),
+  ),
   WaterIntakeCalculator: lazyTool(() =>
     import(
+
       '@/tools/calculators/water-intake/WaterIntakeCalculator'
     ).then((mod) => ({
       default: mod.WaterIntakeCalculator,

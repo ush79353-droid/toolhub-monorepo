@@ -898,8 +898,11 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/ponderal-index/detail'),
   WeightLossPercentageCalculator: () =>
     import('@/tools/calculators/weight-loss-percentage/detail'),
+  WintersFormulaCalculator: () =>
+    import('@/tools/calculators/winters-formula/detail'),
   WaterIntakeCalculator: () =>
     import('@/tools/calculators/water-intake/detail'),
+
   NlrCalculator: () => import('@/tools/calculators/nlr/detail'),
   TransferrinSaturationCalculator: () =>
     import('@/tools/calculators/transferrin-saturation/detail'),

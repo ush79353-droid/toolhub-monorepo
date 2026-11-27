@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Drops Per Minute Calculator (TOOL-826)
+﻿## 2026-11-27 — Winters' Formula Calculator (TOOL-827)
+
+- **Summary:** Screenshot-first Winters expected pCO₂ (`WintersFormulaCalculator`, slug `winters-formula-calculator`). HCO₃ mmol/L; expected pCO₂ kPa default; range ±2 mmHg disclosure; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI+ENG first landed in concurrent `859766af` (bedridden integrate race) / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/winters-formula/calculation.test.ts` → ok (HCO₃ **12** → **26** mmHg · range **24–28**).
+
+## 2026-11-27 — Drops Per Minute Calculator (TOOL-826)
 
 - **Summary:** Screenshot-first IV gtts/min (DropsPerMinuteCalculator). volume×factor/time; drops/h + mL/h; **No FX**.
 - **Mongo:** assign blocked (Atlas DNS).
