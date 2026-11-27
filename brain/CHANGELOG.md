@@ -1,3 +1,7 @@
+## 2026-11-27 — Frontend dev server uses Turbopack
+
+npm run dev in frontend now runs next dev --turbopack. The first tool page no longer compiles every calculator through Webpack.
+
 ## 2026-11-27 — Top progress bar while a page is loading
 
 Public pages show a thin primary bar at the top when a link or search opens another page. The bar finishes when that route is ready. A fast transition does not flash it.

@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-The frontend is an independent Next.js 15 App Router application (`omega-calculators-frontend`) using React 19, TypeScript (strict mode), Tailwind CSS 3.4, and `server-only` server actions to communicate with the Express backend.
+The frontend is an independent Next.js 15 App Router application (`omega-calculators-frontend`) using React 19, TypeScript (strict mode), Tailwind CSS 3.4, and `server-only` server actions to communicate with the Express backend. Local `npm run dev` uses Turbopack (`next dev --turbopack -p 3000`) so a tool page compiles that calculator instead of the whole registry. `npm run build` stays on the default production compiler.
 
 - **Entry Root Layout:** `frontend/src/app/layout.tsx` (sets default metadata `<title>` template `%s | Omega Calculators`, favicon/apple icon `/images/logo/icon-with-bg.png`, base body classes `bg-background font-sans text-foreground`).
 - **PWA Manifest:** `frontend/src/app/manifest.json` + icons in `frontend/public/`.
