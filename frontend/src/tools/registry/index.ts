@@ -3632,6 +3632,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BaiCalculator,
     })),
   ),
+  WaistToHipRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/waist-to-hip/WaistToHipRatioCalculator'
+    ).then((mod) => ({
+      default: mod.WaistToHipRatioCalculator,
+    })),
+  ),
   WaistToHeightRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/waist-to-height/WhtrCalculator').then((mod) => ({
       default: mod.WaistToHeightRatioCalculator,

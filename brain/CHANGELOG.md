@@ -47,6 +47,13 @@ px tsx …/draw-length/calculation.test.ts → ok (70 in → 28 in; 1 m → 40 c
 - **Note:** Engine commit `64e5b397` also introduced Corrected Calcium UI files from a concurrent index race; peer agent owns that tool.
 - **Checks:** `npx tsx …/acid-base/calculation.test.ts` → ok (140/104/24 → AG 12; alb 2 → cAG 17).
 
+## 2026-11-27 — Urine Anion Gap Calculator (TOOL-823)
+
+- **Summary:** Screenshot-first UAG (`UrineAnionGapCalculator`, slug `urine-anion-gap-calculator`). Urinary Na/K/Cl mEq/L; UAG=(Na+K)−Cl; negatives kept; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS expected); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `57adf03d` / ENG `2c396df6` / REG (this commit). Note: `df356d93` was a git-race mislabel (peer waist-to-hip UI). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/urine-anion-gap/calculation.test.ts` → ok (40+20−80 → −20).
+
 ## 2026-11-27 — Transferrin Saturation Calculator (TOOL-822)
 
 - **Summary:** Screenshot-first TSAT (`TransferrinSaturationCalculator`, slug `transferrin-saturation-calculator`). Dual panels: 100×Fe/TIBC and 70.9×Fe/TF; unit menus; **No FX**.
