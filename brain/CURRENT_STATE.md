@@ -6,6 +6,7 @@
 ---
 
 ## 1. Snapshot Summary
+- **Bedridden Patient Height Calculator (/tools/bedridden-patient-height-calculator):** Educational stature/weight estimates (`componentKey: 'BedriddenPatientHeightCalculator'`). Screenshot-first multi-study height + Chumlea/Rabito/Ross weight; Mitchell 85→170; Ross white male 1.19×KH+3.21×AC−86.82; **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS).
 - **Waist to Hip Ratio Calculator (/tools/waist-to-hip-ratio-calculator):** Educational WHR (componentKey: 'WaistToHipRatioCalculator'). Fixture **80**/**100** → **0.8**. Registry wired. **Mongo blocked**.
 - **Corrected Magnesium Calculator (/tools/corrected-magnesium-calculator):** Educational Kroll & Elin albumin-adjusted Mg (`componentKey: 'CorrectedMagnesiumCalculator'`). Screenshot-first (ADR-023): blank Mg (mEq/L|mmol/L|mg/dL) + albumin (g/L|g/dL); corrected = Mg_mmol + 0.005×(40−alb_g/L); share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS); **`indexable` left false** when assign retries. Fixture **0.70** mmol · alb **30** → **0.75** mmol / **1.50** mEq.
 - **Body Frame Size Calculator (/tools/body-frame-size-calculator):** Educational height÷wrist frame index (`componentKey: 'BodyFrameSizeCalculator'`). Screenshot-first (ADR-023): female default; blank height m + wrist cm; Omni/Grant sex bands; share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS); **`indexable` left false** when assign retries. Fixture ♀ **1.7** m · **16** cm → **10.63** medium.

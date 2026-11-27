@@ -1,4 +1,10 @@
-﻿## 2026-11-27 — Corrected Magnesium Calculator (TOOL-826)
+﻿## 2026-11-27 — Bedridden Patient Height Calculator (TOOL-825)
+
+- **Summary:** Screenshot-first bedridden stature/weight (`BedriddenPatientHeightCalculator`, slug `bedridden-patient-height-calculator`). Height studies (Mitchell 2×semi-span, WHO, Rabito, Gray, Chumlea, Cereda, knee-height, demi-span, ulna chart); weight Chumlea/Rabito/Ross with conditional covariates; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `e388a4e5` / ENG `53494815` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/bedridden-patient-height/calculation.test.ts` → ok (85→170; Ross white male fixture).
+## 2026-11-27 — Corrected Magnesium Calculator (TOOL-826)
 
 - **Summary:** Screenshot-first Kroll & Elin corrected Mg (`CorrectedMagnesiumCalculator`, slug `corrected-magnesium-calculator`). Mg mEq/L|mmol/L|mg/dL; albumin g/L|g/dL; corrected = Mg_mmol + 0.005×(40−alb_g/L); **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.

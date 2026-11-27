@@ -1347,6 +1347,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ArterialBloodPhCalculator,
     })),
   ),
+  BedriddenPatientHeightCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bedridden-patient-height/BedriddenPatientHeightCalculator'
+    ).then((mod) => ({
+      default: mod.BedriddenPatientHeightCalculator,
+    })),
+  ),
   AcidBaseCalculator: lazyTool(() =>
     import('@/tools/calculators/acid-base/AcidBaseCalculator').then((mod) => ({
       default: mod.AcidBaseCalculator,
