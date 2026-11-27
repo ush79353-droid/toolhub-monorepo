@@ -14,25 +14,7 @@ import {
   type OverweightInput,
   type OverweightResult,
 } from './types';
-
-function emptyUiResult(): OverweightResult {
-  return {
-    heightMeters: null,
-    weightKg: null,
-    bmi: null,
-    ponderalIndex: null,
-    formattedBmi: '',
-    formattedPonderal: '',
-    category: null,
-    percentile: null,
-    formattedPercentile: '',
-    statusHeadline: 'Enter weight and height.',
-    statusDetail: 'BMI and ponderal index appear when both values are valid.',
-    sourceNote: 'BMI = W/H²; adult ponderal = W/H³. Educational only.',
-    disclaimer:
-      'The ponderal index and BMI results can differ. Always consult a physician if any health condition bothers you.',
-  };
-}
+import { validateOverweightInput } from './validation';
 
 export function OverweightCalculator({
   metadata,
@@ -45,8 +27,8 @@ export function OverweightCalculator({
   const [baseline, setBaseline] = React.useState(() => initial);
   const [input, setInput] = React.useState(() => initial);
   const [errors, setErrors] = React.useState<OverweightFieldErrors>({});
-  const [result, setResult] = React.useState<OverweightResult | null>(() =>
-    emptyUiResult(),
+  const [result, setResult] = React.useState<OverweightResult | null>(
+    () => validateOverweightInput(initial).result,
   );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
@@ -58,9 +40,10 @@ export function OverweightCalculator({
   }, []);
 
   const apply = (next: OverweightInput) => {
+    const validation = validateOverweightInput(next);
     setInput(next);
-    setErrors({});
-    setResult(emptyUiResult());
+    setErrors(validation.errors);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
@@ -68,7 +51,7 @@ export function OverweightCalculator({
     setInput(fresh);
     setBaseline(fresh);
     setErrors({});
-    setResult(emptyUiResult());
+    setResult(validateOverweightInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -78,7 +61,7 @@ export function OverweightCalculator({
     const fresh = createEmptyInput();
     setInput(fresh);
     setErrors({});
-    setResult(emptyUiResult());
+    setResult(validateOverweightInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
