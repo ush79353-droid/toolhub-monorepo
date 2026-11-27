@@ -14,6 +14,7 @@ import {
   type BodySurfaceAreaInput,
   type BodySurfaceAreaResult,
 } from './types';
+import { validateBodySurfaceAreaInput } from './validation';
 
 export function BodySurfaceAreaCalculator({
   metadata,
@@ -45,9 +46,11 @@ export function BodySurfaceAreaCalculator({
   };
 
   const handleCalculate = () => {
-    // Results engine lands in the calculation commit.
-    setErrors({});
-    setResult(null);
+    const validation = validateBodySurfaceAreaInput(input, {
+      requireComplete: true,
+    });
+    setErrors(validation.errors);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
