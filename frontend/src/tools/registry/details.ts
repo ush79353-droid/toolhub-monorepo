@@ -357,6 +357,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AnionGapCalculator: () => import('@/tools/calculators/anion-gap/detail'),
   ArterialBloodPhCalculator: () => import('@/tools/calculators/arterial-blood-ph/detail'),
   BedriddenPatientHeightCalculator: () => import('@/tools/calculators/bedridden-patient-height/detail'),
+  BicarbonateDeficitCalculator: () =>
+    import('@/tools/calculators/bicarbonate-deficit/detail'),
   AcidBaseCalculator: () => import('@/tools/calculators/acid-base/detail'),
   AmtCalculator: () => import('@/tools/calculators/amt/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),

@@ -1361,6 +1361,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BedriddenPatientHeightCalculator,
     })),
   ),
+  BicarbonateDeficitCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bicarbonate-deficit/BicarbonateDeficitCalculator'
+    ).then((mod) => ({
+      default: mod.BicarbonateDeficitCalculator,
+    })),
+  ),
   AcidBaseCalculator: lazyTool(() =>
     import('@/tools/calculators/acid-base/AcidBaseCalculator').then((mod) => ({
       default: mod.AcidBaseCalculator,

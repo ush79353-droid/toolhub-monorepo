@@ -11,6 +11,13 @@
 - **Mongo:** assign blocked (Atlas DNS).
 - **Commits:** UI 15798f87 / ENG 5dca1e5e / REG (this commit).
 - **Checks:** calculation.test.ts ok (100/60/15 → 25, 1500, 100).
+## 2026-11-27 — Bicarbonate Deficit Calculator (TOOL-827)
+
+- **Summary:** Screenshot-first bicarbonate deficit amount (`BicarbonateDeficitCalculator`, slug `bicarbonate-deficit-calculator`). Weight kg|lb; actual/desired HCO₃ mmol/L (desired default 24); deficit = 0.5 × kg × (desired − actual) labeled **mmol** (resolves reference mmol/L mislabel); **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `5ef1b965` / ENG `4da415fb` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/bicarbonate-deficit/calculation.test.ts` → ok (72/19/24 → 180 mmol; equal → 0; lb parity).
+
 ## 2026-11-27 — Bedridden Patient Height Calculator (TOOL-825)
 
 - **Summary:** Screenshot-first bedridden stature/weight (`BedriddenPatientHeightCalculator`, slug `bedridden-patient-height-calculator`). Height studies (Mitchell 2×semi-span, WHO, Rabito, Gray, Chumlea, Cereda, knee-height, demi-span, ulna chart); weight Chumlea/Rabito/Ross with conditional covariates; **No FX**.

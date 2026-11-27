@@ -638,6 +638,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AnionGapCalculator',
   'ArterialBloodPhCalculator',
   'BedriddenPatientHeightCalculator',
+  'BicarbonateDeficitCalculator',
   'AcidBaseCalculator',
   'BaiCalculator',
   'WaistToHeightRatioCalculator',
