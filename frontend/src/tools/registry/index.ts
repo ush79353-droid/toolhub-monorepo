@@ -272,6 +272,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DrawLengthCalculator,
     })),
   ),
+  DripRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/drip-rate/DripRateCalculator'
+    ).then((mod) => ({
+      default: mod.DripRateCalculator,
+    })),
+  ),
   DropsPerMinuteCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/drops-per-minute/DropsPerMinuteCalculator'
@@ -3748,6 +3755,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/transferrin-saturation/TransferrinSaturationCalculator'
     ).then((mod) => ({
       default: mod.TransferrinSaturationCalculator,
+    })),
+  ),
+  TotalBodyWaterCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/total-body-water/TotalBodyWaterCalculator'
+    ).then((mod) => ({
+      default: mod.TotalBodyWaterCalculator,
     })),
   ),
   BeeCalculator: lazyTool(() =>

@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Drip Rate Calculator (TOOL-834)
+﻿## 2026-11-27 — Total Body Water Calculator (TOOL-835)
+
+- **Summary:** Screenshot-first Watson 1980 TBW (`TotalBodyWaterCalculator`, slug `total-body-water-calculator`). Female default; age/height/weight; volume L|mL, mass kg|lb, % body weight; female equation age-invariant; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `856006bb` / ENG `df7c8675` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/total-body-water/calculation.test.ts` → ok (♀ 30/170/65 → ≈32.11 L; age invariant).
+
+## 2026-11-27 — Drip Rate Calculator (TOOL-834)
 
 - **Summary:** Screenshot-first weight-based IV drip worksheet (`DripRateCalculator`, slug `drip-rate-calculator`). Dose/weight/concentration or bag+drug → mL/h, gtts/min, bag duration; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.

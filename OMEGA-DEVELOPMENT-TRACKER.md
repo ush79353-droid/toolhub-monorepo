@@ -1,25 +1,20 @@
 ﻿# OMEGA Development Tracker
 
-Last update: 2026-11-27 — agent cursor-agent-pending-composer-11923
+Last update: 2026-11-27 — agent cursor-agent-pending-composer-omega-220652
 
-## Session checkpoint
+## Session
 
-- Status: PARTIAL — SESSION/CONTEXT CAPACITY LIMIT (`CREDITS_NOT_VERIFIABLE`)
-- Agent: `cursor-agent-pending-composer-11923` / `sess-pending-20261127-2203`
-- Completed this run: Water Intake; RFM; Lean Body Mass
-- Progress: other agents active (~5)
-- Pending remaining: ~18
-- Local commits (this run):
-  - Water: `5565662a` `9958301f` `224421ac`
-  - RFM: `7b67afe3` `cba287b5` `fc1cf081`
-  - LBM: `15cca717` `84832ef4` `bbf3297f`
+- Status: CONTINUING / approaching CAPACITY_LIMIT
+- Credits: CREDITS_NOT_VERIFIABLE
+- Completed this session: Venous Blood pH Calculator; Total Body Water Calculator (REG in progress)
+- Local commits VBPH: UI b63ea80e / ENG a3ee2b2f / REG bbf3297f(+aa56a2c3 race)
+- Local commits TBW: UI 856006bb / ENG df7c8675 / REG (pending)
 - GitHub sync: NONE
-- Report: `brain/reports/OMEGA-PENDING-DEVELOPMENT-LOCAL-COMMITS-REPORT-composer-11923.md`
-- Mongo: assign deferred/blocked (Atlas DNS historically)
+- Mongo: Atlas DNS blocked
 
 ## Resume
 
-1. Rescan `Tools/Pending` (leave other Progress owners alone)
-2. Credit/capacity preflight
-3. Claim next SIMPLE/MODERATE eligible (e.g. Healthy Weight, Total Body Water)
-4. Retry Mongo `tool:assign` when DNS works
+1. Rescan Tools/Pending
+2. Credit preflight
+3. Claim next eligible if capacity allows
+4. Retry Mongo assign when DNS works

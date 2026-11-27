@@ -79,6 +79,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     ),
   DrawLengthCalculator: () =>
     import('@/tools/calculators/draw-length/detail'),
+  DripRateCalculator: () =>
+    import('@/tools/calculators/drip-rate/detail'),
   DropsPerMinuteCalculator: () =>
     import('@/tools/calculators/drops-per-minute/detail'),
   DrugHalfLifeCalculator: () =>
@@ -919,6 +921,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NlrCalculator: () => import('@/tools/calculators/nlr/detail'),
   TransferrinSaturationCalculator: () =>
     import('@/tools/calculators/transferrin-saturation/detail'),
+  TotalBodyWaterCalculator: () =>
+    import('@/tools/calculators/total-body-water/detail'),
   BeeCalculator: () => import('@/tools/calculators/bee-calculator/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),
