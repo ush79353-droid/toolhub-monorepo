@@ -15,6 +15,7 @@ export interface PublicCategoryTool {
   name: string;
   slug: string;
   shortDescription: string;
+  componentKey: string;
   isActive: boolean;
 }
 
