@@ -3665,6 +3665,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WaistToHeightRatioCalculator,
     })),
   ),
+  PlasmaOsmolalityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/plasma-osmolality/PlasmaOsmolalityCalculator'
+    ).then((mod) => ({
+      default: mod.PlasmaOsmolalityCalculator,
+    })),
+  ),
   PonderalIndexCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/ponderal-index/PonderalIndexCalculator'
@@ -3688,10 +3695,14 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   ),
   WaterIntakeCalculator: lazyTool(() =>
     import(
-
       '@/tools/calculators/water-intake/WaterIntakeCalculator'
     ).then((mod) => ({
       default: mod.WaterIntakeCalculator,
+    })),
+  ),
+  RfmCalculator: lazyTool(() =>
+    import('@/tools/calculators/rfm/RfmCalculator').then((mod) => ({
+      default: mod.RfmCalculator,
     })),
   ),
   NlrCalculator: lazyTool(() =>

@@ -896,6 +896,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/waist-to-hip/detail'),
   WaistToHeightRatioCalculator: () =>
     import('@/tools/calculators/waist-to-height/detail'),
+  PlasmaOsmolalityCalculator: () =>
+    import('@/tools/calculators/plasma-osmolality/detail'),
   PonderalIndexCalculator: () =>
     import('@/tools/calculators/ponderal-index/detail'),
   WeightLossPercentageCalculator: () =>
@@ -904,7 +906,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/winters-formula/detail'),
   WaterIntakeCalculator: () =>
     import('@/tools/calculators/water-intake/detail'),
-
+  RfmCalculator: () => import('@/tools/calculators/rfm/detail'),
   NlrCalculator: () => import('@/tools/calculators/nlr/detail'),
   TransferrinSaturationCalculator: () =>
     import('@/tools/calculators/transferrin-saturation/detail'),

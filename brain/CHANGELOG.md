@@ -1,4 +1,18 @@
-﻿## 2026-11-27 — Winters' Formula Calculator (TOOL-827)
+﻿## 2026-11-27 — RFM Calculator (Relative Fat Mass) (TOOL-828)
+
+- **Summary:** Screenshot-first RFM (`RfmCalculator`, slug `rfm-calculator-relative-fat-mass`). Woolcott–Bergman; **No FX**.
+- **Mongo:** assign deferred/blocked; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `7b67afe3` / ENG `cba287b5` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/rfm/calculation.test.ts` → ok (180/90 → 24%/36%).
+
+## 2026-11-27 — Water Intake Calculator (TOOL-829)
+
+- **Summary:** Screenshot-first water AI (`WaterIntakeCalculator`, slug `water-intake-calculator`). IOM 2005; adult male 3.7 L / 3.0 L (~13 cups); **No FX**.
+- **Mongo:** assign deferred/blocked; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `5565662a` / ENG `9958301f` / REG `224421ac` (+ registry via concurrent commits). Local only.
+- **Checks:** `npx tsx …/water-intake/calculation.test.ts` → ok.
+
+## 2026-11-27 — Winters' Formula Calculator (TOOL-827)
 
 - **Summary:** Screenshot-first Winters expected pCO₂ (`WintersFormulaCalculator`, slug `winters-formula-calculator`). HCO₃ mmol/L; expected pCO₂ kPa default; range ±2 mmHg disclosure; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
@@ -94,6 +108,12 @@ px tsx …/draw-length/calculation.test.ts → ok (70 in → 28 in; 1 m → 40 c
 - **Commits:** UI `5e3dc4db` / ENG `4311c0c0` / REG (this commit). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/nlr/calculation.test.ts` → ok (4/2 → 2; percent 70/20 → 3.5).
 
+## 2026-11-27 — RFM Calculator (Relative Fat Mass) (TOOL-823)
+
+- **Summary:** Screenshot-first RFM (`RfmCalculator`, slug `rfm-calculator-relative-fat-mass`). Woolcott–Bergman; **No FX**.
+- **Mongo:** assign deferred/blocked; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `7b67afe3` / ENG `cba287b5` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/rfm/calculation.test.ts` → ok (180/90 → 24%/36%).
 ## 2026-11-27 — Water Intake Calculator (TOOL-822)
 
 - **Summary:** Screenshot-first water AI (`WaterIntakeCalculator`, slug `water-intake-calculator`). IOM 2005 tables; adult male 3.7 L / 3.0 L (~13 cups); child age bands; **No FX**.
