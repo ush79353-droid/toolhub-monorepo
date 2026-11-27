@@ -14,21 +14,7 @@ import {
   type NlrInput,
   type NlrResult,
 } from './types';
-
-/** UI shell — calculation wiring lands in the engine commit. */
-function emptyUiResult(): NlrResult {
-  return {
-    nlr: null,
-    formattedNlr: '',
-    statusHeadline: 'Enter neutrophil and lymphocyte values.',
-    statusDetail:
-      'NLR updates when both inputs are valid on the selected absolute or % basis.',
-    sourceNote:
-      'NLR = neutrophils ÷ lymphocytes (same absolute or % basis). Educational only.',
-    disclaimer:
-      'Educational CBC ratio only — not a diagnosis, prognosis, or treatment decision.',
-  };
-}
+import { validateNlrInput } from './validation';
 
 export function NlrCalculator({
   metadata,
@@ -41,8 +27,8 @@ export function NlrCalculator({
   const [baseline, setBaseline] = React.useState(() => initial);
   const [input, setInput] = React.useState(() => initial);
   const [errors, setErrors] = React.useState<NlrFieldErrors>({});
-  const [result, setResult] = React.useState<NlrResult | null>(() =>
-    emptyUiResult(),
+  const [result, setResult] = React.useState<NlrResult | null>(
+    () => validateNlrInput(initial).result,
   );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
@@ -54,9 +40,10 @@ export function NlrCalculator({
   }, []);
 
   const apply = (next: NlrInput) => {
+    const validation = validateNlrInput(next);
     setInput(next);
-    setErrors({});
-    setResult(emptyUiResult());
+    setErrors(validation.errors);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
@@ -64,7 +51,7 @@ export function NlrCalculator({
     setInput(fresh);
     setBaseline(fresh);
     setErrors({});
-    setResult(emptyUiResult());
+    setResult(validateNlrInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -74,7 +61,7 @@ export function NlrCalculator({
     const fresh = createEmptyInput();
     setInput(fresh);
     setErrors({});
-    setResult(emptyUiResult());
+    setResult(validateNlrInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
