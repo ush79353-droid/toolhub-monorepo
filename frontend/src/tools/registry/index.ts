@@ -1327,6 +1327,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnionGapCalculator,
     })),
   ),
+  AcidBaseCalculator: lazyTool(() =>
+    import('@/tools/calculators/acid-base/AcidBaseCalculator').then((mod) => ({
+      default: mod.AcidBaseCalculator,
+    })),
+  ),
   AltmanZScoreCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/altman-z-score/AltmanZScoreCalculator'
