@@ -37,10 +37,13 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cefdinir-dose/detail'),
   ChancesOfHavingTwinsCalculator: () =>
     import('@/tools/calculators/chances-of-having-twins/detail'),
+  CorrectedCalciumCalculator: () =>
+    import('@/tools/calculators/corrected-calcium/detail'),
   CorrectedReticulocyteCountCalculator: () =>
     import('@/tools/calculators/corrected-reticulocyte-count/detail'),
 
   CreatinineClearanceCalculator: () =>
+
     import('@/tools/calculators/creatinine-clearance/detail'),
   DaptCalculator: () => import('@/tools/calculators/dapt/detail'),
   DebtAvalancheCalculator: () =>
@@ -343,6 +346,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AncWithoutBandsCalculator: () =>
     import('@/tools/calculators/anc-without-bands/detail'),
   AnionGapCalculator: () => import('@/tools/calculators/anion-gap/detail'),
+  AcidBaseCalculator: () => import('@/tools/calculators/acid-base/detail'),
   AmtCalculator: () => import('@/tools/calculators/amt/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),
   FeetToInchesCalculator: () => import('@/tools/calculators/feet-to-inches/detail'),
