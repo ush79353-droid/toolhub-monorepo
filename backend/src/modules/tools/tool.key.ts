@@ -115,6 +115,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ProteinCalculator',
   'ProteinCreatinineRatioCalculator',
   'QuarantineActivityCalculator',
+  'QuizFfmiCalculator',
   'QuizHarrisBenedictCalculator',
   'RmrCalculator',
   'SodiumChangeHypertriglyceridemiaCalculator',

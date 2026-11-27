@@ -741,6 +741,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.QuarantineActivityCalculator,
     })),
   ),
+  QuizFfmiCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/quiz-ffmi/QuizFfmiCalculator'
+    ).then((mod) => ({
+      default: mod.QuizFfmiCalculator,
+    })),
+  ),
   QuizHarrisBenedictCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/quiz-harris-benedict/QuizHarrisBenedictCalculator'

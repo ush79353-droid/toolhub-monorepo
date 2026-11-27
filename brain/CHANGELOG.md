@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Overweight Calculator (TOOL-841)
+﻿## 2026-11-27 — Body Surface Area Calculator (TOOL-842)
+
+- **Summary:** Screenshot-first multi-formula BSA (`BodySurfaceAreaCalculator`, slug `body-surface-area-calculator`). Gender; pounds/kg; ft+in OR cm (last-edited clears the other); Calculate/Clear; Du Bois/Mosteller/Haycock/Gehan & George/Boyd/Fujimoto/Takahira/Schlich; **No FX**; share URL only. Distinct from Omni-style `BsaCalculator`.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified this session; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `e3a6a6ab` / ENG `bff483b3` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/body-surface-area/calculation.test.ts` → ok (155 lb · 5′9″ → Mosteller 1.85).
+
+## 2026-11-27 — Overweight Calculator (TOOL-841)
 
 - **Summary:** Screenshot-first overweight/BMI (`OverweightCalculator`, slug `overweight-calculator`). Adult BMI=W/H² + ponderal=W/H³ with WHO bands; optional child ≤19 uses CDC BMI-for-age LMS via `bmi-kids`; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); `_id` not verified this session; activation pending; **indexable** false when assign retries.

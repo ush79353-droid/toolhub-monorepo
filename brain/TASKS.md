@@ -26,6 +26,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-842` | Body Surface Area Calculator (`BodySurfaceAreaCalculator`); multi-formula BSA (Du Bois/Mosteller/Haycock/Gehan-George/Boyd/Fujimoto/Takahira/Schlich); distinct from BsaCalculator; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/body-surface-area/*` | Mongo Atlas DNS |
 | `TOOL-841` | Overweight Calculator (`OverweightCalculator`); adult BMI+ponderal WHO; child CDC LMS via bmi-kids; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-55201) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/overweight/*` | Mongo Atlas DNS |
 | `TOOL-839` | Plasma Volume Calculator (`PlasmaVolumeCalculator`); PV=TBV×(1−Hct/100); 65/70 mL/kg + optional Nadler/Lemmens; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-67323) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/plasma-volume/*` | Mongo Atlas DNS |
 | `TOOL-838` | FFMI Calculator (`FfmiCalculator`); FFM/FFMI/normalized; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-83147b) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/ffmi/*` | Mongo Atlas DNS |

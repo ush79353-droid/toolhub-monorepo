@@ -201,6 +201,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/protein-creatinine-ratio/detail'),
   QuarantineActivityCalculator: () =>
     import('@/tools/calculators/quarantine-activity/detail'),
+  QuizFfmiCalculator: () =>
+    import('@/tools/calculators/quiz-ffmi/detail'),
   QuizHarrisBenedictCalculator: () =>
     import('@/tools/calculators/quiz-harris-benedict/detail'),
   RmrCalculator: () => import('@/tools/calculators/rmr/detail'),

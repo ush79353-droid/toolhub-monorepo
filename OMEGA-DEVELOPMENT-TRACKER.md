@@ -1,19 +1,19 @@
 ﻿# OMEGA Development Tracker
 
-Last update: 2026-11-27 — agent cursor-agent-pending-composer-20261127-225355
+Last update: 2026-11-27 — agent cursor-agent-pending-composer-omega-224145
 
-## Session end
+## Session
 
-- Status: PENDING EMPTY — OTHER AGENTS STILL ACTIVE
-- Claimed this session: none (Pending was empty)
-- Progress (other agents): 8 folders
-- Local commits this session: 0
+- Status: DEVELOPING → finalizing Body Surface Area Calculator
+- Credits: CREDITS_NOT_VERIFIABLE
+- Completed this session: Body Surface Area Calculator (pending folder move)
+- Local commits BSA: UI e3a6a6ab / ENG bff483b3 / REG (pending)
 - GitHub sync: NONE
-- Report: brain/reports/OMEGA-PENDING-DEVELOPMENT-LOCAL-COMMITS-REPORT-composer-20261127-225355.md
+- Mongo: Atlas DNS blocked
 
 ## Resume
 
-1. Rescan Tools/Pending for restored packets
+1. Rescan Tools/Pending
 2. Credit preflight
-3. Claim next eligible only from Pending
-4. Do not take over active Progress ownership
+3. Claim next eligible
+4. Retry Mongo assign when DNS works
