@@ -138,6 +138,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/isotretinoin-dose/detail'),
   IvigDoseCalculator: () =>
     import('@/tools/calculators/ivig-dose/detail'),
+  KarvonenFormulaCalculator: () =>
+    import('@/tools/calculators/karvonen-formula/detail'),
   KatchMcardleCalculator: () =>
     import('@/tools/calculators/katch-mcardle/detail'),
   KtvDaugirdasCalculator: () =>

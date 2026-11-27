@@ -484,6 +484,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IvigDoseCalculator,
     })),
   ),
+  KarvonenFormulaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/karvonen-formula/KarvonenFormulaCalculator'
+    ).then((mod) => ({
+      default: mod.KarvonenFormulaCalculator,
+    })),
+  ),
   KatchMcardleCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/katch-mcardle/KatchMcardleCalculator'
