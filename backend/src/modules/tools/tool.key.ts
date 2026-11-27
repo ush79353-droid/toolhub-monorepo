@@ -36,6 +36,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DicSyndromeCalculator',
   'DietRiskScoreCalculator',
   'DiffuseLargeBCellLymphomaPrognosisCalculator',
+  'DrawLengthCalculator',
   'DrugHalfLifeCalculator',
   'DriCalculator',
   'EbitdaMarginCalculator',

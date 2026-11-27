@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Arterial Blood pH Calculator (TOOL-824)
+﻿## 2026-11-27 — Draw Length Calculator (TOOL-824)
+
+- **Summary:** Screenshot-first draw length (DrawLengthCalculator, slug draw-length-calculator). Wingspan ÷ 2.5; cm|m|in|ft; bidirectional; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI 406a355 / ENG 61ff218 / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** 
+px tsx …/draw-length/calculation.test.ts → ok (70 in → 28 in; 1 m → 40 cm).
+## 2026-11-27 — Arterial Blood pH Calculator (TOOL-824)
 
 - **Summary:** Screenshot-first Henderson–Hasselbalch arterial pH (`ArterialBloodPhCalculator`, slug `arterial-blood-ph-calculator`). Blank HCO₃ mEq/L + PaCO₂ mmHg|kPa; pH=6.1+log10(HCO₃/(0.0308×PaCO₂_mmHg)); **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
@@ -6606,4 +6613,5 @@ px tsx --test …/bladder-volume/calculation.test.ts → 5/5 (5×4×3×0.81=48.6
 - **Summary:** Shipped FENa on existing catalog slug `fena-calculator-fractional-excretion-of-sodium` (`FenaCalculator`, catalog `6af46f12a27d8d1d4e9902d0`). Screenshot-first blank serum/urine Cr+Na; FENa=100×(UNa×SCr)/(SNa×UCr); educational bands with diuretic/CKD limits; share URL only. **No FX**. Activated via `tool:assign --set-active`; **indexable** preserved false.
 - **Example:** SCr 2 · SNa 140 · UCr 100 · UNa 70 → FENa **1%**.
 - **Important Files:** `frontend/src/tools/calculators/fena/*`, registry keys/index/details, `tool.key.ts`, brain docs.
+
 

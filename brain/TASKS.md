@@ -1,4 +1,4 @@
-- [x] URR Calculator - Urea Reduction Ratio (urr-calculator-urea-reduction-ratio) — developed + activated 2026-11-26 (indexable false).
+﻿- [x] URR Calculator - Urea Reduction Ratio (urr-calculator-urea-reduction-ratio) — developed + activated 2026-11-26 (indexable false).
 - [x] Protein Creatinine Ratio Calculator (protein-creatinine-ratio-calculator) — Mongo activated 2026-11-26 (indexable false).
 - [x] FENa Calculator (fena-calculator-fractional-excretion-of-sodium) — developed + activated 2026-11-25 (indexable false).
 - [x] PF Ratio Calculator (pf-ratio-calculator) — developed + activated 2026-11-25 (indexable false).
@@ -26,6 +26,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
 | `TOOL-823` | Corrected Calcium Calculator (`CorrectedCalciumCalculator`); Payne albumin-adjusted total Ca; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/corrected-calcium/*` | Mongo Atlas DNS |
 | `TOOL-824` | Arterial Blood pH Calculator (`ArterialBloodPhCalculator`); HH pH; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/arterial-blood-ph/*` | Mongo Atlas DNS |
 | `TOOL-822` | Karvonen Formula Calculator (`KarvonenFormulaCalculator`); THR/HRR + Fox 220−age; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/karvonen-formula/*` | Mongo Atlas DNS |
@@ -273,6 +274,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
 *No code implementation tasks currently active (TOOL-811 Creatinine Clearance moved to Completed).*
 
 ---
@@ -281,6 +283,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
 | `TOOL-812` | Audit Score Calculator (`AuditScoreCalculator`); WHO AUDIT 10-item; Mongo `6af46f12a27d8d1d4e9902f5` activated; indexable false | Cursor (`cursor-agent-25205458-010544`) | Completed | `frontend/src/tools/calculators/audit-score/*`, `Tools/Completed/Audit Score Calculator` | — |
 | `TOOL-811` | Protein Creatinine Ratio Calculator (`ProteinCreatinineRatioCalculator`); UPCR g/g; Mongo activation pending Atlas if DNS fails | Cursor (`cursor-agent-82288078-002138`) | Completed (activation may be pending) | `frontend/src/tools/calculators/protein-creatinine-ratio/*` | Atlas DNS |
 | `TOOL-810` | Adrenal Washout Calculator (`AdrenalWashoutCalculator`); APW/RPW HU washout; Mongo `6af46f12a27d8d1d4e9902ca` activated; indexable false | Cursor (`cursor-agent-82288078-002138`) | Completed | `frontend/src/tools/calculators/adrenal-washout/*`, `Tools/Completed/Adrenal Washout Calculator` | — |
@@ -293,6 +296,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
 | `TOOL-729` | Implement hCG Levels Calculator on existing slug `hcg-levels-calculator` with serial difference/%/doubling/1–2d increases, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/hcg-levels/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-723` | Implement Flange Size Calculator on existing slug `flange-size-calculator` with Spectra Baby USA discrete nipple→flange bands, mm|in, fit/measure diagrams, out-of-range flags, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/flange-size/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-718` | Implement EDD Calculator - Estimated Date of Delivery on existing slug `edd-calculator-estimated-date-of-delivery` with LMP vs ultrasound EDD comparison, cycle adjusts LMP only, GA difference, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/edd/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
@@ -341,6 +345,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
 | `TOOL-729` | Implement hCG Levels Calculator on existing slug `hcg-levels-calculator` with serial difference/%/doubling/1–2d increases, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/hcg-levels/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-723` | Implement Flange Size Calculator on existing slug `flange-size-calculator` with Spectra Baby USA discrete nipple→flange bands, mm|in, fit/measure diagrams, out-of-range flags, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/flange-size/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-718` | Implement EDD Calculator - Estimated Date of Delivery on existing slug `edd-calculator-estimated-date-of-delivery` with LMP vs ultrasound EDD comparison, cycle adjusts LMP only, GA difference, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/edd/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
@@ -1120,5 +1125,6 @@
 - componentKey: `RuleOf72Calculator`
 - Mongo: `6af46f10a27d8d1d4e9901bc` (isDeveloped/isActive true; indexable false)
 - Commits: UI `05cd36a8`, engine `fe742ea5`, reg (this commit)
+
 
 

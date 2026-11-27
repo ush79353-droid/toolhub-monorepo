@@ -6,6 +6,7 @@
 ---
 
 ## 1. Snapshot Summary
+- **Draw Length Calculator (/tools/draw-length-calculator):** Educational wingspan÷2.5 (componentKey: 'DrawLengthCalculator'). Screenshot-first; cm|m|in|ft; bidirectional; **No FX**. Registry wired. **Mongo blocked**. Fixture **70** in → **28** in.
 - **Arterial Blood pH Calculator (/tools/arterial-blood-ph-calculator):** Educational Henderson–Hasselbalch pH (`componentKey: 'ArterialBloodPhCalculator'`). Screenshot-first (ADR-023): blank HCO₃ mEq/L + PaCO₂ mmHg|kPa; pH=6.1+log10(HCO₃/(0.0308×PaCO₂_mmHg)); share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS); **`indexable` left false** when assign retries. Fixture **24**/ **40** → ≈ **7.39**.
 - **Acid Base Calculator (/tools/acid-base-calculator):** Educational ABG + anion gap (`componentKey: 'AcidBaseCalculator'`). Screenshot-first (ADR-023): blank pH/PCO₂ mmHg/HCO₃ + Cl/Na/albumin; AG=Na−Cl−HCO₃; cAG=AG+2.5×(4−alb); compact ABG framing + Winter's when pH/PCO₂/HCO₃ set; share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS); **`indexable` left false** when assign retries. Fixture **140/104/24** → AG **12**; alb **2** → cAG **17**.
 - **Corrected Calcium Calculator (/tools/corrected-calcium-calculator):** Educational Payne albumin-adjusted total calcium (`componentKey: 'CorrectedCalciumCalculator'`). Screenshot-first (ADR-023): blank serum Ca (mg/dL|mmol/L) + albumin (g/dL|g/L); corrected = Ca_mg/dL + 0.8×(4−albumin_g/dL); result unit menu; share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS); **`indexable` left false** when assign retries. Fixture Ca **10** · albumin **4** → **10**; albumin **3** → **10.8**.
@@ -1072,5 +1073,6 @@
 - **Profitability Index Calculator (`/tools/profitability-index-calculator`):** Live client-side PI calculator (`componentKey: 'ProfitabilityIndexCalculator'`, catalog `6af46f0fa27d8d1d4e9900b2`). Initial investment + PV of future cash flow → PI = PV ÷ investment; compact interpretation (PI >, =, < 1). Optional “PV unknown” tip (no invented cash-flow schedule). Denomination currency (PKR). Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on.
 
 - **Rule of 72 Calculator (/tools/rule-of-72-calculator):** Live client-side doubling estimator (componentKey: 'RuleOf72Calculator', catalog 6af46f10a27d8d1d4e9901bc). Bidirectional Increase %/period ? Doubling time periods via Rule of 72; exact compound comparison; no FX. Activated; **`indexable` left false**. Example: **8%** ? **9** periods.
+
 
 

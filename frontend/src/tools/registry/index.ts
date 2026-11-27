@@ -257,6 +257,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DiffuseLargeBCellLymphomaPrognosisCalculator,
     })),
   ),
+  DrawLengthCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/draw-length/DrawLengthCalculator'
+    ).then((mod) => ({
+      default: mod.DrawLengthCalculator,
+    })),
+  ),
   DrugHalfLifeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/drug-half-life/DrugHalfLifeCalculator'

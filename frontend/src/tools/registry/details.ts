@@ -74,6 +74,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import(
       '@/tools/calculators/diffuse-large-b-cell-lymphoma-prognosis/detail'
     ),
+  DrawLengthCalculator: () =>
+    import('@/tools/calculators/draw-length/detail'),
   DrugHalfLifeCalculator: () =>
     import('@/tools/calculators/drug-half-life/detail'),
   DriCalculator: () => import('@/tools/calculators/dri/detail'),
