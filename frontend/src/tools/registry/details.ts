@@ -141,6 +141,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KetoCalculator: () => import('@/tools/calculators/keto/detail'),
   KidneyFailureRiskCalculator: () =>
     import('@/tools/calculators/kidney-failure-risk/detail'),
+  KidneyStonePcnlCalculator: () =>
+    import('@/tools/calculators/kidney-stone-pcnl/detail'),
   LidocaineDoseCalculator: () =>
     import('@/tools/calculators/lidocaine-dose/detail'),
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),
@@ -167,6 +169,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NetCarbsCalculator: () => import('@/tools/calculators/net-carbs/detail'),
   OpioidConversionCalculator: () =>
     import('@/tools/calculators/opioid-conversion/detail'),
+  OxygenationIndexCalculator: () =>
+    import('@/tools/calculators/oxygenation-index/detail'),
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
   PrescriptionRefillCalculator: () =>
     import('@/tools/calculators/prescription-refill/detail'),
@@ -798,6 +802,9 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/testosterone-estradiol-ratio/detail'),
   TimeValueOfMoneyCalculator: () =>
     import('@/tools/calculators/time-value-of-money/detail'),
+  TidalVolumeCalculator: () =>
+    import('@/tools/calculators/tidal-volume/detail'),
+  TtkgCalculator: () => import('@/tools/calculators/ttkg/detail'),
   TtmCalculator: () => import('@/tools/calculators/ttm/detail'),
   TreynorRatioCalculator: () =>
     import('@/tools/calculators/treynor-ratio/detail'),
@@ -1651,6 +1658,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lifetime-earnings/detail'),
   LifoInventoryCalculator: () =>
     import('@/tools/calculators/lifo-inventory/detail'),
+  LightsCriteriaCalculator: () =>
+    import('@/tools/calculators/lights-criteria/detail'),
   LongTermCareCalculator: () =>
     import('@/tools/calculators/long-term-care/detail'),
   MegaMillionsPayoutCalculator: () =>
