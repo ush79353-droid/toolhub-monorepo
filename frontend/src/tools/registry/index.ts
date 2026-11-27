@@ -138,6 +138,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ChancesOfHavingTwinsCalculator,
     })),
   ),
+  CorrectedCalciumCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/corrected-calcium/CorrectedCalciumCalculator'
+    ).then((mod) => ({
+      default: mod.CorrectedCalciumCalculator,
+    })),
+  ),
   CorrectedReticulocyteCountCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/corrected-reticulocyte-count/CorrectedReticulocyteCountCalculator'
@@ -145,6 +152,7 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CorrectedReticulocyteCountCalculator,
     })),
   ),
+
 
   CreatinineClearanceCalculator: lazyTool(() =>
     import(
