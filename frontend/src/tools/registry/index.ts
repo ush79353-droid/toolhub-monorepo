@@ -5745,6 +5745,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BoatLoanCalculator,
     })),
   ),
+  BagCalculator: lazyTool(() =>
+    import('@/tools/calculators/bag/BagCalculator').then((mod) => ({
+      default: mod.BagCalculator,
+    })),
+  ),
   BoatSpeedCalculator: lazyTool(() =>
     import('@/tools/calculators/boat-speed/BoatSpeedCalculator').then((mod) => ({
       default: mod.BoatSpeedCalculator,

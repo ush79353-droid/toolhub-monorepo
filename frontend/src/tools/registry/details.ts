@@ -1543,6 +1543,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/blood-pressure/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
+  BagCalculator: () => import('@/tools/calculators/bag/detail'),
   BoatSpeedCalculator: () =>
     import('@/tools/calculators/boat-speed/detail'),
   BoostHorsepowerCalculator: () =>

@@ -989,6 +989,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BloodDonationDueDateCalculator',
   'BloodPregnancyHcgCalculator',
   'BloodPressureCalculator',
+  'BagCalculator',
   'BoatLoanCalculator',
   'BoatSpeedCalculator',
   'BoostHorsepowerCalculator',

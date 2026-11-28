@@ -125,6 +125,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'margin-of-safety-calculator',
   'mortgage-points-calculator',
   'mortgage-refinance-calculator',
+  'bag-calculator',
   'boat-loan-calculator',
   'boat-speed-calculator',
   'boost-horsepower-calculator',
