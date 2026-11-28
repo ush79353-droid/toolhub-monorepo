@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Miles to Hours Converter
+
+Screenshot-first distance–speed–time tool (`MilesToHoursConverter`, slug `miles-to-hours-converter`, catalog `6af46f19a27d8d1d4e990dd3`, pillar null). Modes calculate time/distance/speed; mi|km|m|ft|yd|nmi · mph|km/h|m/s|ft/s|kn · s|min|h|d|wk; readable duration; optional speed compare + breaks. Mongo `isDeveloped: true`; **indexable** false. Fixture: 150 mi @ 50 mph → 3 h. Tests 32/32.
+
 ## 2026-11-28 — Miles to Dollars Calculator
 
 Screenshot-first airline loyalty miles valuation (`MilesToDollarsCalculator`, slug `miles-to-dollars-calculator`, catalog `6af46f19a27d8d1d4e990dd2`, pillar null). Assumed ¢/$ per mile (illustrative, editable); award-equivalent = miles×value + fees; cash comparison + actual ¢/mi; optional convert/compare/target. **No FX** (USD display). Mongo `isDeveloped: true`; **indexable** false. Fixture: 25,000 mi @ 1.5¢ + $50 vs $600 → $425 / $175 / 2.20¢. Tests 25/25.

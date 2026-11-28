@@ -1034,6 +1034,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'IdlingFuelConsumptionCalculator',
   'MilesPerYearCalculator',
   'MilesToDollarsCalculator',
+  'MilesToHoursConverter',
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
   'TylenolDosageCalculator',
