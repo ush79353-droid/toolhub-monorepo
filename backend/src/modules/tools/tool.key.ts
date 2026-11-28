@@ -957,6 +957,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DeadweightLossCalculator',
   'DiscretionaryIncomeCalculator',
   'FisherEffectCalculator',
+  'FabricCalculator',
   'FaceShapeCalculator',
   'FalseNegativePregnancyTestCalculator',
   'FertilityByAgeCalculator',

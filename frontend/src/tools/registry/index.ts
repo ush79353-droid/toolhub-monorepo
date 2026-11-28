@@ -5461,6 +5461,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  FabricCalculator: lazyTool(() =>
+    import('@/tools/calculators/fabric/FabricCalculator').then((mod) => ({
+      default: mod.FabricCalculator,
+    })),
+  ),
   FaceShapeCalculator: lazyTool(() =>
     import('@/tools/calculators/face-shape/FaceShapeCalculator').then((mod) => ({
       default: mod.FaceShapeCalculator,

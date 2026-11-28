@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Fabric Calculator
+
+Screenshot-first cutting/yardage tool (`FabricCalculator`, slug `fabric-calculator`, catalog `6af46f19a27d8d1d4e990e2c`, pillar null). P=floor((F+G)/(W+G)); R=ceil(N/P); length; yards; utilization; gap/edge/shrink/extra; optional 90°; SVG layout; 36 FAQs. Fixture: 60×12×18 in · 12 pcs → 5×3 · 54 in · 1.5 yd · 80%. Mongo `isDeveloped: true`; **indexable** false. Tests 15/15.
+
 ## 2026-11-28 — Dress Size Calculator
 
 Screenshot-first sizing tool (`DressSizeCalculator`, slug `dress-size-calculator`, catalog `6af46f19a27d8d1d4e990e2b`, pillar null). Bust/waist/hips vs illustrative US–UK–EU–INT chart; overall = smallest size accommodating all maxes; mixed-size guidance; SVG measure diagram; 36 FAQs. Fixture: 96/78/102 cm → US 12 / UK 16 / EU 44 / M. Mongo `isDeveloped: true`; **indexable** false. Tests 10/10.

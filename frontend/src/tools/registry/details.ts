@@ -1468,6 +1468,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/discretionary-income/detail'),
   FisherEffectCalculator: () =>
     import('@/tools/calculators/fisher-effect/detail'),
+  FabricCalculator: () =>
+    import('@/tools/calculators/fabric/detail'),
   FaceShapeCalculator: () =>
     import('@/tools/calculators/face-shape/detail'),
   FalseNegativePregnancyTestCalculator: () =>
