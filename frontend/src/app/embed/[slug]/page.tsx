@@ -119,6 +119,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'miles-per-year-calculator',
   'miles-to-dollars-calculator',
   'miles-to-hours-converter',
+  'mpg-calculator',
   'triple-discount-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',

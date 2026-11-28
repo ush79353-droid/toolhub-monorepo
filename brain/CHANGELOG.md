@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — MPG Calculator
+
+Screenshot-first fuel economy tool (`MpgCalculator`, slug `mpg-calculator`, catalog `6af46f19a27d8d1d4e990dd4`, pillar null). Modes economy/fuel/distance; US|imp gal|L|mL; US|imp mpg|km/L|L/100km|mi/L; trip cost (**No FX** CurrencySelect); range/compare/improve optional. Fixture: 300 mi / 10 US gal → 30 US MPG. Mongo `isDeveloped: true`; **indexable** false. Tests 33/33.
+
 ## 2026-11-28 — Miles to Hours Converter
 
 Screenshot-first distance–speed–time tool (`MilesToHoursConverter`, slug `miles-to-hours-converter`, catalog `6af46f19a27d8d1d4e990dd3`, pillar null). Modes calculate time/distance/speed; mi|km|m|ft|yd|nmi · mph|km/h|m/s|ft/s|kn · s|min|h|d|wk; readable duration; optional speed compare + breaks. Mongo `isDeveloped: true`; **indexable** false. Fixture: 150 mi @ 50 mph → 3 h. Tests 32/32.

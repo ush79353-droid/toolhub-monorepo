@@ -6149,6 +6149,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MilesToHoursConverter,
     })),
   ),
+  MpgCalculator: lazyTool(() =>
+    import('@/tools/calculators/mpg/MpgCalculator').then((mod) => ({
+      default: mod.MpgCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'
