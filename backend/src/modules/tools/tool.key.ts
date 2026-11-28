@@ -1142,6 +1142,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GoldMeltCalculator',
   'GloveSizeCalculator',
   'GoodwillCalculator',
+  'HalfSquareTriangleCalculator',
   'IncomeElasticityOfDemandCalculator',
   'InventoryTurnoverCalculator',
   'LifetimeEarningsCalculator',

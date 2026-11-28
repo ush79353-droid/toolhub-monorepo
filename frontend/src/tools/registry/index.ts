@@ -6776,6 +6776,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GoodwillCalculator,
     })),
   ),
+  HalfSquareTriangleCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/half-square-triangle/HalfSquareTriangleCalculator'
+    ).then((mod) => ({
+      default: mod.HalfSquareTriangleCalculator,
+    })),
+  ),
   IncomeElasticityOfDemandCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/income-elasticity-of-demand/IncomeElasticityOfDemandCalculator'

@@ -1828,6 +1828,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GloveSizeCalculator: () =>
     import('@/tools/calculators/glove-size/detail'),
   GoodwillCalculator: () => import('@/tools/calculators/goodwill/detail'),
+  HalfSquareTriangleCalculator: () =>
+    import('@/tools/calculators/half-square-triangle/detail'),
   IncomeElasticityOfDemandCalculator: () =>
     import('@/tools/calculators/income-elasticity-of-demand/detail'),
   InventoryTurnoverCalculator: () =>

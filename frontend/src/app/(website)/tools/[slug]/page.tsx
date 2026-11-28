@@ -136,6 +136,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'dress-size-calculator',
   'fabric-calculator',
   'glove-size-calculator',
+  'half-square-triangle-calculator',
   'boat-loan-calculator',
   'boat-speed-calculator',
   'boost-horsepower-calculator',

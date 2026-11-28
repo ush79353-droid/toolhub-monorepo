@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Half Square Triangle Calculator
+
+Screenshot-first quilting tool (`HalfSquareTriangleCalculator`, slug `half-square-triangle-calculator`, catalog `6af46f19a27d8d1d4e990e2e`, pillar null). Finished/unfinished/raw square + diagonal; two- & eight-at-a-time; geometric vs traditional vs oversized; quantity; fractional inches; SVG diagram; size chart; 40 FAQs. Fixture: 4″ finished · traditional two-at-a-time → raw 4⅞″ · unfinished 4.5″. Mongo `isDeveloped: true`; **indexable** false. Tests 13/13.
+
 ## 2026-11-28 — Glove Size Calculator
 
 Screenshot-first sizing tool (`GloveSizeCalculator`, slug `glove-size-calculator`, catalog `6af46f19a27d8d1d4e990e2d`, pillar null). Palm circumference → men/unisex & women charts; numeric labels; reverse size→range; SVG measure guide; 36 FAQs. Fixture: 21 cm men → M ≈ 9. Mongo `isDeveloped: true`; **indexable** false. Tests 11/11.
