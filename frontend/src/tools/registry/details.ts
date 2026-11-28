@@ -1635,6 +1635,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/credit-utilization/detail'),
   CrossExchangeRateCalculator: () =>
     import('@/tools/calculators/cross-exchange-rate/detail'),
+  CrossStitchCalculator: () =>
+    import('@/tools/calculators/cross-stitch/detail'),
   CrosswindCalculator: () =>
     import('@/tools/calculators/crosswind/detail'),
   DiscountedCashFlowCalculator: () =>

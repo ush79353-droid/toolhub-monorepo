@@ -773,6 +773,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CpcAndCpmCalculator',
   'CpmCalculator',
   'CrossPriceElasticityCalculator',
+  'CrossStitchCalculator',
   'CtrCalculator',
   'Curb65Calculator',
   'CurrentRatioCalculator',

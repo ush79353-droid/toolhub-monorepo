@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Cross-Stitch Calculator:** Live at `/tools/cross-stitch-calculator` (`CrossStitchCalculator`, catalog `6af46f19a27d8d1d4e990e28`). D=C/O; finished size; fabric +2A; optional floss; SVG; **indexable false**; pillar null.
 > **2026-11-28 Circle Skirt Calculator:** Live at `/tools/circle-skirt-calculator` (`CircleSkirtCalculator`, catalog `6af46f19a27d8d1d4e990e27`). Full/¾/half/quarter; R=W/(2πf); radial cut L+R+A; hem circ; SVG sector; **indexable false**; pillar null.
 > **2026-11-28 Bra Size Calculator:** Live at `/tools/bra-size-calculator` (`BraSizeCalculator`, catalog `6af46f19a27d8d1d4e990e26`). Underbust/bust → US/UK/EU/AU/FR; modern/+4; sister sizes; conversions; SVG measure diagram; **indexable false**; pillar null.
 > **2026-11-28 Bikini Calculator:** Live at `/tools/bikini-calculator` (`BikiniCalculator`, catalog `6af46f19a27d8d1d4e990e25`). Bust/waist/high-hip/hip heuristics; optional prefs; SVG silhouettes; browser-local privacy; **indexable false**; pillar null.

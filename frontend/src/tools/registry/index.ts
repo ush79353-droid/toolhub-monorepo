@@ -6059,6 +6059,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CrossExchangeRateCalculator,
     })),
   ),
+  CrossStitchCalculator: lazyTool(() =>
+    import('@/tools/calculators/cross-stitch/CrossStitchCalculator').then(
+      (mod) => ({
+        default: mod.CrossStitchCalculator,
+      }),
+    ),
+  ),
   CrosswindCalculator: lazyTool(() =>
     import('@/tools/calculators/crosswind/CrosswindCalculator').then((mod) => ({
       default: mod.CrosswindCalculator,
