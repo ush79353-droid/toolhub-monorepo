@@ -6025,6 +6025,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CrossExchangeRateCalculator,
     })),
   ),
+  CrosswindCalculator: lazyTool(() =>
+    import('@/tools/calculators/crosswind/CrosswindCalculator').then((mod) => ({
+      default: mod.CrosswindCalculator,
+    })),
+  ),
   CrownRumpLengthCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/crown-rump-length/CrownRumpLengthCalculator'

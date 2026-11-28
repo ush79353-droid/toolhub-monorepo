@@ -1040,6 +1040,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CrownRumpLengthCalculator',
   'CreditUtilizationCalculator',
   'CrossExchangeRateCalculator',
+  'CrosswindCalculator',
   'EffectiveAnnualYieldCalculator',
   'EffectiveInterestRateCalculator',
   'EjectionFractionCalculator',

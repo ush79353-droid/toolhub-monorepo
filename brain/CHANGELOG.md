@@ -1,3 +1,7 @@
+## 2026-11-28 — Crosswind Calculator
+
+Screenshot-first aviation wind components (`CrosswindCalculator`, slug `crosswind-calculator`, catalog `6af46f19a27d8d1d4e990dc4`, pillar null). H=R×10; θ wrap (−180,180]; X=Vsinθ; Hw=Vcosθ; left/right; head/tail; kt|km/h|mph|m/s; optional precise heading + true→magnetic (east+); SVG diagram + θ chart; safety notice; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: RWY36/090/20 → 20 kt right; RWY27/300/20 → 10 / ≈17.32. Tests 17/17.
+
 ## 2026-11-28 — Compression Ratio to PSI Calculator
 
 Screenshot-first CR→pressure estimate (`CompressionRatioToPsiCalculator`, slug `compression-ratio-to-psi-calculator`, catalog `6af46f19a27d8d1d4e990dc3`, pillar null). Simplified P_abs=r×P_atm (labeled approximation); polytropic P=P_atm×rⁿ; gauge=abs−atm; reverse ratio; psi|bar|kPa|MPa|Pa|atm; presets; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 10:1 · 14.7 → 147 psia / 132.3 psig; n=1.3 → ≈293.30 / ≈278.60. Tests 18/18.
