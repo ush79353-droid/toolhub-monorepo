@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Tesla Charging Cost Calculator:** Live at `/tools/tesla-charging-cost-calculator` (`TeslaChargingCostCalculator`, catalog `6af46f19a27d8d1d4e990dda`). Charge/drive cost + SOC chart; estimate presets; **No FX**; **indexable false**; pillar null.
 > **2026-11-28 Speedometer Gear Calculator:** Live at `/tools/speedometer-gear-calculator` (`SpeedometerGearCalculator`, catalog `6af46f19a27d8d1d4e990dd9`). Driven teeth from tire·axle·drive gear; **indexable false**; pillar null.
 > **2026-11-28 Speed Calculator:** Live at `/tools/speed-calculator` (`SpeedCalculator`, catalog `6af46f19a27d8d1d4e990dd8`). DST modes; compare + multi-segment avg; **indexable false**; pillar null.
 > **2026-11-28 RPM Calculator:** Live at `/tools/rpm-calculator` (`RpmCalculator`, catalog `6af46f19a27d8d1d4e990dd7`). ERPM/WRPM/ratio/tire/speed bidirectional; **indexable false**; pillar null.

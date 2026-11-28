@@ -209,6 +209,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'rpm-calculator',
   'speed-calculator',
   'speedometer-gear-calculator',
+  'tesla-charging-cost-calculator',
   'triple-discount-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',
