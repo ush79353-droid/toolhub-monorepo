@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Engine Hours to Miles Converter:** Live at `/tools/engine-hours-to-miles-converter` (`EngineHoursToMilesConverter`, catalog `6af46f19a27d8d1d4e990dc6`). Distance=Hours×Speed; reverse Hours=Distance/Speed; stationary actual 0 + configurable maintenance-equivalent factor; **indexable false**; pillar null.
 > **2026-11-28 Horsepower Calculator:** Live at `/tools/horsepower-calculator` (`HorsepowerCalculator`, catalog `6af46f18a27d8d1d4e990d0a`, pillar Horsepower `6af451d6a27d8d1d4e98fa02`). ET HP=W/(ET/5.825)³; trap HP=W(V/234)³; hp|PS|W|kW; **indexable false**.
 > **2026-11-28 Drive Time Calculator:** Live at `/tools/drive-time-calculator` (`DriveTimeCalculator`, catalog `6af46f19a27d8d1d4e990dc5`). Time=Dist/Speed + breaks; arrival/departure schedule; fuel L/100; trip cost split; denomination CurrencySelect (**No FX**); **indexable false**; pillar null.
 > **2026-11-28 Crosswind Calculator:** Live at `/tools/crosswind-calculator` (`CrosswindCalculator`, catalog `6af46f19a27d8d1d4e990dc4`). θ wrap; X=Vsinθ; Hw=Vcosθ; left/right; diagram+chart; true→magnetic option; **indexable false**; pillar null.

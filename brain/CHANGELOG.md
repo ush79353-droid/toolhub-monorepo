@@ -2,6 +2,14 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Engine Hours to Miles Converter
+
+Screenshot-first hours↔distance tool (`EngineHoursToMilesConverter`, slug `engine-hours-to-miles-converter`, catalog `6af46f19a27d8d1d4e990dc6`, pillar null). Driving: Distance=Hours×Speed; reverse Hours=Distance/Speed; stationary actual distance 0 + user-assumed maintenance-equivalent factor (default illustrative 30 mi/h); time h|min|s|d; speed mph|km/h|m/s|kn; distance mi|km|m|ft; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 1000 h · 30 mph → 30,000 mi; 500 idle · 30 → 15,000 equiv / 0 actual; 60,000 mi · 30 → 2,000 h. Tests 15/15.
+
+## 2026-11-28 — Horsepower Calculator
+
+Screenshot-first quarter-mile HP estimator (`HorsepowerCalculator`, slug `horsepower-calculator`, catalog `6af46f18a27d8d1d4e990d0a`, pillar Horsepower `6af451d6a27d8d1d4e98fa02`). ET: HP=W/(ET/5.825)³; trap: HP=W(V/234)³; weight lb|kg|t|US ton; trap mph|km/h|m/s; output hp|PS|W|kW; method radios; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 3500 lb · 13.5 s → ≈281.16 hp; 105 mph → ≈316.22 hp. Tests 16/16.
+
 ## 2026-11-28 — Drive Time Calculator
 
 Screenshot-first trip duration/cost tool (`DriveTimeCalculator`, slug `drive-time-calculator`, catalog `6af46f19a27d8d1d4e990dc5`, pillar null). DrivingTime=Dist/Speed; +breaks; arrival↔departure via datetime-local + elapsed ms; fuel L/100→cost; parking/tolls/other; cost/person & /km; km|mi|m|ft + km/h|mph|m/s|ft/s; denomination CurrencySelect (**No FX**). Guide/FAQ. Mongo `isDeveloped: true`; **indexable** false. Fixture: 300 km · 60 · 45 min → 5 h 45 min; 7 L/100 · PKR 280 → 21 L / 5,880; +800 extras / 4 → 1,670 pp. Tests 22/22.

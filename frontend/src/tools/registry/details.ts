@@ -1641,6 +1641,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/double-discount/detail'),
   DriveTimeCalculator: () =>
     import('@/tools/calculators/drive-time/detail'),
+  EngineHoursToMilesConverter: () =>
+    import('@/tools/calculators/engine-hours-to-miles/detail'),
   TramadolDosageCalculator: () =>
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>

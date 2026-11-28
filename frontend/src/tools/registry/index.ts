@@ -6073,6 +6073,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DriveTimeCalculator,
     })),
   ),
+  EngineHoursToMilesConverter: lazyTool(() =>
+    import(
+      '@/tools/calculators/engine-hours-to-miles/EngineHoursToMilesCalculator'
+    ).then((mod) => ({
+      default: mod.EngineHoursToMilesConverter,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'

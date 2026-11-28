@@ -191,6 +191,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'discount-rate-calculator',
   'double-discount-calculator',
   'drive-time-calculator',
+  'engine-hours-to-miles-converter',
   'triple-discount-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',
