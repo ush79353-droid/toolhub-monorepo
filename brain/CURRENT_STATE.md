@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Idling Fuel Consumption Calculator:** Live at `/tools/idling-fuel-consumption-calculator` (`IdlingFuelConsumptionCalculator`, catalog `6af46f19a27d8d1d4e990dcf`). Petrol/diesel idle rate × time × price; **indexable false**; pillar null.
 > **2026-11-28 GVWR Calculator:** Live at `/tools/gvwr-calculator` (`GvwrCalculator`, catalog `6af46f19a27d8d1d4e990dce`). GVW=tare+payload; GVWR capacity check; **indexable false**; pillar null.
 > **2026-11-28 Gas Oil Ratio Calculator:** Live at `/tools/gas-oil-ratio-calculator` (`GasOilRatioCalculator`, catalog `6af46f18a27d8d1d4e990d08`). Oil=Gas/Ratio; modes oil/gas/ratio/total; mixing chart; **indexable false**; pillar `6af451d5a27d8d1d4e98fa01`.
 > **2026-11-28 Gas Calculator:** Live at `/tools/gas-calculator` (`GasCalculator`, catalog `6af46f18a27d8d1d4e990d06`). FuelRequired=(km×L/100)/100; cost/person & range/recurring/compare; **indexable false**; pillar `6af451d5a27d8d1d4e98fa01`.
