@@ -1148,6 +1148,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'IncomeElasticityOfDemandCalculator',
   'InventoryTurnoverCalculator',
   'JacketSizeCalculator',
+  'JeansSizeCalculator',
   'LifetimeEarningsCalculator',
   'LifoInventoryCalculator',
   'LightsCriteriaCalculator',

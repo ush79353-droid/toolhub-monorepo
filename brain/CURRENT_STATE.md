@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Jeans Size Calculator:** Live at `/tools/jeans-size-calculator` (`JeansSizeCalculator`, catalog `6af46f19a27d8d1d4e990e32`). Men/women waist+inseam → W×L; body vs flat jeans; SVG; **indexable false**; pillar null.
 > **2026-11-28 Jacket Size Calculator:** Live at `/tools/jacket-size-calculator` (`JacketSizeCalculator`, catalog `6af46f19a27d8d1d4e990e31`). Men/women chest charts; US/UK/EU/intl; short/regular/long; SVG; **indexable false**; pillar null.
 > **2026-11-28 Hexagon Quilt Calculator:** Live at `/tools/hexagon-quilt-calculator` (`HexagonQuiltCalculator`, catalog `6af46f19a27d8d1d4e990e30`). Flat-top staggered columns/rows; full+half hexes; actual top; seam cutting; fabric estimate; SVG; **indexable false**; pillar null.
 > **2026-11-28 Hat Size Calculator:** Live at `/tools/hat-size-calculator` (`HatSizeCalculator`, catalog `6af46f19a27d8d1d4e990e2f`). Adult/child head circumference → US/UK/EU/intl; between-size upsizing; SVG; charts; **indexable false**; pillar null.

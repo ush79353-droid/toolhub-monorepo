@@ -6816,6 +6816,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  JeansSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/jeans-size/JeansSizeCalculator').then(
+      (mod) => ({
+        default: mod.JeansSizeCalculator,
+      }),
+    ),
+  ),
   LifetimeEarningsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/lifetime-earnings/LifetimeEarningsCalculator'
