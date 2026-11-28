@@ -78,6 +78,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'car-depreciation-calculator',
   'car-lease-calculator',
   'car-loan-emi-calculator',
+  'carpooling-calculator',
   'car-refinance-calculator',
   'cash-flow-to-debt-ratio-calculator',
   'cash-ratio-calculator',

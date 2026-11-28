@@ -734,7 +734,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarInterestCalculator',
   'CarLeaseCalculator',
   'LeaseMileageCalculator',
-  'CarLoanEmiCalculator',  'CarRefinanceCalculator',
+  'CarLoanEmiCalculator',
+  'CarpoolingCalculator',
+  'CarRefinanceCalculator',
   'RefinanceCalculator',
 
   'LoanRepaymentCalculator',
@@ -1960,7 +1962,9 @@ export const REGISTERED_COMPONENT_KEYS = [
   'CarInterestCalculator',
   'CarLeaseCalculator',
   'LeaseMileageCalculator',
-  'CarLoanEmiCalculator',  'CarRefinanceCalculator',
+  'CarLoanEmiCalculator',
+  'CarpoolingCalculator',
+  'CarRefinanceCalculator',
   'RefinanceCalculator',
 
   'LoanRepaymentCalculator',

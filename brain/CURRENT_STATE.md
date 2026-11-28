@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Carpooling Calculator:** Live at `/tools/carpooling-calculator` (`CarpoolingCalculator`, catalog `6af46f19a27d8d1d4e990dc0`). Fuel×price + split; round trip; reimbursement modes; savings scenario; **indexable false**; pillar null.
 > **2026-11-28 BSFC Calculator:** Live at `/tools/bsfc-calculator` (`BsfcCalculator`, catalog `6af46f19a27d8d1d4e990dbf`). η%=360000/(BSFC×LHV); fuel types; reverse BSFC/power/flow; **indexable false**; pillar null.
 > **2026-11-28 Boost Horsepower Calculator:** Live at `/tools/boost-horsepower-calculator` (`BoostHorsepowerCalculator`, catalog `6af46f18a27d8d1d4e990d0b`). Ideal HP×(1+P_boost/P_atm); reverse boost/original HP; power+pressure units; chart; **indexable false**.
 > **2026-11-28 Boat Speed Calculator:** Live at `/tools/boat-speed-calculator` (`BoatSpeedCalculator`, catalog `6af46f19a27d8d1d4e990dbe`). Crouch formula S=C√(P/D); reverse P/D/C; unit conversions; chart; **indexable false**.

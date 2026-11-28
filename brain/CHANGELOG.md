@@ -1,3 +1,7 @@
+## 2026-11-28 — Carpooling Calculator
+
+Screenshot-first trip cost sharing tool (`CarpoolingCalculator`, slug `carpooling-calculator`, catalog `6af46f19a27d8d1d4e990dc0`, pillar null). FuelUsed=Dist×Economy/100; FuelCost×price; equal/driver-free/custom split; round trip; optional tolls/parking; savings scenario vs separate vehicles; denomination CurrencySelect (**No FX**). Sample vehicle economies (not model DB). Charts; guide/FAQ. Mongo `isDeveloped: true`; **indexable** false. Fixture: 120 km · 8 L/100 · $1.50 · 4 + $8 extras → $5.60/person. Tests 17/17.
+
 ## 2026-11-28 — BSFC Calculator
 
 Screenshot-first brake specific fuel consumption tool (`BsfcCalculator`, slug `bsfc-calculator`, catalog `6af46f19a27d8d1d4e990dbf`, pillar null). η_b(%)=360000/(BSFC×LHV); fuel LHV presets + custom; reverse BSFC/power/flow; power+BSFC+LHV units; optional volumetric flow; charts; guide/FAQ. **No FX**. Registry + tools/embed allowlists; Mongo `isDeveloped: true`; **indexable** false. Fixture: 250 g/kWh · 43.4 MJ/kg → ≈33.18%; 100 kW → 25 kg/h. Tests 20/20.

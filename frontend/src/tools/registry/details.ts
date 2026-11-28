@@ -1076,6 +1076,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lease-mileage/detail'),
   CarLoanEmiCalculator: () =>
     import('@/tools/calculators/car-loan-emi/detail'),
+  CarpoolingCalculator: () =>
+    import('@/tools/calculators/carpooling/detail'),
   CarRefinanceCalculator: () =>
     import('@/tools/calculators/car-refinance/detail'),
   RefinanceCalculator: () =>

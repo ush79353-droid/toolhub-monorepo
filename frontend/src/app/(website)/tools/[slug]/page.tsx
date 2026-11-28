@@ -165,6 +165,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'cagr-calculator',
   'capital-gains-yield-calculator',
   'car-loan-emi-calculator',
+  'carpooling-calculator',
   'car-refinance-calculator',
   'cash-flow-to-debt-ratio-calculator',
   'cash-ratio-calculator',
