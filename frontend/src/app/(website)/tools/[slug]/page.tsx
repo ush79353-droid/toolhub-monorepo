@@ -216,6 +216,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'triple-discount-calculator',
   'turbo-size-calculator',
   'wheel-horsepower-calculator',
+  'wheel-offset-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',
   'dividend-yield-calculator',

@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Wheel Offset Calculator
+
+Screenshot-first wheel fitment comparison (`WheelOffsetCalculator`, slug `wheel-offset-calculator`, catalog `6af46f19a27d8d1d4e990ddf`, pillar null). I=W/2+ET; O=W/2−ET; C=I_c−I_n; P=O_n−O_c; in|mm|cm; SVG hub-plane diagram. Fixture: 7.5″ ET45 → 8.5″ ET35 → C −2.7 mm · P +22.7 mm. Mongo `isDeveloped: true`; **indexable** false. Tests 12/12.
+
 ## 2026-11-28 — Wheel Horsepower Calculator
 
 Screenshot-first WHP / drivetrain-loss tool (`WheelHorsepowerCalculator`, slug `wheel-horsepower-calculator`, catalog `6af46f18a27d8d1d4e990d0d`, pillar Horsepower `6af451d6a27d8d1d4e98fa02`). WHP=HP×η; HP=WHP/η; η=Πη_i; Loss%=100(1−η); overall XOR components; FWD/RWD/AWD/4WD/CUSTOM presets; hp|kW|PS. Fixture: 300 hp × 85% → 255 WHP · 45 hp loss. Mongo `isDeveloped: true`; **indexable** false. Tests 13/13.

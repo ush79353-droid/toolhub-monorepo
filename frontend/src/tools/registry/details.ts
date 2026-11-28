@@ -1686,6 +1686,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TurboSizeCalculator: () => import('@/tools/calculators/turbo-size/detail'),
   WheelHorsepowerCalculator: () =>
     import('@/tools/calculators/wheel-horsepower/detail'),
+  WheelOffsetCalculator: () => import('@/tools/calculators/wheel-offset/detail'),
   EffectiveAnnualYieldCalculator: () =>
     import('@/tools/calculators/effective-annual-yield/detail'),
   EffectiveInterestRateCalculator: () =>

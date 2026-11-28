@@ -6237,6 +6237,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WheelHorsepowerCalculator,
     })),
   ),
+  WheelOffsetCalculator: lazyTool(() =>
+    import('@/tools/calculators/wheel-offset/WheelOffsetCalculator').then(
+      (mod) => ({
+        default: mod.WheelOffsetCalculator,
+      }),
+    ),
+  ),
   EffectiveAnnualYieldCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/effective-annual-yield/EffectiveAnnualYieldCalculator'
