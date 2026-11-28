@@ -195,6 +195,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'flight-radiation-calculator',
   'fuel-cost-calculator',
   'fuel-injector-calculator',
+  'fuel-pump-calculator',
   'triple-discount-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',
