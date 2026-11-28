@@ -791,6 +791,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DividendPayoutRatioCalculator',
   'DividendYieldCalculator',
   'DosageCalculator',
+  'DressSizeCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'DupontAnalysisCalculator',
   'EarCalculator',

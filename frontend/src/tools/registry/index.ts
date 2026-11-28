@@ -4486,6 +4486,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DosageCalculator,
     })),
   ),
+  DressSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/dress-size/DressSizeCalculator').then(
+      (mod) => ({
+        default: mod.DressSizeCalculator,
+      }),
+    ),
+  ),
   DirectMaterialPriceVarianceCalculator: lazyTool(() =>
     import('@/tools/calculators/direct-material-price-variance/DirectMaterialPriceVarianceCalculator').then((mod) => ({
       default: mod.DirectMaterialPriceVarianceCalculator,

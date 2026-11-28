@@ -1156,6 +1156,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DividendYieldCalculator: () =>
     import('@/tools/calculators/dividend-yield/detail'),
   DosageCalculator: () => import('@/tools/calculators/dosage/detail'),
+  DressSizeCalculator: () =>
+    import('@/tools/calculators/dress-size/detail'),
   DirectMaterialPriceVarianceCalculator: () =>
     import('@/tools/calculators/direct-material-price-variance/detail'),
   DupontAnalysisCalculator: () =>

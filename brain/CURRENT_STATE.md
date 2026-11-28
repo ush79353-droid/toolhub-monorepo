@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Dress Size Calculator:** Live at `/tools/dress-size-calculator` (`DressSizeCalculator`, catalog `6af46f19a27d8d1d4e990e2b`). Bust/waist/hips chart; US/UK/EU/INT; mixed-size guidance; SVG; **indexable false**; pillar null.
 > **2026-11-28 Curtain Size Calculator:** Live at `/tools/curtain-size-calculator` (`CurtainSizeCalculator`, catalog `6af46f19a27d8d1d4e990e2a`). Sill/café/floor length; rod W+2E; fullness; SVG; **indexable false**; pillar null.
 > **2026-11-28 Curtain Panel Calculator:** Live at `/tools/curtain-panel-calculator` (`CurtainPanelCalculator`, catalog `6af46f19a27d8d1d4e990e29`). Coverage R×F; drops; cut L; yardage ¼-up; SVG preview; **indexable false**; pillar null.
 > **2026-11-28 Cross-Stitch Calculator:** Live at `/tools/cross-stitch-calculator` (`CrossStitchCalculator`, catalog `6af46f19a27d8d1d4e990e28`). D=C/O; finished size; fabric +2A; optional floss; SVG; **indexable false**; pillar null.
