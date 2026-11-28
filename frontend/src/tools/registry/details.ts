@@ -1135,6 +1135,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cpm/detail'),
   CtrCalculator: () =>
     import('@/tools/calculators/ctr/detail'),
+  CurtainPanelCalculator: () =>
+    import('@/tools/calculators/curtain-panel/detail'),
   Curb65Calculator: () =>
     import('@/tools/calculators/curb-65/detail'),
   CustomerAcquisitionCostCalculator: () =>

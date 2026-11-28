@@ -4419,6 +4419,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CtrCalculator,
     })),
   ),
+  CurtainPanelCalculator: lazyTool(() =>
+    import('@/tools/calculators/curtain-panel/CurtainPanelCalculator').then(
+      (mod) => ({
+        default: mod.CurtainPanelCalculator,
+      }),
+    ),
+  ),
   Curb65Calculator: lazyTool(() =>
     import('@/tools/calculators/curb-65/Curb65Calculator').then((mod) => ({
       default: mod.Curb65Calculator,
