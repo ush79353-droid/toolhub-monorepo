@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Winch Size Calculator
+
+Screenshot-first winch sizing tool (`WinchSizeCalculator`, slug `winch-size-calculator`, catalog `6af46f19a27d8d1d4e990de0`, pillar null). Rolling/drag F_r=C·m·g·cosθ + F_s=m·g·sinθ; SF; 1.5× weight guideline; rating tiers; recovery vs load-moving. Fixture: 2000 kg · mud 0.35 · 10° · SF1.5 → ~10.17 kN · ~3428 lbf adj · ~6614 lbf guideline. Mongo `isDeveloped: true`; **indexable** false. Tests 13/13.
+
 ## 2026-11-28 — Wheel Offset Calculator
 
 Screenshot-first wheel fitment comparison (`WheelOffsetCalculator`, slug `wheel-offset-calculator`, catalog `6af46f19a27d8d1d4e990ddf`, pillar null). I=W/2+ET; O=W/2−ET; C=I_c−I_n; P=O_n−O_c; in|mm|cm; SVG hub-plane diagram. Fixture: 7.5″ ET45 → 8.5″ ET35 → C −2.7 mm · P +22.7 mm. Mongo `isDeveloped: true`; **indexable** false. Tests 12/12.

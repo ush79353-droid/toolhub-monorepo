@@ -1050,6 +1050,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TurboSizeCalculator',
   'WheelHorsepowerCalculator',
   'WheelOffsetCalculator',
+  'WinchSizeCalculator',
   'TylenolDosageCalculator',
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',

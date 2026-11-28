@@ -6244,6 +6244,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  WinchSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/winch-size/WinchSizeCalculator').then(
+      (mod) => ({
+        default: mod.WinchSizeCalculator,
+      }),
+    ),
+  ),
   EffectiveAnnualYieldCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/effective-annual-yield/EffectiveAnnualYieldCalculator'

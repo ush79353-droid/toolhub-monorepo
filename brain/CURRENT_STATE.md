@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Winch Size Calculator:** Live at `/tools/winch-size-calculator` (`WinchSizeCalculator`, catalog `6af46f19a27d8d1d4e990de0`). F_r+F_s×SF + 1.5× weight guideline; terrain C; recovery/load modes; **indexable false**; pillar null.
 > **2026-11-28 Wheel Offset Calculator:** Live at `/tools/wheel-offset-calculator` (`WheelOffsetCalculator`, catalog `6af46f19a27d8d1d4e990ddf`). Current vs new width/ET; C=I_c−I_n; P=O_n−O_c; SVG diagram; **indexable false**; pillar null.
 > **2026-11-28 Wheel Horsepower Calculator:** Live at `/tools/wheel-horsepower-calculator` (`WheelHorsepowerCalculator`, catalog `6af46f18a27d8d1d4e990d0d`). WHP↔HP via overall/component η; FWD/RWD/AWD/4WD presets; hp|kW|PS; **indexable false**; pillar Horsepower `6af451d6a27d8d1d4e98fa02`.
 > **2026-11-28 Turbo Size Calculator:** Live at `/tools/turbo-size-calculator` (`TurboSizeCalculator`, catalog `6af46f19a27d8d1d4e990dde`). Airflow heuristic HP/10 + advanced ṁ/PR; **indexable false**; pillar null.

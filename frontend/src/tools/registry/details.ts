@@ -1687,6 +1687,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   WheelHorsepowerCalculator: () =>
     import('@/tools/calculators/wheel-horsepower/detail'),
   WheelOffsetCalculator: () => import('@/tools/calculators/wheel-offset/detail'),
+  WinchSizeCalculator: () => import('@/tools/calculators/winch-size/detail'),
   EffectiveAnnualYieldCalculator: () =>
     import('@/tools/calculators/effective-annual-yield/detail'),
   EffectiveInterestRateCalculator: () =>
