@@ -1029,6 +1029,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FuelInjectorCalculator',
   'FuelPumpCalculator',
   'GasCalculator',
+  'GasOilRatioCalculator',
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
   'TylenolDosageCalculator',

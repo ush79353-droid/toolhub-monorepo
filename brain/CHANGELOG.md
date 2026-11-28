@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Gas Oil Ratio Calculator
+
+Screenshot-first two-stroke premix tool (`GasOilRatioCalculator`, slug `gas-oil-ratio-calculator`, catalog `6af46f18a27d8d1d4e990d08`, pillar `6af451d5a27d8d1d4e98fa01`). Oil=Gas/Ratio; reverse gas; ratio from volumes; total premix split Total/(R+1); oil % of mixture vs gasoline; metric/US chart; presets 16–100. Mongo `isDeveloped: true`; **indexable** false. Fixture: 5 L · 50:1 → 100 mL. Tests 26/26.
+
 ## 2026-11-28 — Gas Calculator
 
 Screenshot-first trip fuel tool (`GasCalculator`, slug `gas-calculator`, catalog `6af46f18a27d8d1d4e990d06`, pillar `6af451d5a27d8d1d4e98fa01`). FuelRequired=(km×L/100)/100; cost=volume×price/L; round-trip ×2; cost/person & /km; advanced range, recurring (52/12 month), vehicle compare, % consumption reduction. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 250 km · 7.5 · PKR 280 · 3 pax → 18.75 L · 5,250 · 1,750 · 21/km. Tests 21/21.
