@@ -1042,6 +1042,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SpeedCalculator',
   'SpeedometerGearCalculator',
   'TeslaChargingCostCalculator',
+  'TicketOptimizerCalculator',
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
   'TylenolDosageCalculator',

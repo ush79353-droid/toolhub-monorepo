@@ -6192,6 +6192,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TeslaChargingCostCalculator,
     })),
   ),
+  TicketOptimizerCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ticket-optimizer/TicketOptimizerCalculator'
+    ).then((mod) => ({
+      default: mod.TicketOptimizerCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'

@@ -1674,6 +1674,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/speedometer-gear/detail'),
   TeslaChargingCostCalculator: () =>
     import('@/tools/calculators/tesla-charging-cost/detail'),
+  TicketOptimizerCalculator: () =>
+    import('@/tools/calculators/ticket-optimizer/detail'),
   TramadolDosageCalculator: () =>
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>
