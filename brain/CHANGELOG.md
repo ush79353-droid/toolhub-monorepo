@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — GVWR Calculator
+
+Screenshot-first vehicle weight tool (`GvwrCalculator`, slug `gvwr-calculator`, catalog `6af46f19a27d8d1d4e990dce`, pillar null). GVW=tare+payload (never invent GVWR); capacity check remaining/utilization/overload; max payload=GVWR−unloaded; kg/lb/t/US ton. Mongo `isDeveloped: true`; **indexable** false. Fixture: 1,000+500→1,500 kg. Tests 21/21.
+
 ## 2026-11-28 — Gas Oil Ratio Calculator
 
 Screenshot-first two-stroke premix tool (`GasOilRatioCalculator`, slug `gas-oil-ratio-calculator`, catalog `6af46f18a27d8d1d4e990d08`, pillar `6af451d5a27d8d1d4e98fa01`). Oil=Gas/Ratio; reverse gas; ratio from volumes; total premix split Total/(R+1); oil % of mixture vs gasoline; metric/US chart; presets 16–100. Mongo `isDeveloped: true`; **indexable** false. Fixture: 5 L · 50:1 → 100 mL. Tests 26/26.

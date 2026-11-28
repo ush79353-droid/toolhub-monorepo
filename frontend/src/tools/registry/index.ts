@@ -6116,6 +6116,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GasOilRatioCalculator,
     })),
   ),
+  GvwrCalculator: lazyTool(() =>
+    import('@/tools/calculators/gvwr/GvwrCalculator').then((mod) => ({
+      default: mod.GvwrCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'

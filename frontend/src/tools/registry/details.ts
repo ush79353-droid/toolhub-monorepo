@@ -1654,6 +1654,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GasCalculator: () => import('@/tools/calculators/gas/detail'),
   GasOilRatioCalculator: () =>
     import('@/tools/calculators/gas-oil-ratio/detail'),
+  GvwrCalculator: () => import('@/tools/calculators/gvwr/detail'),
   TramadolDosageCalculator: () =>
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>
