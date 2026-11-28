@@ -1657,6 +1657,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GvwrCalculator: () => import('@/tools/calculators/gvwr/detail'),
   IdlingFuelConsumptionCalculator: () =>
     import('@/tools/calculators/idling-fuel-consumption/detail'),
+  MilesPerYearCalculator: () =>
+    import('@/tools/calculators/miles-per-year/detail'),
   TramadolDosageCalculator: () =>
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>

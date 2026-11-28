@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Miles per Year Calculator
+
+Screenshot-first annual mileage tool (`MilesPerYearCalculator`, slug `miles-per-year-calculator`, catalog `6af46f19a27d8d1d4e990dd1`, pillar null). Day×365 / week×365/7 / month×12 / year×1; mi↔km; period switch preserves annual; optional commute schedule, fuel cost, odometer projection. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 1,000 mi/month → 12,000 mi/year. Tests 24/24.
+
 ## 2026-11-28 — Idling Fuel Consumption Calculator
 
 Screenshot-first idle burn/cost tool (`IdlingFuelConsumptionCalculator`, slug `idling-fuel-consumption-calculator`, catalog `6af46f19a27d8d1d4e990dcf`, pillar null). Petrol F=0.6×E, diesel F=0.45×E (L/h); Fuel=F×hours; Cost=Fuel×price/L; custom rate; optional long-term + tank-to-wheel CO₂. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 2.0 L petrol · 30 min · PKR 280 → 1.2 L/h · 0.6 L · PKR 168. Tests 22/22.
