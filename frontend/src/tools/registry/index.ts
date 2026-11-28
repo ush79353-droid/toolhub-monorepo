@@ -6788,6 +6788,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HatSizeCalculator,
     })),
   ),
+  HexagonQuiltCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/hexagon-quilt/HexagonQuiltCalculator'
+    ).then((mod) => ({
+      default: mod.HexagonQuiltCalculator,
+    })),
+  ),
   IncomeElasticityOfDemandCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/income-elasticity-of-demand/IncomeElasticityOfDemandCalculator'
