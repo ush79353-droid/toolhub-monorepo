@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Speed Calculator
+
+Screenshot-first DST tool (`SpeedCalculator`, slug `speed-calculator`, catalog `6af46f19a27d8d1d4e990dd8`, pillar null). Modes speed/distance/time; SI meters/seconds/m/s; compare references; multi-segment average. Fixture: 150 km / 3 h → 50 km/h. Mongo `isDeveloped: true`; **indexable** false. Tests 26/26.
+
 ## 2026-11-28 — RPM Calculator
 
 Screenshot-first bidirectional RPM tool (`RpmCalculator`, slug `rpm-calculator`, catalog `6af46f19a27d8d1d4e990dd7`, pillar null). ERPM↔WRPM↔R; WRPM↔speed↔tire Ø; SI solver; optional G×F, circ/RPS/WRM. Fixture: 3000·4·26 in → 750 WRPM · ~58.01 mph / ~93.36 km/h. Mongo `isDeveloped: true`; **indexable** false. Tests 29/29.

@@ -6173,6 +6173,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RpmCalculator,
     })),
   ),
+  SpeedCalculator: lazyTool(() =>
+    import('@/tools/calculators/speed/SpeedCalculator').then((mod) => ({
+      default: mod.SpeedCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'

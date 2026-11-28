@@ -1039,6 +1039,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NauticalMileCalculator',
   'PulsePerMileCalculator',
   'RpmCalculator',
+  'SpeedCalculator',
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
   'TylenolDosageCalculator',
