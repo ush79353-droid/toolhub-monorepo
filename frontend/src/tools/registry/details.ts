@@ -1830,6 +1830,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GoodwillCalculator: () => import('@/tools/calculators/goodwill/detail'),
   HalfSquareTriangleCalculator: () =>
     import('@/tools/calculators/half-square-triangle/detail'),
+  HatSizeCalculator: () => import('@/tools/calculators/hat-size/detail'),
   IncomeElasticityOfDemandCalculator: () =>
     import('@/tools/calculators/income-elasticity-of-demand/detail'),
   InventoryTurnoverCalculator: () =>

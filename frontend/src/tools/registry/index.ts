@@ -6783,6 +6783,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HalfSquareTriangleCalculator,
     })),
   ),
+  HatSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/hat-size/HatSizeCalculator').then((mod) => ({
+      default: mod.HatSizeCalculator,
+    })),
+  ),
   IncomeElasticityOfDemandCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/income-elasticity-of-demand/IncomeElasticityOfDemandCalculator'

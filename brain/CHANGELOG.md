@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Hat Size Calculator
+
+Screenshot-first sizing tool (`HatSizeCalculator`, slug `hat-size-calculator`, catalog `6af46f19a27d8d1d4e990e2f`, pillar null). Adult/child head circumference → intl/US/UK/EU; between-size recommends larger; fit advisory; SVG measure guide; 40 FAQs. Fixture: 58 cm adult → L / 7¼ / 7⅛ / EU 58. Mongo `isDeveloped: true`; **indexable** false. Tests 12/12.
+
 ## 2026-11-28 — Half Square Triangle Calculator
 
 Screenshot-first quilting tool (`HalfSquareTriangleCalculator`, slug `half-square-triangle-calculator`, catalog `6af46f19a27d8d1d4e990e2e`, pillar null). Finished/unfinished/raw square + diagonal; two- & eight-at-a-time; geometric vs traditional vs oversized; quantity; fractional inches; SVG diagram; size chart; 40 FAQs. Fixture: 4″ finished · traditional two-at-a-time → raw 4⅞″ · unfinished 4.5″. Mongo `isDeveloped: true`; **indexable** false. Tests 13/13.

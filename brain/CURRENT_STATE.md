@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Hat Size Calculator:** Live at `/tools/hat-size-calculator` (`HatSizeCalculator`, catalog `6af46f19a27d8d1d4e990e2f`). Adult/child head circumference → US/UK/EU/intl; between-size upsizing; SVG; charts; **indexable false**; pillar null.
 > **2026-11-28 Half Square Triangle Calculator:** Live at `/tools/half-square-triangle-calculator` (`HalfSquareTriangleCalculator`, catalog `6af46f19a27d8d1d4e990e2e`). Finished/unfinished/raw/diagonal; two- & eight-at-a-time; geo vs traditional; SVG; chart; **indexable false**; pillar null.
 > **2026-11-28 Glove Size Calculator:** Live at `/tools/glove-size-calculator` (`GloveSizeCalculator`, catalog `6af46f19a27d8d1d4e990e2d`). Palm circumference charts men/unisex & women; reverse lookup; SVG; **indexable false**; pillar null.
 > **2026-11-28 Fabric Calculator:** Live at `/tools/fabric-calculator` (`FabricCalculator`, catalog `6af46f19a27d8d1d4e990e2c`). Pieces across/rows; yardage; gap/edge/shrink/extra; rotation; SVG layout; **indexable false**; pillar null.
