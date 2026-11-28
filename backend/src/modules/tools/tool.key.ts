@@ -677,6 +677,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BeeCalculator',
   'BeltSizeCalculator',
   'BikiniCalculator',
+  'BraSizeCalculator',
   'BenadrylDosageCalculator',
   'BenzodiazepineConversionCalculator',
   'BloodDonorCalculator',

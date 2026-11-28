@@ -957,6 +957,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BeeCalculator: () => import('@/tools/calculators/bee-calculator/detail'),
   BeltSizeCalculator: () => import('@/tools/calculators/belt-size/detail'),
   BikiniCalculator: () => import('@/tools/calculators/bikini/detail'),
+  BraSizeCalculator: () => import('@/tools/calculators/bra-size/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),
   BenzodiazepineConversionCalculator: () =>

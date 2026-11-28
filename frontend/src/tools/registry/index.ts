@@ -3875,6 +3875,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BikiniCalculator,
     })),
   ),
+  BraSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/bra-size/BraSizeCalculator').then((mod) => ({
+      default: mod.BraSizeCalculator,
+    })),
+  ),
   BenadrylDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/benadryl-dosage/BenadrylDosageCalculator'
