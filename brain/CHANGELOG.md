@@ -1,3 +1,7 @@
+## 2026-11-28 — SEO draft paragraph overflow no longer fails generation
+
+OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
+
 ## 2026-11-28 — Crosswind Calculator
 
 Screenshot-first aviation wind components (`CrosswindCalculator`, slug `crosswind-calculator`, catalog `6af46f19a27d8d1d4e990dc4`, pillar null). H=R×10; θ wrap (−180,180]; X=Vsinθ; Hw=Vcosθ; left/right; head/tail; kt|km/h|mph|m/s; optional precise heading + true→magnetic (east+); SVG diagram + θ chart; safety notice; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: RWY36/090/20 → 20 kt right; RWY27/300/20 → 10 / ≈17.32. Tests 17/17.
