@@ -6809,6 +6809,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InventoryTurnoverCalculator,
     })),
   ),
+  JacketSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/jacket-size/JacketSizeCalculator').then(
+      (mod) => ({
+        default: mod.JacketSizeCalculator,
+      }),
+    ),
+  ),
   LifetimeEarningsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/lifetime-earnings/LifetimeEarningsCalculator'

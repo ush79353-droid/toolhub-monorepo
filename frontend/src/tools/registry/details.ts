@@ -1837,6 +1837,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/income-elasticity-of-demand/detail'),
   InventoryTurnoverCalculator: () =>
     import('@/tools/calculators/inventory-turnover/detail'),
+  JacketSizeCalculator: () => import('@/tools/calculators/jacket-size/detail'),
   LifetimeEarningsCalculator: () =>
     import('@/tools/calculators/lifetime-earnings/detail'),
   LifoInventoryCalculator: () =>
