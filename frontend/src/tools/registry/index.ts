@@ -6204,6 +6204,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TireSizeCalculator,
     })),
   ),
+  TrafficDensityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/traffic-density/TrafficDensityCalculator'
+    ).then((mod) => ({
+      default: mod.TrafficDensityCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'

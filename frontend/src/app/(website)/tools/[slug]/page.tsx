@@ -212,6 +212,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'tesla-charging-cost-calculator',
   'ticket-optimizer',
   'tire-size-calculator',
+  'traffic-density-calculator',
   'triple-discount-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',

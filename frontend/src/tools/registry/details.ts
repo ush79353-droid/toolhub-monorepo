@@ -1677,6 +1677,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TicketOptimizerCalculator: () =>
     import('@/tools/calculators/ticket-optimizer/detail'),
   TireSizeCalculator: () => import('@/tools/calculators/tire-size/detail'),
+  TrafficDensityCalculator: () =>
+    import('@/tools/calculators/traffic-density/detail'),
   TramadolDosageCalculator: () =>
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>
