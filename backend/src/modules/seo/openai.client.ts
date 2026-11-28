@@ -1,7 +1,14 @@
 import OpenAI from 'openai';
 import { env } from '../../config/env';
 import type { KeywordFact, SuggestedLink } from './choose-keyword';
-import { clipSeoRaw, countDraftWords, seoContentSchema, type SeoContent } from './content';
+import {
+  clipSeoRaw,
+  countDraftWords,
+  SECTION_BULLET_MAX,
+  SECTION_PARAGRAPH_MAX,
+  seoContentSchema,
+  type SeoContent,
+} from './content';
 import type { SeoSnapshot, SerpItem } from './seo.model';
 
 const DRAFT_SCHEMA: Record<string, unknown> = {
@@ -25,6 +32,8 @@ const DRAFT_SCHEMA: Record<string, unknown> = {
     disclaimer: { type: 'string' },
     sections: {
       type: 'array',
+      minItems: 4,
+      maxItems: 8,
       items: {
         type: 'object',
         additionalProperties: false,
@@ -32,8 +41,17 @@ const DRAFT_SCHEMA: Record<string, unknown> = {
         properties: {
           id: { type: 'string' },
           title: { type: 'string' },
-          paragraphs: { type: 'array', items: { type: 'string' } },
-          bullets: { type: 'array', items: { type: 'string' } },
+          paragraphs: {
+            type: 'array',
+            minItems: 1,
+            maxItems: SECTION_PARAGRAPH_MAX,
+            items: { type: 'string' },
+          },
+          bullets: {
+            type: 'array',
+            maxItems: SECTION_BULLET_MAX,
+            items: { type: 'string' },
+          },
           formula: { type: 'string' },
           formulaNote: { type: 'string' },
         },
@@ -41,6 +59,8 @@ const DRAFT_SCHEMA: Record<string, unknown> = {
     },
     faqs: {
       type: 'array',
+      minItems: 3,
+      maxItems: 8,
       items: {
         type: 'object',
         additionalProperties: false,
@@ -53,6 +73,8 @@ const DRAFT_SCHEMA: Record<string, unknown> = {
     },
     links: {
       type: 'array',
+      minItems: 3,
+      maxItems: 6,
       items: {
         type: 'object',
         additionalProperties: false,
@@ -290,6 +312,8 @@ The disclaimer must clearly state that the page is educational and is not financ
 Generate the following six sections in exactly this order.
 
 Use the exact section IDs.
+
+Each section may include at most 16 paragraphs and 12 bullets. Prefer fewer longer paragraphs over many short ones.
 
 ## Section 1: what-this-covers
 
