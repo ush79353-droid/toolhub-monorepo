@@ -1,3 +1,7 @@
+## 2026-11-28 — Drive Time Calculator
+
+Screenshot-first trip duration/cost tool (`DriveTimeCalculator`, slug `drive-time-calculator`, catalog `6af46f19a27d8d1d4e990dc5`, pillar null). DrivingTime=Dist/Speed; +breaks; arrival↔departure via datetime-local + elapsed ms; fuel L/100→cost; parking/tolls/other; cost/person & /km; km|mi|m|ft + km/h|mph|m/s|ft/s; denomination CurrencySelect (**No FX**). Guide/FAQ. Mongo `isDeveloped: true`; **indexable** false. Fixture: 300 km · 60 · 45 min → 5 h 45 min; 7 L/100 · PKR 280 → 21 L / 5,880; +800 extras / 4 → 1,670 pp. Tests 22/22.
+
 ## 2026-11-28 — Crosswind Calculator
 
 Screenshot-first aviation wind components (`CrosswindCalculator`, slug `crosswind-calculator`, catalog `6af46f19a27d8d1d4e990dc4`, pillar null). H=R×10; θ wrap (−180,180]; X=Vsinθ; Hw=Vcosθ; left/right; head/tail; kt|km/h|mph|m/s; optional precise heading + true→magnetic (east+); SVG diagram + θ chart; safety notice; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: RWY36/090/20 → 20 kt right; RWY27/300/20 → 10 / ≈17.32. Tests 17/17.
