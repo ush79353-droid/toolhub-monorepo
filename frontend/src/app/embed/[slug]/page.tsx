@@ -117,6 +117,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'gvwr-calculator',
   'idling-fuel-consumption-calculator',
   'miles-per-year-calculator',
+  'miles-to-dollars-calculator',
   'triple-discount-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',

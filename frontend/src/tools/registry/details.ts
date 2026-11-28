@@ -1659,6 +1659,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/idling-fuel-consumption/detail'),
   MilesPerYearCalculator: () =>
     import('@/tools/calculators/miles-per-year/detail'),
+  MilesToDollarsCalculator: () =>
+    import('@/tools/calculators/miles-to-dollars/detail'),
   TramadolDosageCalculator: () =>
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>

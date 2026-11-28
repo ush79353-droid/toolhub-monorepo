@@ -1033,6 +1033,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GvwrCalculator',
   'IdlingFuelConsumptionCalculator',
   'MilesPerYearCalculator',
+  'MilesToDollarsCalculator',
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
   'TylenolDosageCalculator',

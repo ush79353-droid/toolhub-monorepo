@@ -6135,6 +6135,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MilesPerYearCalculator,
     })),
   ),
+  MilesToDollarsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/miles-to-dollars/MilesToDollarsCalculator'
+    ).then((mod) => ({
+      default: mod.MilesToDollarsCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'
