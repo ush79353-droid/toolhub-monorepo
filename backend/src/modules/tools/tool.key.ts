@@ -1051,6 +1051,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'WheelHorsepowerCalculator',
   'WheelOffsetCalculator',
   'WinchSizeCalculator',
+  'WindsockCalculator',
   'TylenolDosageCalculator',
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',

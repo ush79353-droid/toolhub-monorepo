@@ -6251,6 +6251,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  WindsockCalculator: lazyTool(() =>
+    import('@/tools/calculators/windsock/WindsockCalculator').then((mod) => ({
+      default: mod.WindsockCalculator,
+    })),
+  ),
   EffectiveAnnualYieldCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/effective-annual-yield/EffectiveAnnualYieldCalculator'

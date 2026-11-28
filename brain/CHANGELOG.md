@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Windsock Calculator
+
+Screenshot-first windsock speed tool (`WindsockCalculator`, slug `windsock-calculator`, catalog `6af46f19a27d8d1d4e990de1`, pillar null). V_kn=3n (0–5 segments); bidirectional kn/mph/ft/s/km/h/m/s; saturated notice above 15 kn; SVG schematic. Fixture: 3 seg → 9 kn · ~10.36 mph · ~16.67 km/h. Mongo `isDeveloped: true`; **indexable** false. Tests 14/14.
+
 ## 2026-11-28 — Winch Size Calculator
 
 Screenshot-first winch sizing tool (`WinchSizeCalculator`, slug `winch-size-calculator`, catalog `6af46f19a27d8d1d4e990de0`, pillar null). Rolling/drag F_r=C·m·g·cosθ + F_s=m·g·sinθ; SF; 1.5× weight guideline; rating tiers; recovery vs load-moving. Fixture: 2000 kg · mud 0.35 · 10° · SF1.5 → ~10.17 kN · ~3428 lbf adj · ~6614 lbf guideline. Mongo `isDeveloped: true`; **indexable** false. Tests 13/13.
