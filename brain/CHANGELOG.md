@@ -1,3 +1,7 @@
+## 2026-11-28 — BSFC Calculator
+
+Screenshot-first brake specific fuel consumption tool (`BsfcCalculator`, slug `bsfc-calculator`, catalog `6af46f19a27d8d1d4e990dbf`, pillar null). η_b(%)=360000/(BSFC×LHV); fuel LHV presets + custom; reverse BSFC/power/flow; power+BSFC+LHV units; optional volumetric flow; charts; guide/FAQ. **No FX**. Registry + tools/embed allowlists; Mongo `isDeveloped: true`; **indexable** false. Fixture: 250 g/kWh · 43.4 MJ/kg → ≈33.18%; 100 kW → 25 kg/h. Tests 20/20.
+
 ## 2026-11-28 — Boost Horsepower Calculator
 
 Screenshot-first ideal boost model (`BoostHorsepowerCalculator`, slug `boost-horsepower-calculator`, catalog `6af46f18a27d8d1d4e990d0b`, pillar Horsepower). HP_boosted = HP × (P_boost + P_atm) / P_atm; reverse required boost / original HP; hp|PS|kW|W and psi|kPa|bar|mbar|Pa; optional η; chart; guide/FAQ. **No FX**. Registry + tools/embed allowlists; Mongo `isDeveloped: true`; **indexable** false. Fixture: 200 hp · 6 psi · 14.7 atm → ≈281.63 hp. Tests 22/22.
