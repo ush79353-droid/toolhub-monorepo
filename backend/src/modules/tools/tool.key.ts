@@ -776,6 +776,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CrossStitchCalculator',
   'CtrCalculator',
   'CurtainPanelCalculator',
+  'CurtainSizeCalculator',
   'Curb65Calculator',
   'CurrentRatioCalculator',
   'CustomerAcquisitionCostCalculator',

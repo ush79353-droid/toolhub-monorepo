@@ -4426,6 +4426,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  CurtainSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/curtain-size/CurtainSizeCalculator').then(
+      (mod) => ({
+        default: mod.CurtainSizeCalculator,
+      }),
+    ),
+  ),
   Curb65Calculator: lazyTool(() =>
     import('@/tools/calculators/curb-65/Curb65Calculator').then((mod) => ({
       default: mod.Curb65Calculator,

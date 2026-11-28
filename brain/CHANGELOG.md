@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Curtain Size Calculator
+
+Screenshot-first finished-size tool (`CurtainSizeCalculator`, slug `curtain-size-calculator`, catalog `6af46f19a27d8d1d4e990e2a`, pillar null). Sill/café/extra-long length; R=W+2E; Wc=R×F; panels; SVG preview; 35 FAQs. Fixture: 150×120 · sill · deluxe 2× · ext 15 · mount 15 → length 135 · width 360 · panel 180. Mongo `isDeveloped: true`; **indexable** false. Tests 14/14.
+
 ## 2026-11-28 — Curtain Panel Calculator
 
 Screenshot-first sewing yardage tool (`CurtainPanelCalculator`, slug `curtain-panel-calculator`, catalog `6af46f19a27d8d1d4e990e29`, pillar null). Coverage R×F; panel/cut widths; fabric drops with joining seams; cut length; pattern repeat; shrinkage/waste; yardage ¼-up; SVG preview; 36 FAQs. Fixture: 200 cm · 2× · 2 panels · 140 cm fabric → 4×245 cm · 9.8 m · buy 10.75 yd. Mongo `isDeveloped: true`; **indexable** false. Tests 14/14.
