@@ -1026,6 +1026,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TylenolDosageCalculator',
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',
+  'CompressionRatioCalculator',
   'ContinuousCompoundInterestCalculator',
   'CouponPaymentCalculator',
   'CouponRateCalculator',

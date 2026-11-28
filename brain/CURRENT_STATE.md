@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Compression Ratio Calculator:** Live at `/tools/compression-ratio-calculator` (`CompressionRatioCalculator`, catalog `6af46f19a27d8d1d4e990dc2`). Static/dynamic CR; displacement; **indexable false**; pillar null.
 > **2026-11-28 Commute Calculator:** Live at `/tools/commute-calculator` (`CommuteCalculator`, catalog `6af46f19a27d8d1d4e990dc1`). Car vs transit; frequency norms; carpool share; **indexable false**; pillar null.
 > **2026-11-28 Carpooling Calculator:** Live at `/tools/carpooling-calculator` (`CarpoolingCalculator`, catalog `6af46f19a27d8d1d4e990dc0`). Fuel×price + split; round trip; reimbursement modes; savings scenario; **indexable false**; pillar null.
 > **2026-11-28 BSFC Calculator:** Live at `/tools/bsfc-calculator` (`BsfcCalculator`, catalog `6af46f19a27d8d1d4e990dbf`). η%=360000/(BSFC×LHV); fuel types; reverse BSFC/power/flow; **indexable false**; pillar null.

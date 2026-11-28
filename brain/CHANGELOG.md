@@ -1,3 +1,7 @@
+## 2026-11-28 — Compression Ratio Calculator
+
+Screenshot-first engine CR tool (`CompressionRatioCalculator`, slug `compression-ratio-calculator`, catalog `6af46f19a27d8d1d4e990dc2`, pillar null). Vs=πD²L/4000; Vc=chamber+gasket+deck+piston; CR=(Vs+Vc)/Vc; reverse Vc; known volumes; dynamic CR via crank-slider IVC ABDC; SVG diagram; presets; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 86×86 mm → ≈499.56 cc/cyl; 450/50 → 10:1. Tests 23/23.
+
 ## 2026-11-28 — Commute Calculator
 
 Screenshot-first commute comparison (`CommuteCalculator`, slug `commute-calculator`, catalog `6af46f19a27d8d1d4e990dc1`, pillar null). Round-trip×days; fuel+parking+wear; cost/person; transit per-ride/day/pass; weekly×52 / monthly×12; denomination CurrencySelect (**No FX**). Charts; guide/FAQ. Mongo `isDeveloped: true`; **indexable** false. Fixture: 20 km · 22 days · 8 L/100 · PKR 280 → 28,512 total / 9,504 pp vs 6,600 transit → 2,904 savings. Tests 20/20.

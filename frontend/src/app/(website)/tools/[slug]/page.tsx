@@ -174,6 +174,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'compound-growth-calculator',
   'compound-interest-calculator',
   'compound-interest-rate-calculator',
+  'compression-ratio-calculator',
   'continuous-compound-interest-calculator',
   'coupon-payment-calculator',
   'credit-card-calculator',

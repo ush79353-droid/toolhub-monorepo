@@ -5929,6 +5929,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CompoundInterestRateCalculator,
     })),
   ),
+  CompressionRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/compression-ratio/CompressionRatioCalculator'
+    ).then((mod) => ({
+      default: mod.CompressionRatioCalculator,
+    })),
+  ),
   CompoundGrowthCalculator: lazyTool(() =>
     import('@/tools/calculators/compound-growth/CompoundGrowthCalculator').then((mod) => ({
       default: mod.CompoundGrowthCalculator,
