@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Bikini Calculator
+
+Screenshot-first bikini style tool (`BikiniCalculator`, slug `bikini-calculator`, catalog `6af46f19a27d8d1d4e990e25`, pillar null). Bust/waist/high-hip/hip → BHR/WHR/WBR + heuristic shapes (hourglass family, spoon, triangle, inverted triangle, rectangle, mixed); optional coverage/support/style/activity ranking; original SVG silhouettes; 38 FAQs; client-only measurements. Fixture: 95/70/88/96 cm → hourglass. Mongo `isDeveloped: true`; **indexable** false. Tests 13/13.
+
 ## 2026-11-28 — Belt Size Calculator
 
 Screenshot-first belt sizing tool (`BeltSizeCalculator`, slug `belt-size-calculator`, catalog `6af46f19a27d8d1d4e990e24`, pillar null). Women/men charts; five methods (numerical, general, waist, existing belt, dress/pants); pants heuristic B≈P+2; direct waist chart match (no auto +2); fastening-to-hole measurement; mm/cm/in/ft; SVG diagram; 35 FAQs. Fixture: men pants 32 → 34 in · 86.36 cm. Mongo `isDeveloped: true`; **indexable** false. Tests 10/10.

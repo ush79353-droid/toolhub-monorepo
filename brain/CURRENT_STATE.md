@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Bikini Calculator:** Live at `/tools/bikini-calculator` (`BikiniCalculator`, catalog `6af46f19a27d8d1d4e990e25`). Bust/waist/high-hip/hip heuristics; optional prefs; SVG silhouettes; browser-local privacy; **indexable false**; pillar null.
 > **2026-11-28 Belt Size Calculator:** Live at `/tools/belt-size-calculator` (`BeltSizeCalculator`, catalog `6af46f19a27d8d1d4e990e24`). Women/men charts; numerical/general/waist/existing belt/dress-pants; pants B≈P+2; SVG measure diagram; **indexable false**; pillar null.
 > **2026-11-28 Bag Calculator:** Live at `/tools/bag-calculator` (`BagCalculator`, catalog `6af46f19a27d8d1d4e990e23`). Folded-bottom tote Fw/Fh flat vs boxed; seam/hem; SVG diagram; **indexable false**; pillar null.
 > **2026-11-28 Windsock Calculator:** Live at `/tools/windsock-calculator` (`WindsockCalculator`, catalog `6af46f19a27d8d1d4e990de1`). V_kn=3n; kn↔mph/km/h/m/s/ft/s; SVG schematic; **indexable false**; pillar null.
