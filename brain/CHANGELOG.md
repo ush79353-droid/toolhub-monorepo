@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Belt Size Calculator
+
+Screenshot-first belt sizing tool (`BeltSizeCalculator`, slug `belt-size-calculator`, catalog `6af46f19a27d8d1d4e990e24`, pillar null). Women/men charts; five methods (numerical, general, waist, existing belt, dress/pants); pants heuristic B≈P+2; direct waist chart match (no auto +2); fastening-to-hole measurement; mm/cm/in/ft; SVG diagram; 35 FAQs. Fixture: men pants 32 → 34 in · 86.36 cm. Mongo `isDeveloped: true`; **indexable** false. Tests 10/10.
+
 ## 2026-11-28 — Bag Calculator
 
 Screenshot-first tote fabric tool (`BagCalculator`, slug `bag-calculator`, catalog `6af46f19a27d8d1d4e990e23`, pillar null). Flat Fw=W+2S · Fh=2H+2T; boxed Fw=W+D+2S · Fh=2H+D+2T; area; mm↔cm↔m↔in↔ft. Fixture: 40×35×10 cm · S1 · T2 → flat 37×84 / boxed 47×94. Mongo `isDeveloped: true`; **indexable** false. Tests 11/11.

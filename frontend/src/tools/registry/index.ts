@@ -3865,6 +3865,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BeeCalculator,
     })),
   ),
+  BeltSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/belt-size/BeltSizeCalculator').then((mod) => ({
+      default: mod.BeltSizeCalculator,
+    })),
+  ),
   BenadrylDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/benadryl-dosage/BenadrylDosageCalculator'
