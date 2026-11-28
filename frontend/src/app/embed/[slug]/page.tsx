@@ -110,6 +110,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'engine-hours-to-miles-converter',
   'flight-radiation-calculator',
   'fuel-cost-calculator',
+  'fuel-injector-calculator',
   'triple-discount-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',

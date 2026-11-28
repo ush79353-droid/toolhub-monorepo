@@ -1026,6 +1026,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EngineHoursToMilesConverter',
   'FlightRadiationCalculator',
   'FuelCostCalculator',
+  'FuelInjectorCalculator',
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
   'TylenolDosageCalculator',

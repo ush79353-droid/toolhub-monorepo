@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Fuel Injector Calculator
+
+Screenshot-first injector sizing tool (`FuelInjectorCalculator`, slug `fuel-injector-calculator`, catalog `6af46f19a27d8d1d4e990dcb`, pillar null). IFR=(HP×BSFC)/(N×DC); target HP precedence; fuel×aspiration BSFC estimates (overrideable); density for lb/hr↔cc/min; Q₂=Q₁√(ΔP₂/ΔP₁); existing-injector DC compare; hp|kW|PS; bar|psi|kPa; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 400 hp · 0.50 · 8 · 80% → 31.25 lb/hr; 3→4 bar · 300 → ≈346.41. Tests 17/17.
+
 ## 2026-11-28 — Fuel Cost Calculator
 
 Screenshot-first trip fuel expense tool (`FuelCostCalculator`, slug `fuel-cost-calculator`, catalog `6af46f19a27d8d1d4e990dc9`, pillar null). TotalDist=one-way×(1|2); FuelUsed=km×(L/100)/100; Cost=Fuel×Price/L; km|mi|m; L/100|km/L|mpg US|UK; L|mL|gal US|UK; price /L|/gal; optional vehicle-category estimates (labeled); cost/km|/mi|/passenger; denomination CurrencySelect (**No FX**). Guide/FAQ. Mongo `isDeveloped: true`; **indexable** false. Fixture: 150 km RT · 7.5 · PKR 280 → 22.5 L / 6,300 / 21 per km. Tests 15/15.

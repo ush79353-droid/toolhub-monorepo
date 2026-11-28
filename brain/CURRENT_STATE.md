@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Fuel Injector Calculator:** Live at `/tools/fuel-injector-calculator` (`FuelInjectorCalculator`, catalog `6af46f19a27d8d1d4e990dcb`). IFR=(HP×BSFC)/(N×DC); target HP precedence; pressure √ adjust; **indexable false**; pillar null.
 > **2026-11-28 Fuel Cost Calculator:** Live at `/tools/fuel-cost-calculator` (`FuelCostCalculator`, catalog `6af46f19a27d8d1d4e990dc9`). FuelUsed=km×(L/100)/100; Cost=Fuel×Price; round-trip toggle; denomination CurrencySelect (**No FX**); **indexable false**; pillar null.
 > **2026-11-28 Flight Radiation Calculator:** Live at `/tools/flight-radiation-calculator` (`FlightRadiationCalculator`, catalog `6af46f19a27d8d1d4e990dc7`). Dose=Rate×Time; optional cumulative flights; default illustrative 0.003 mSv/h; **indexable false**; pillar null.
 > **2026-11-28 Engine Hours to Miles Converter:** Live at `/tools/engine-hours-to-miles-converter` (`EngineHoursToMilesConverter`, catalog `6af46f19a27d8d1d4e990dc6`). Distance=Hours×Speed; reverse Hours=Distance/Speed; stationary actual 0 + configurable maintenance-equivalent factor; **indexable false**; pillar null.
