@@ -1,3 +1,7 @@
+## 2026-11-28 — Boat Speed Calculator
+
+Screenshot-first Crouch formula tool (`BoatSpeedCalculator`, slug `boat-speed-calculator`, catalog `6af46f19a27d8d1d4e990dbe`). S=C√(P/D) in mph/hp/lb; reverse P/D/C; power/displacement/speed units; horsepower comparison chart; guide/FAQ. **No FX**. Registry + tools/embed allowlists; Mongo `isDeveloped: true`; **indexable** false. Example: 3000 hp · 6000 lb · C=150 → ≈106.07 mph. Tests 20/20.
+
 ## 2026-11-25 — RSBI Calculator - Rapid Shallow Breathing Index
 
 Screenshot-first educational RSBI (`RsbiCalculator`, slug `rsbi-calculator-rapid-shallow-breathing-index`, catalog `6af46f12a27d8d1d4e9902f0`). RSBI = f / VT(L); fixture 20/400 mL → 50; share URL only; **No FX**. Registry + backend allowlist; Mongo active/developed; **indexable** false.

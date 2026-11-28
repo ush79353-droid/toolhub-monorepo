@@ -218,22 +218,6 @@ export function BoatSpeedGuideArticle() {
       <ul className="mt-3 list-disc space-y-1 pl-5 text-sm sm:text-base">
         <li>
           <Link
-            href="/tools/speed-calculator"
-            className="font-medium text-primary underline-offset-2 hover:underline"
-          >
-            Speed Calculator
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/tools/power-calculator"
-            className="font-medium text-primary underline-offset-2 hover:underline"
-          >
-            Power Calculator
-          </Link>
-        </li>
-        <li>
-          <Link
             href="/tools/boat-loan-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >

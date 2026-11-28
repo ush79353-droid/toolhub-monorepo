@@ -5733,6 +5733,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BoatLoanCalculator,
     })),
   ),
+  BoatSpeedCalculator: lazyTool(() =>
+    import('@/tools/calculators/boat-speed/BoatSpeedCalculator').then((mod) => ({
+      default: mod.BoatSpeedCalculator,
+    })),
+  ),
   BodyFatCalculator: lazyTool(() =>
     import('@/tools/calculators/body-fat/BodyFatCalculator').then((mod) => ({
       default: mod.BodyFatCalculator,
