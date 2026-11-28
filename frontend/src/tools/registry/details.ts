@@ -1643,6 +1643,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/drive-time/detail'),
   EngineHoursToMilesConverter: () =>
     import('@/tools/calculators/engine-hours-to-miles/detail'),
+  FlightRadiationCalculator: () =>
+    import('@/tools/calculators/flight-radiation/detail'),
   TramadolDosageCalculator: () =>
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>

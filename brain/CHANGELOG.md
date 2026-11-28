@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Flight Radiation Calculator
+
+Screenshot-first cosmic dose estimate (`FlightRadiationCalculator`, slug `flight-radiation-calculator`, catalog `6af46f19a27d8d1d4e990dc7`, pillar null). Dose=Rate×Time; optional flights cumulative; time s|min|h|d; rate µSv/h|mSv/h|Sv/h|mrem/h|rem/h; dose µSv|mSv|Sv|mrem|rem; default illustrative 0.003 mSv/h; no invented altitude/latitude model; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 8 h · 0.003 → 0.024 mSv; 3 h → 0.009; 10× → 0.24. Tests 18/18.
+
 ## 2026-11-28 — Engine Hours to Miles Converter
 
 Screenshot-first hours↔distance tool (`EngineHoursToMilesConverter`, slug `engine-hours-to-miles-converter`, catalog `6af46f19a27d8d1d4e990dc6`, pillar null). Driving: Distance=Hours×Speed; reverse Hours=Distance/Speed; stationary actual distance 0 + user-assumed maintenance-equivalent factor (default illustrative 30 mi/h); time h|min|s|d; speed mph|km/h|m/s|kn; distance mi|km|m|ft; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 1000 h · 30 mph → 30,000 mi; 500 idle · 30 → 15,000 equiv / 0 actual; 60,000 mi · 30 → 2,000 h. Tests 15/15.

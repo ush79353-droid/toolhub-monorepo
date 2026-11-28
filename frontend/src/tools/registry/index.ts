@@ -6080,6 +6080,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EngineHoursToMilesConverter,
     })),
   ),
+  FlightRadiationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/flight-radiation/FlightRadiationCalculator'
+    ).then((mod) => ({
+      default: mod.FlightRadiationCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'
