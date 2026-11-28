@@ -158,8 +158,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/katch-mcardle/detail'),
   KtvDaugirdasCalculator: () =>
     import('@/tools/calculators/ktv-daugirdas/detail'),
-  KidneyStonePcnlCalculator: () =>
-    import('@/tools/calculators/kidney-stone-pcnl/detail'),
   KetoCalculator: () => import('@/tools/calculators/keto/detail'),
   KidneyFailureRiskCalculator: () =>
     import('@/tools/calculators/kidney-failure-risk/detail'),
@@ -1758,8 +1756,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lifetime-earnings/detail'),
   LifoInventoryCalculator: () =>
     import('@/tools/calculators/lifo-inventory/detail'),
-  LightsCriteriaCalculator: () =>
-    import('@/tools/calculators/lights-criteria/detail'),
   LongTermCareCalculator: () =>
     import('@/tools/calculators/long-term-care/detail'),
   MegaMillionsPayoutCalculator: () =>
