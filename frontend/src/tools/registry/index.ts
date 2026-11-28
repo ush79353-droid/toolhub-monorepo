@@ -5936,6 +5936,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CompressionRatioCalculator,
     })),
   ),
+  CompressionRatioToPsiCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/compression-ratio-to-psi/CompressionRatioToPsiCalculator'
+    ).then((mod) => ({
+      default: mod.CompressionRatioToPsiCalculator,
+    })),
+  ),
   CompoundGrowthCalculator: lazyTool(() =>
     import('@/tools/calculators/compound-growth/CompoundGrowthCalculator').then((mod) => ({
       default: mod.CompoundGrowthCalculator,

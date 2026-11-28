@@ -1027,6 +1027,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',
   'CompressionRatioCalculator',
+  'CompressionRatioToPsiCalculator',
   'ContinuousCompoundInterestCalculator',
   'CouponPaymentCalculator',
   'CouponRateCalculator',

@@ -1,3 +1,7 @@
+## 2026-11-28 — Compression Ratio to PSI Calculator
+
+Screenshot-first CR→pressure estimate (`CompressionRatioToPsiCalculator`, slug `compression-ratio-to-psi-calculator`, catalog `6af46f19a27d8d1d4e990dc3`, pillar null). Simplified P_abs=r×P_atm (labeled approximation); polytropic P=P_atm×rⁿ; gauge=abs−atm; reverse ratio; psi|bar|kPa|MPa|Pa|atm; presets; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 10:1 · 14.7 → 147 psia / 132.3 psig; n=1.3 → ≈293.30 / ≈278.60. Tests 18/18.
+
 ## 2026-11-28 — Compression Ratio Calculator
 
 Screenshot-first engine CR tool (`CompressionRatioCalculator`, slug `compression-ratio-calculator`, catalog `6af46f19a27d8d1d4e990dc2`, pillar null). Vs=πD²L/4000; Vc=chamber+gasket+deck+piston; CR=(Vs+Vc)/Vc; reverse Vc; known volumes; dynamic CR via crank-slider IVC ABDC; SVG diagram; presets; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 86×86 mm → ≈499.56 cc/cyl; 450/50 → 10:1. Tests 23/23.

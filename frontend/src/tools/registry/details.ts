@@ -1599,6 +1599,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/compound-interest-rate/detail'),
   CompressionRatioCalculator: () =>
     import('@/tools/calculators/compression-ratio/detail'),
+  CompressionRatioToPsiCalculator: () =>
+    import('@/tools/calculators/compression-ratio-to-psi/detail'),
   CompoundGrowthCalculator: () =>
     import('@/tools/calculators/compound-growth/detail'),
   ContinuousCompoundInterestCalculator: () =>

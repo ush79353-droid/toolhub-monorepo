@@ -20,6 +20,7 @@
  *   --unset-indexable                       (sets indexable=false)
  *   --no-developed                          (skip isDeveloped=true)
  *   --no-embed                              (sets embedEnabled=false)
+ *   --og-title / --og-description / --keywords  (optional SEO fields; max 70/200/200)
  *
  * Do NOT create per-tool assign-*-tool.ts scripts. Pass content via these flags.
  */
@@ -80,6 +81,9 @@ async function run(): Promise<void> {
   const shortDescription = requireArg('--short-description');
   const metaTitle = requireArg('--meta-title');
   const metaDescription = requireArg('--meta-description');
+  const ogTitle = argValue('--og-title')?.trim();
+  const ogDescription = argValue('--og-description')?.trim();
+  const keywords = argValue('--keywords')?.trim();
   const executionType = (argValue('--execution') ?? 'client').trim() as ToolExecutionType;
 
   const expectedPillar = parseExpectedId(argValue('--expected-pillar'));
@@ -105,6 +109,9 @@ async function run(): Promise<void> {
   }
   assertLen('--meta-title', metaTitle, META_TITLE_MAX);
   assertLen('--meta-description', metaDescription, META_DESCRIPTION_MAX);
+  if (ogTitle) assertLen('--og-title', ogTitle, 70);
+  if (ogDescription) assertLen('--og-description', ogDescription, 200);
+  if (keywords) assertLen('--keywords', keywords, 200);
 
   const connected = await connectDB();
   if (!connected) {
@@ -144,6 +151,9 @@ async function run(): Promise<void> {
     tool.shortDescription = shortDescription;
     tool.metaTitle = metaTitle;
     tool.metaDescription = metaDescription;
+    if (ogTitle) tool.ogTitle = ogTitle;
+    if (ogDescription) tool.ogDescription = ogDescription;
+    if (keywords) tool.keywords = keywords;
 
     if (!skipDeveloped) {
       tool.isDeveloped = true;

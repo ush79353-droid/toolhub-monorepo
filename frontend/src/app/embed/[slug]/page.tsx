@@ -90,6 +90,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'compound-interest-calculator',
   'compound-interest-rate-calculator',
   'compression-ratio-calculator',
+  'compression-ratio-to-psi-calculator',
   'continuous-compound-interest-calculator',
   'coupon-payment-calculator',
   'credit-card-calculator',
