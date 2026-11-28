@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Pulse per Mile Calculator
+
+Screenshot-first VSS PPM tool (`PulsePerMileCalculator`, slug `pulse-per-mile-calculator`, catalog `6af46f19a27d8d1d4e990dd6`, pillar null). WRM = 63360/(π×TD); PPM = WRM×AR×NT; tire diameter in/cm/mm/ft; optional circumference + sensor Hz. Fixture: 3.42 · 20 · 26 in → ~775.7 rev/mi · ~53,058 PPM. Mongo `isDeveloped: true`; **indexable** false. Tests 20/20.
+
 ## 2026-11-28 — Nautical Mile Calculator
 
 Screenshot-first nmi converter + travel tool (`NauticalMileCalculator`, slug `nautical-mile-calculator`, catalog `6af46f19a27d8d1d4e990dd5`, pillar null). Bidirectional nmi↔mi/km (+ cable/ft/yd/in/m/cm/mm); distance/speed/time modes with kn; optional speed convert + haversine. Fixture: 10 nmi → 18.52 km; 15 kn × 4 h → 60 nmi. Mongo `isDeveloped: true`; **indexable** false. Tests 30/30.

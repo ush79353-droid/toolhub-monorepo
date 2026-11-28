@@ -1666,6 +1666,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MpgCalculator: () => import('@/tools/calculators/mpg/detail'),
   NauticalMileCalculator: () =>
     import('@/tools/calculators/nautical-mile/detail'),
+  PulsePerMileCalculator: () =>
+    import('@/tools/calculators/pulse-per-mile/detail'),
   TramadolDosageCalculator: () =>
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>

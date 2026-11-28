@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Pulse per Mile Calculator:** Live at `/tools/pulse-per-mile-calculator` (`PulsePerMileCalculator`, catalog `6af46f19a27d8d1d4e990dd6`). WRM/PPM from axle·teeth·tire Ø; **indexable false**; pillar null.
 > **2026-11-28 Nautical Mile Calculator:** Live at `/tools/nautical-mile-calculator` (`NauticalMileCalculator`, catalog `6af46f19a27d8d1d4e990dd5`). nmi↔mi/km convert; kn travel DST; haversine optional; **indexable false**; pillar null.
 > **2026-11-28 MPG Calculator:** Live at `/tools/mpg-calculator` (`MpgCalculator`, catalog `6af46f19a27d8d1d4e990dd4`). Distance÷fuel→MPG (+ reverse); US/imp; L/100 km; trip cost **No FX**; **indexable false**; pillar null.
 > **2026-11-28 Miles to Hours Converter:** Live at `/tools/miles-to-hours-converter` (`MilesToHoursConverter`, catalog `6af46f19a27d8d1d4e990dd3`). Distance÷speed→time (+ reverse); unit suites; compare/breaks optional; **indexable false**; pillar null.

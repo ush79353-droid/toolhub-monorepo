@@ -121,6 +121,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'miles-to-hours-converter',
   'mpg-calculator',
   'nautical-mile-calculator',
+  'pulse-per-mile-calculator',
   'triple-discount-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',
