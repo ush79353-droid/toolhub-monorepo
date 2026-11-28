@@ -4,8 +4,8 @@ import { SPEED_FAQS, SPEED_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert mph, km/h, m/s, ft/s, knots, and running pace instantly. All linear units go through meters per second.',
-  asideAriaLabel: 'Interactive speed conversion calculator',
+    'Calculate speed, distance, and time with unit conversions, average speed, and illustrative speed comparisons.',
+  asideAriaLabel: 'Interactive Speed Calculator',
   tocItems: SPEED_TOC_ITEMS,
   GuideArticle: SpeedGuideArticle,
   faqs: SPEED_FAQS,

@@ -1,372 +1,456 @@
 'use client';
 
-import type { FormEvent, ReactNode } from 'react';
-import { ChevronDown, ChevronUp, RotateCcw } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import type { ReactNode } from 'react';
+import { InfoTooltip } from '../auto-loan/InfoTooltip';
+import { convertDistance, convertSpeed, convertTime, fmt } from './calculation';
 import {
-  IMPERIAL_OTHER,
-  IMPERIAL_PRIMARY,
-  METRIC_OTHER,
-  METRIC_PRIMARY,
-  OTHER_PRIMARY,
-  PACE_FIELD_LABELS,
-  PACE_OTHER,
-  PACE_PRIMARY,
-  PACE_UNIT_SYMBOLS,
-  SPEED_FIELD_LABELS,
-  SPEED_UNIT_SYMBOLS,
-  type PaceUnit,
-  type SpeedField,
+  DISTANCE_UNIT_LABELS,
+  MODE_LABELS,
+  SPEED_UNIT_LABELS,
+  TIME_UNIT_LABELS,
+  createEmptyInput,
+  type CalculationMode,
+  type DistanceUnit,
   type SpeedFieldErrors,
+  type SpeedInput,
+  type SpeedResult,
   type SpeedUnit,
+  type TimeUnit,
 } from './types';
 
-export interface SpeedDraft {
-  texts: Record<SpeedField, string>;
-  activeField: SpeedField | null;
-  imperialOpen: boolean;
-  metricOpen: boolean;
-  otherOpen: boolean;
-  paceOpen: boolean;
-  imperialExtra: SpeedUnit;
-  metricExtra: SpeedUnit;
-  paceExtra: PaceUnit;
-}
-
-const labelClass = 'mb-1.5 block text-[13px] font-medium text-accent';
+const labelClass =
+  'mb-1.5 flex items-center gap-1.5 text-[13px] font-medium text-accent';
 const inputClass =
-  'h-11 w-full bg-transparent px-3 font-mono text-sm tabular-nums text-accent outline-none placeholder:text-muted-foreground';
+  'h-11 w-full min-w-0 bg-transparent px-3 text-sm tabular-nums text-accent outline-none';
 
-function emptyTexts(): Record<SpeedField, string> {
-  return {
-    mph: '',
-    ftPerSec: '',
-    ydPerSec: '',
-    miPerSec: '',
-    ftPerMin: '',
-    kmh: '',
-    mps: '',
-    kmPerSec: '',
-    mPerMin: '',
-    cmPerSec: '',
-    mmPerSec: '',
-    knot: '',
-    c: '',
-    minPerKm: '',
-    secPerKm: '',
-    minPerMile: '',
-    secPerMile: '',
-    minPer100m: '',
-    secPer100m: '',
-  };
-}
-
-export function emptyDraft(): SpeedDraft {
-  return {
-    texts: emptyTexts(),
-    activeField: null,
-    imperialOpen: true,
-    metricOpen: true,
-    otherOpen: true,
-    paceOpen: true,
-    imperialExtra: 'miPerSec',
-    metricExtra: 'mPerMin',
-    paceExtra: 'minPer100m',
-  };
-}
-
-interface SpeedFormProps {
-  draft: SpeedDraft;
-  errors: SpeedFieldErrors;
-  paceUndefined: boolean;
-  onDraftChange: (draft: SpeedDraft) => void;
-  onSubmit: (event: FormEvent) => void;
-  onReset: () => void;
-  onReload: () => void;
-  children?: ReactNode;
-}
-
-function FieldRow({
-  field,
-  label,
-  symbol,
-  draft,
-  errors,
-  onDraftChange,
-}: {
-  field: SpeedField;
-  label: string;
-  symbol: string;
-  draft: SpeedDraft;
-  errors: SpeedFieldErrors;
-  onDraftChange: (draft: SpeedDraft) => void;
-}) {
-  const id = `speed-${field}`;
-  const error = errors[field];
-  return (
-    <div className="space-y-1.5">
-      <label htmlFor={id} className={labelClass}>
-        {label}
-      </label>
-      <div className="flex gap-2">
-        <div className="min-w-0 flex-1 rounded-lg border border-border bg-white focus-within:ring-2 focus-within:ring-ring">
-          <input
-            id={id}
-            inputMode="decimal"
-            autoComplete="off"
-            spellCheck={false}
-            className={inputClass}
-            value={draft.texts[field]}
-            placeholder=""
-            aria-invalid={Boolean(error)}
-            aria-describedby={error ? `${id}-error` : undefined}
-            onChange={(event) =>
-              onDraftChange({
-                ...draft,
-                texts: { ...draft.texts, [field]: event.target.value },
-                activeField: field,
-              })
-            }
-          />
-        </div>
-        <span className="flex h-11 min-w-[4.25rem] shrink-0 items-center justify-center rounded-lg border border-border bg-muted/40 px-2 text-sm font-medium text-accent">
-          {symbol}
-        </span>
-      </div>
-      {error ? (
-        <p id={`${id}-error`} className="text-xs text-red-600" role="alert">
-          {error}
-        </p>
-      ) : null}
-    </div>
-  );
-}
-
-function AccordionSection({
-  title,
-  open,
-  onToggle,
+function FieldShell({
+  error,
+  muted,
   children,
 }: {
-  title: string;
-  open: boolean;
-  onToggle: () => void;
+  error?: string;
+  muted?: boolean;
   children: ReactNode;
 }) {
   return (
-    <div className="rounded-xl border border-border">
-      <button
-        type="button"
-        className="flex w-full items-center justify-between gap-2 px-3.5 py-3 text-left text-sm font-medium text-accent"
-        aria-expanded={open}
-        onClick={onToggle}
-      >
-        <span>{title}</span>
-        {open ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-      </button>
-      {open ? <div className="space-y-3.5 border-t border-border px-3.5 pb-3.5 pt-3">{children}</div> : null}
+    <div
+      className={`relative flex h-11 min-w-0 flex-1 items-center rounded-lg border border-border focus-within:ring-2 focus-within:ring-ring ${
+        muted ? 'bg-muted/20' : 'bg-white'
+      } ${error ? 'border-rose-400' : ''}`}
+    >
+      {children}
     </div>
   );
 }
 
+interface SpeedFormProps {
+  input: SpeedInput;
+  errors: SpeedFieldErrors;
+  result: SpeedResult | null;
+  onChange: (next: SpeedInput) => void;
+}
+
 export function SpeedForm({
-  draft,
+  input,
   errors,
-  paceUndefined,
-  onDraftChange,
-  onSubmit,
-  onReset,
-  onReload,
-  children,
+  result,
+  onChange,
 }: SpeedFormProps) {
+  const set = (patch: Partial<SpeedInput>) => onChange({ ...input, ...patch });
+  const distRO = input.calculationMode === 'distance';
+  const timeRO = input.calculationMode === 'time';
+  const speedRO = input.calculationMode === 'speed';
+
   return (
-    <form onSubmit={onSubmit} className="space-y-4" noValidate>
-      <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Enter a speed in any field to convert all others via meters per second. Running pace is
- inverse speed (time per distance); zero speed leaves pace undefined. Negative values are
-        not accepted. Mach is omitted (depends on medium and temperature).
+    <form
+      onSubmit={(e) => e.preventDefault()}
+      className="space-y-4"
+      noValidate
+      autoComplete="off"
+    >
+      <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
+        Speed = distance ÷ time. Choose what to calculate; the other two fields
+        stay editable. Units convert without changing the physical quantity.
+      </p>
+
+      <div className="flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => onChange(createEmptyInput())}
+          className="rounded-md border border-border bg-white px-2.5 py-1 text-xs font-medium text-accent hover:bg-muted/30"
+        >
+          Example (150 km · 3 h)
+        </button>
       </div>
 
-      <AccordionSection
-        title="Imperial / US"
-        open={draft.imperialOpen}
-        onToggle={() => onDraftChange({ ...draft, imperialOpen: !draft.imperialOpen })}
-      >
-        {IMPERIAL_PRIMARY.map((unit) => (
-          <FieldRow
-            key={unit}
-            field={unit}
-            label={SPEED_FIELD_LABELS[unit]}
-            symbol={SPEED_UNIT_SYMBOLS[unit]}
-            draft={draft}
-            errors={errors}
-            onDraftChange={onDraftChange}
-          />
-        ))}
-        <div className="space-y-1.5">
-          <label htmlFor="imperial-extra" className={labelClass}>
-            Other imperial / US units
+      <div>
+        <label htmlFor="spd-mode" className={labelClass}>
+          Calculate
+        </label>
+        <select
+          id="spd-mode"
+          className="h-11 w-full rounded-lg border border-border bg-white px-3 text-sm"
+          value={input.calculationMode}
+          onChange={(e) =>
+            set({ calculationMode: e.target.value as CalculationMode })
+          }
+        >
+          {(Object.keys(MODE_LABELS) as CalculationMode[]).map((m) => (
+            <option key={m} value={m}>
+              {MODE_LABELS[m]}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="space-y-3 rounded-xl border border-border bg-white p-3.5">
+        <h3 className="text-[13px] font-semibold text-accent">Inputs</h3>
+
+        <div>
+          <label htmlFor="spd-dist" className={labelClass}>
+            Distance
+            <InfoTooltip
+              label="Distance"
+              text="Path length traveled (scalar). Not displacement."
+            />
           </label>
-          <select
-            id="imperial-extra"
-            className="h-11 w-full rounded-lg border border-border bg-white px-3 text-sm text-accent outline-none focus:ring-2 focus:ring-ring"
-            value={draft.imperialExtra}
-            onChange={(event) =>
-              onDraftChange({
-                ...draft,
-                imperialExtra: event.target.value as SpeedUnit,
-              })
-            }
-          >
-            {IMPERIAL_OTHER.map((unit) => (
-              <option key={unit} value={unit}>
-                {SPEED_FIELD_LABELS[unit]} ({SPEED_UNIT_SYMBOLS[unit]})
-              </option>
-            ))}
-          </select>
+          <div className="flex gap-2">
+            <FieldShell error={errors.distance} muted={distRO}>
+              <input
+                id="spd-dist"
+                className={inputClass}
+                inputMode="decimal"
+                readOnly={distRO}
+                value={
+                  distRO
+                    ? (result?.distanceValue != null
+                        ? fmt(result.distanceValue, 4)
+                        : '')
+                    : input.distance
+                }
+                aria-invalid={Boolean(errors.distance)}
+                onChange={(e) => set({ distance: e.target.value })}
+              />
+            </FieldShell>
+            <select
+              className="h-11 w-[88px] shrink-0 rounded-lg border border-border bg-white px-2 text-sm"
+              value={input.distanceUnit}
+              aria-label="Distance unit"
+              onChange={(e) => {
+                const next = e.target.value as DistanceUnit;
+                const n = Number(input.distance.replace(/,/g, ''));
+                if (!distRO && Number.isFinite(n) && n >= 0 && input.distance.trim()) {
+                  set({
+                    distanceUnit: next,
+                    distance: String(
+                      Number(
+                        convertDistance(n, input.distanceUnit, next).toPrecision(
+                          12,
+                        ),
+                      ),
+                    ),
+                  });
+                  return;
+                }
+                set({ distanceUnit: next });
+              }}
+            >
+              {(Object.keys(DISTANCE_UNIT_LABELS) as DistanceUnit[]).map(
+                (u) => (
+                  <option key={u} value={u}>
+                    {DISTANCE_UNIT_LABELS[u]}
+                  </option>
+                ),
+              )}
+            </select>
+          </div>
+          {errors.distance ? (
+            <p className="mt-1 text-xs text-rose-600">{errors.distance}</p>
+          ) : null}
         </div>
-        <FieldRow
-          field={draft.imperialExtra}
-          label={SPEED_FIELD_LABELS[draft.imperialExtra]}
-          symbol={SPEED_UNIT_SYMBOLS[draft.imperialExtra]}
-          draft={draft}
-          errors={errors}
-          onDraftChange={onDraftChange}
-        />
-      </AccordionSection>
 
-      <AccordionSection
-        title="Metric"
-        open={draft.metricOpen}
-        onToggle={() => onDraftChange({ ...draft, metricOpen: !draft.metricOpen })}
-      >
-        {METRIC_PRIMARY.map((unit) => (
-          <FieldRow
-            key={unit}
-            field={unit}
-            label={SPEED_FIELD_LABELS[unit]}
-            symbol={SPEED_UNIT_SYMBOLS[unit]}
-            draft={draft}
-            errors={errors}
-            onDraftChange={onDraftChange}
-          />
-        ))}
-        <div className="space-y-1.5">
-          <label htmlFor="metric-extra" className={labelClass}>
-            Other metric units
+        <div>
+          <label htmlFor="spd-time" className={labelClass}>
+            Time
+            <InfoTooltip
+              label="Time"
+              text="Elapsed duration for the trip, not a clock time of day."
+            />
           </label>
-          <select
-            id="metric-extra"
-            className="h-11 w-full rounded-lg border border-border bg-white px-3 text-sm text-accent outline-none focus:ring-2 focus:ring-ring"
-            value={draft.metricExtra}
-            onChange={(event) =>
-              onDraftChange({
-                ...draft,
-                metricExtra: event.target.value as SpeedUnit,
-              })
-            }
-          >
-            {METRIC_OTHER.map((unit) => (
-              <option key={unit} value={unit}>
-                {SPEED_FIELD_LABELS[unit]} ({SPEED_UNIT_SYMBOLS[unit]})
-              </option>
-            ))}
-          </select>
+          <div className="flex gap-2">
+            <FieldShell error={errors.time} muted={timeRO}>
+              <input
+                id="spd-time"
+                className={inputClass}
+                inputMode="decimal"
+                readOnly={timeRO}
+                value={
+                  timeRO
+                    ? (result?.timeValue != null
+                        ? fmt(result.timeValue, 4)
+                        : '')
+                    : input.time
+                }
+                aria-invalid={Boolean(errors.time)}
+                onChange={(e) => set({ time: e.target.value })}
+              />
+            </FieldShell>
+            <select
+              className="h-11 w-[88px] shrink-0 rounded-lg border border-border bg-white px-2 text-sm"
+              value={input.timeUnit}
+              aria-label="Time unit"
+              onChange={(e) => {
+                const next = e.target.value as TimeUnit;
+                const n = Number(input.time.replace(/,/g, ''));
+                if (!timeRO && Number.isFinite(n) && n >= 0 && input.time.trim()) {
+                  set({
+                    timeUnit: next,
+                    time: String(
+                      Number(
+                        convertTime(n, input.timeUnit, next).toPrecision(12),
+                      ),
+                    ),
+                  });
+                  return;
+                }
+                set({ timeUnit: next });
+              }}
+            >
+              {(Object.keys(TIME_UNIT_LABELS) as TimeUnit[]).map((u) => (
+                <option key={u} value={u}>
+                  {TIME_UNIT_LABELS[u]}
+                </option>
+              ))}
+            </select>
+          </div>
+          {errors.time ? (
+            <p className="mt-1 text-xs text-rose-600">{errors.time}</p>
+          ) : null}
         </div>
-        <FieldRow
-          field={draft.metricExtra}
-          label={SPEED_FIELD_LABELS[draft.metricExtra]}
-          symbol={SPEED_UNIT_SYMBOLS[draft.metricExtra]}
-          draft={draft}
-          errors={errors}
-          onDraftChange={onDraftChange}
-        />
-      </AccordionSection>
 
-      <AccordionSection
-        title="Other"
-        open={draft.otherOpen}
-        onToggle={() => onDraftChange({ ...draft, otherOpen: !draft.otherOpen })}
-      >
-        {OTHER_PRIMARY.map((unit) => (
-          <FieldRow
-            key={unit}
-            field={unit}
-            label={SPEED_FIELD_LABELS[unit]}
-            symbol={SPEED_UNIT_SYMBOLS[unit]}
-            draft={draft}
-            errors={errors}
-            onDraftChange={onDraftChange}
+        <div>
+          <label htmlFor="spd-speed" className={labelClass}>
+            Speed
+            <InfoTooltip
+              label="Speed"
+              text="Distance per unit time (scalar). Average over the entered duration."
+            />
+          </label>
+          <div className="flex gap-2">
+            <FieldShell error={errors.speed} muted={speedRO}>
+              <input
+                id="spd-speed"
+                className={inputClass}
+                inputMode="decimal"
+                readOnly={speedRO}
+                value={
+                  speedRO
+                    ? (result?.speedValue != null
+                        ? fmt(result.speedValue, 4)
+                        : '')
+                    : input.speed
+                }
+                aria-invalid={Boolean(errors.speed)}
+                onChange={(e) => set({ speed: e.target.value })}
+              />
+            </FieldShell>
+            <select
+              className="h-11 w-[100px] shrink-0 rounded-lg border border-border bg-white px-2 text-sm"
+              value={input.speedUnit}
+              aria-label="Speed unit"
+              onChange={(e) => {
+                const next = e.target.value as SpeedUnit;
+                const n = Number(input.speed.replace(/,/g, ''));
+                if (
+                  !speedRO &&
+                  Number.isFinite(n) &&
+                  n >= 0 &&
+                  input.speed.trim()
+                ) {
+                  set({
+                    speedUnit: next,
+                    speed: String(
+                      Number(
+                        convertSpeed(n, input.speedUnit, next).toPrecision(12),
+                      ),
+                    ),
+                  });
+                  return;
+                }
+                set({ speedUnit: next });
+              }}
+            >
+              {(Object.keys(SPEED_UNIT_LABELS) as SpeedUnit[]).map((u) => (
+                <option key={u} value={u}>
+                  {SPEED_UNIT_LABELS[u]}
+                </option>
+              ))}
+            </select>
+          </div>
+          {errors.speed ? (
+            <p className="mt-1 text-xs text-rose-600">{errors.speed}</p>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="space-y-3 rounded-xl border border-border bg-white p-3.5">
+        <label className="flex items-center gap-2 text-[13px] font-medium text-accent">
+          <input
+            type="checkbox"
+            className="h-4 w-4 rounded border-border"
+            checked={input.showCompare}
+            onChange={(e) => set({ showCompare: e.target.checked })}
           />
-        ))}
-      </AccordionSection>
+          Compare to the speed of other things
+          <InfoTooltip
+            label="Speed comparison"
+            text="Illustrative approximate reference speeds — not constant real-world values."
+          />
+        </label>
+      </div>
 
-      <AccordionSection
-        title="Run pace"
-        open={draft.paceOpen}
-        onToggle={() => onDraftChange({ ...draft, paceOpen: !draft.paceOpen })}
-      >
-        {paceUndefined ? (
-          <p className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900" role="status">
-            Pace is undefined at zero speed (division by zero). Enter a positive speed to see pace.
-          </p>
+      <div className="space-y-3 rounded-xl border border-border bg-white p-3.5">
+        <label className="flex items-center gap-2 text-[13px] font-medium text-accent">
+          <input
+            type="checkbox"
+            className="h-4 w-4 rounded border-border"
+            checked={input.showAverage}
+            onChange={(e) => set({ showAverage: e.target.checked })}
+          />
+          Multi-segment average speed
+          <InfoTooltip
+            label="Average speed"
+            text="Total distance ÷ total time across segments — not the mean of speeds unless times are equal."
+          />
+        </label>
+        {input.showAverage ? (
+          <div className="space-y-3">
+            {input.segments.map((seg, idx) => (
+              <div
+                key={seg.id}
+                className="space-y-2 rounded-lg border border-border p-2.5"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-medium text-accent">
+                    Segment {idx + 1}
+                  </span>
+                  {input.segments.length > 1 ? (
+                    <button
+                      type="button"
+                      className="text-xs text-rose-600"
+                      onClick={() =>
+                        set({
+                          segments: input.segments.filter((s) => s.id !== seg.id),
+                        })
+                      }
+                    >
+                      Remove
+                    </button>
+                  ) : null}
+                </div>
+                <div className="flex gap-2">
+                  <FieldShell>
+                    <input
+                      className={inputClass}
+                      inputMode="decimal"
+                      placeholder="Distance"
+                      aria-label={`Segment ${idx + 1} distance`}
+                      value={seg.distance}
+                      onChange={(e) => {
+                        const segments = input.segments.map((s) =>
+                          s.id === seg.id
+                            ? { ...s, distance: e.target.value }
+                            : s,
+                        );
+                        set({ segments });
+                      }}
+                    />
+                  </FieldShell>
+                  <select
+                    className="h-11 w-[72px] shrink-0 rounded-lg border border-border bg-white px-1 text-sm"
+                    value={seg.distanceUnit}
+                    aria-label={`Segment ${idx + 1} distance unit`}
+                    onChange={(e) => {
+                      const segments = input.segments.map((s) =>
+                        s.id === seg.id
+                          ? {
+                              ...s,
+                              distanceUnit: e.target.value as DistanceUnit,
+                            }
+                          : s,
+                      );
+                      set({ segments });
+                    }}
+                  >
+                    {(Object.keys(DISTANCE_UNIT_LABELS) as DistanceUnit[]).map(
+                      (u) => (
+                        <option key={u} value={u}>
+                          {DISTANCE_UNIT_LABELS[u]}
+                        </option>
+                      ),
+                    )}
+                  </select>
+                </div>
+                <div className="flex gap-2">
+                  <FieldShell>
+                    <input
+                      className={inputClass}
+                      inputMode="decimal"
+                      placeholder="Time"
+                      aria-label={`Segment ${idx + 1} time`}
+                      value={seg.time}
+                      onChange={(e) => {
+                        const segments = input.segments.map((s) =>
+                          s.id === seg.id ? { ...s, time: e.target.value } : s,
+                        );
+                        set({ segments });
+                      }}
+                    />
+                  </FieldShell>
+                  <select
+                    className="h-11 w-[72px] shrink-0 rounded-lg border border-border bg-white px-1 text-sm"
+                    value={seg.timeUnit}
+                    aria-label={`Segment ${idx + 1} time unit`}
+                    onChange={(e) => {
+                      const segments = input.segments.map((s) =>
+                        s.id === seg.id
+                          ? { ...s, timeUnit: e.target.value as TimeUnit }
+                          : s,
+                      );
+                      set({ segments });
+                    }}
+                  >
+                    {(Object.keys(TIME_UNIT_LABELS) as TimeUnit[]).map((u) => (
+                      <option key={u} value={u}>
+                        {TIME_UNIT_LABELS[u]}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            ))}
+            <button
+              type="button"
+              className="rounded-md border border-border bg-white px-2.5 py-1 text-xs font-medium text-accent hover:bg-muted/30"
+              onClick={() =>
+                set({
+                  segments: [
+                    ...input.segments,
+                    {
+                      id: String(Date.now()),
+                      distance: '',
+                      distanceUnit: 'km',
+                      time: '',
+                      timeUnit: 'h',
+                    },
+                  ],
+                })
+              }
+            >
+              Add segment
+            </button>
+          </div>
         ) : null}
-        {PACE_PRIMARY.map((unit) => (
-          <FieldRow
-            key={unit}
-            field={unit}
-            label={PACE_FIELD_LABELS[unit]}
-            symbol={PACE_UNIT_SYMBOLS[unit]}
-            draft={draft}
-            errors={errors}
-            onDraftChange={onDraftChange}
-          />
-        ))}
-        <div className="space-y-1.5">
-          <label htmlFor="pace-extra" className={labelClass}>
-            Other pace units
-          </label>
-          <select
-            id="pace-extra"
-            className="h-11 w-full rounded-lg border border-border bg-white px-3 text-sm text-accent outline-none focus:ring-2 focus:ring-ring"
-            value={draft.paceExtra}
-            onChange={(event) =>
-              onDraftChange({
-                ...draft,
-                paceExtra: event.target.value as PaceUnit,
-              })
-            }
-          >
-            {PACE_OTHER.map((unit) => (
-              <option key={unit} value={unit}>
-                {PACE_FIELD_LABELS[unit]} ({PACE_UNIT_SYMBOLS[unit]})
-              </option>
-            ))}
-          </select>
-        </div>
-        <FieldRow
-          field={draft.paceExtra}
-          label={PACE_FIELD_LABELS[draft.paceExtra]}
-          symbol={PACE_UNIT_SYMBOLS[draft.paceExtra]}
-          draft={draft}
-          errors={errors}
-          onDraftChange={onDraftChange}
-        />
-      </AccordionSection>
-
-      {children}
-
-      <div className="flex flex-wrap gap-2 pt-1">
-        <Button type="button" variant="outline" className="h-11" onClick={onReload}>
-          <RotateCcw className="mr-1.5 h-4 w-4" />
-          Reload calculator
-        </Button>
-        <Button type="button" variant="outline" className="h-11" onClick={onReset}>
-          Clear all changes
-        </Button>
-        <button type="submit" className="sr-only">
-          Convert
-        </button>
       </div>
     </form>
   );
