@@ -6087,6 +6087,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FlightRadiationCalculator,
     })),
   ),
+  FuelCostCalculator: lazyTool(() =>
+    import('@/tools/calculators/fuel-cost/FuelCostCalculator').then((mod) => ({
+      default: mod.FuelCostCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'

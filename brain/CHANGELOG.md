@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Fuel Cost Calculator
+
+Screenshot-first trip fuel expense tool (`FuelCostCalculator`, slug `fuel-cost-calculator`, catalog `6af46f19a27d8d1d4e990dc9`, pillar null). TotalDist=one-way×(1|2); FuelUsed=km×(L/100)/100; Cost=Fuel×Price/L; km|mi|m; L/100|km/L|mpg US|UK; L|mL|gal US|UK; price /L|/gal; optional vehicle-category estimates (labeled); cost/km|/mi|/passenger; denomination CurrencySelect (**No FX**). Guide/FAQ. Mongo `isDeveloped: true`; **indexable** false. Fixture: 150 km RT · 7.5 · PKR 280 → 22.5 L / 6,300 / 21 per km. Tests 15/15.
+
 ## 2026-11-28 — Flight Radiation Calculator
 
 Screenshot-first cosmic dose estimate (`FlightRadiationCalculator`, slug `flight-radiation-calculator`, catalog `6af46f19a27d8d1d4e990dc7`, pillar null). Dose=Rate×Time; optional flights cumulative; time s|min|h|d; rate µSv/h|mSv/h|Sv/h|mrem/h|rem/h; dose µSv|mSv|Sv|mrem|rem; default illustrative 0.003 mSv/h; no invented altitude/latitude model; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 8 h · 0.003 → 0.024 mSv; 3 h → 0.009; 10× → 0.24. Tests 18/18.
