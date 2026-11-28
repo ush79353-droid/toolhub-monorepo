@@ -751,6 +751,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ChildTaxCreditCalculator',
   'CaffeineCalculator',
   'CigaretteCalculator',
+  'CircleSkirtCalculator',
   'CiwaCalculator',
   'ClomidOvulationCalculator',
   'CashRatioCalculator',

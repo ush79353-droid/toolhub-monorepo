@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Circle Skirt Calculator:** Live at `/tools/circle-skirt-calculator` (`CircleSkirtCalculator`, catalog `6af46f19a27d8d1d4e990e27`). Full/¾/half/quarter; R=W/(2πf); radial cut L+R+A; hem circ; SVG sector; **indexable false**; pillar null.
 > **2026-11-28 Bra Size Calculator:** Live at `/tools/bra-size-calculator` (`BraSizeCalculator`, catalog `6af46f19a27d8d1d4e990e26`). Underbust/bust → US/UK/EU/AU/FR; modern/+4; sister sizes; conversions; SVG measure diagram; **indexable false**; pillar null.
 > **2026-11-28 Bikini Calculator:** Live at `/tools/bikini-calculator` (`BikiniCalculator`, catalog `6af46f19a27d8d1d4e990e25`). Bust/waist/high-hip/hip heuristics; optional prefs; SVG silhouettes; browser-local privacy; **indexable false**; pillar null.
 > **2026-11-28 Belt Size Calculator:** Live at `/tools/belt-size-calculator` (`BeltSizeCalculator`, catalog `6af46f19a27d8d1d4e990e24`). Women/men charts; numerical/general/waist/existing belt/dress-pants; pants B≈P+2; SVG measure diagram; **indexable false**; pillar null.

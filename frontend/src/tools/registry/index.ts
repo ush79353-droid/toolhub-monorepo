@@ -4330,6 +4330,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CigaretteCalculator,
     })),
   ),
+  CircleSkirtCalculator: lazyTool(() =>
+    import('@/tools/calculators/circle-skirt/CircleSkirtCalculator').then(
+      (mod) => ({
+        default: mod.CircleSkirtCalculator,
+      }),
+    ),
+  ),
   CiwaCalculator: lazyTool(() =>
     import('@/tools/calculators/ciwa/CiwaCalculator').then((mod) => ({
       default: mod.CiwaCalculator,

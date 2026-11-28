@@ -57,6 +57,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'belt-size-calculator',
   'bikini-calculator',
   'bra-size-calculator',
+  'circle-skirt-calculator',
   'boat-loan-calculator',
   'boat-speed-calculator',
   'boost-horsepower-calculator',
