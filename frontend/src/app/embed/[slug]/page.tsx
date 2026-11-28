@@ -56,6 +56,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'boat-loan-calculator',
   'boat-speed-calculator',
   'boost-horsepower-calculator',
+  'horsepower-calculator',
   'bsfc-calculator',
   'bond-convexity-calculator',
   'bond-current-yield-calculator',

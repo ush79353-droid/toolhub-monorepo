@@ -992,6 +992,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BoatLoanCalculator',
   'BoatSpeedCalculator',
   'BoostHorsepowerCalculator',
+  'HorsepowerCalculator',
   'BsfcCalculator',
   'BodyFatCalculator',
   'BondCalculator',

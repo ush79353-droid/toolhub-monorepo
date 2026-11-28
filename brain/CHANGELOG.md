@@ -1,3 +1,7 @@
+## 2026-11-28 — Horsepower Calculator
+
+Screenshot-first quarter-mile HP estimator (`HorsepowerCalculator`, slug `horsepower-calculator`, catalog `6af46f18a27d8d1d4e990d0a`, pillar Horsepower `6af451d6a27d8d1d4e98fa02`). ET: HP=W/(ET/5.825)³; trap: HP=W(V/234)³; weight lb|kg|t|US ton; trap mph|km/h|m/s; output hp|PS|W|kW; method radios; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 3500 lb · 13.5 s → ≈281.16 hp; 105 mph → ≈316.22 hp. Tests 16/16.
+
 ## 2026-11-28 — Drive Time Calculator
 
 Screenshot-first trip duration/cost tool (`DriveTimeCalculator`, slug `drive-time-calculator`, catalog `6af46f19a27d8d1d4e990dc5`, pillar null). DrivingTime=Dist/Speed; +breaks; arrival↔departure via datetime-local + elapsed ms; fuel L/100→cost; parking/tolls/other; cost/person & /km; km|mi|m|ft + km/h|mph|m/s|ft/s; denomination CurrencySelect (**No FX**). Guide/FAQ. Mongo `isDeveloped: true`; **indexable** false. Fixture: 300 km · 60 · 45 min → 5 h 45 min; 7 L/100 · PKR 280 → 21 L / 5,880; +800 extras / 4 → 1,670 pp. Tests 22/22.
