@@ -85,6 +85,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'price-to-cash-flow-ratio-calculator',
   'price-to-sales-ratio-calculator',
   'commercial-lease-calculator',
+  'commute-calculator',
   'compound-growth-calculator',
   'compound-interest-calculator',
   'compound-interest-rate-calculator',

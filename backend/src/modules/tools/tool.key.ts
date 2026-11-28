@@ -576,6 +576,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'StockSplitCalculator',
   'CommercialLeaseCalculator',
   'CommissionCalculator',
+  'CommuteCalculator',
   'SalesCommissionCalculator',
   'SalesCalculator',
   'RentalCommissionCalculator',

@@ -170,6 +170,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'cash-flow-to-debt-ratio-calculator',
   'cash-ratio-calculator',
   'commercial-lease-calculator',
+  'commute-calculator',
   'compound-growth-calculator',
   'compound-interest-calculator',
   'compound-interest-rate-calculator',

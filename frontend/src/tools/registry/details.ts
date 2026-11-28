@@ -805,6 +805,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/commercial-lease/detail'),
   CommissionCalculator: () =>
     import('@/tools/calculators/commission/detail'),
+  CommuteCalculator: () => import('@/tools/calculators/commute/detail'),
   SalesCommissionCalculator: () =>
     import('@/tools/calculators/sales-commission/detail'),
   SalesCalculator: () => import('@/tools/calculators/sales/detail'),

@@ -3371,6 +3371,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CommissionCalculator,
     })),
   ),
+  CommuteCalculator: lazyTool(() =>
+    import('@/tools/calculators/commute/CommuteCalculator').then((mod) => ({
+      default: mod.CommuteCalculator,
+    })),
+  ),
   SalesCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/sales-commission/SalesCommissionCalculator'

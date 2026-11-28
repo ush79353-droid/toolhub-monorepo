@@ -1,3 +1,7 @@
+## 2026-11-28 — Commute Calculator
+
+Screenshot-first commute comparison (`CommuteCalculator`, slug `commute-calculator`, catalog `6af46f19a27d8d1d4e990dc1`, pillar null). Round-trip×days; fuel+parking+wear; cost/person; transit per-ride/day/pass; weekly×52 / monthly×12; denomination CurrencySelect (**No FX**). Charts; guide/FAQ. Mongo `isDeveloped: true`; **indexable** false. Fixture: 20 km · 22 days · 8 L/100 · PKR 280 → 28,512 total / 9,504 pp vs 6,600 transit → 2,904 savings. Tests 20/20.
+
 ## 2026-11-28 — Carpooling Calculator
 
 Screenshot-first trip cost sharing tool (`CarpoolingCalculator`, slug `carpooling-calculator`, catalog `6af46f19a27d8d1d4e990dc0`, pillar null). FuelUsed=Dist×Economy/100; FuelCost×price; equal/driver-free/custom split; round trip; optional tolls/parking; savings scenario vs separate vehicles; denomination CurrencySelect (**No FX**). Sample vehicle economies (not model DB). Charts; guide/FAQ. Mongo `isDeveloped: true`; **indexable** false. Fixture: 120 km · 8 L/100 · $1.50 · 4 + $8 extras → $5.60/person. Tests 17/17.
