@@ -6178,6 +6178,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SpeedCalculator,
     })),
   ),
+  SpeedometerGearCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/speedometer-gear/SpeedometerGearCalculator'
+    ).then((mod) => ({
+      default: mod.SpeedometerGearCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'

@@ -1040,6 +1040,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PulsePerMileCalculator',
   'RpmCalculator',
   'SpeedCalculator',
+  'SpeedometerGearCalculator',
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
   'TylenolDosageCalculator',

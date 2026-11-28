@@ -124,6 +124,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'pulse-per-mile-calculator',
   'rpm-calculator',
   'speed-calculator',
+  'speedometer-gear-calculator',
   'triple-discount-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',
