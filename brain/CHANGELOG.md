@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Tire Size Calculator
+
+Screenshot-first tire geometry tool (`TireSizeCalculator`, slug `tire-size-calculator`, catalog `6af46f19a27d8d1d4e990ddc`, pillar null). H=W×A/100; D=R_mm+2H; C=πD; rev/km & rev/mi; optional compare + SVG + speedo estimate; code parse/generate. Fixture: 225/65 R17 → H 146.25 · D 724.3 mm. Mongo `isDeveloped: true`; **indexable** false. Tests 12/12.
+
 ## 2026-11-28 — Ticket Optimizer
 
 Screenshot-first transport fare optimizer (`TicketOptimizerCalculator`, slug `ticket-optimizer`, catalog `6af46f19a27d8d1d4e990ddb`, pillar null). Timestamp DP for singles + short/long passes; savings vs all-singles; CurrencySelect denomination only. Fixture: 2/day · 10d · 2.80 · short 7/5d → 2 passes · 14 · save 42 (75%). Mongo `isDeveloped: true`; **indexable** false. Tests 13/13.
