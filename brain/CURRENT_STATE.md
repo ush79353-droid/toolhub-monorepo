@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Turbo Size Calculator:** Live at `/tools/turbo-size-calculator` (`TurboSizeCalculator`, catalog `6af46f19a27d8d1d4e990dde`). Airflow heuristic HP/10 + advanced ṁ/PR; **indexable false**; pillar null.
 > **2026-11-28 Traffic Density Calculator:** Live at `/tools/traffic-density-calculator` (`TrafficDensityCalculator`, catalog `6af46f19a27d8d1d4e990ddd`). Flow/density/speed q=k×v; headway/spacing; **indexable false**; pillar null.
 > **2026-11-28 Tire Size Calculator:** Live at `/tools/tire-size-calculator` (`TireSizeCalculator`, catalog `6af46f19a27d8d1d4e990ddc`). Sidewall/diameter/circumference + compare/speedo; **indexable false**; pillar null.
 > **2026-11-28 Ticket Optimizer:** Live at `/tools/ticket-optimizer` (`TicketOptimizerCalculator`, catalog `6af46f19a27d8d1d4e990ddb`). Min-cost DP ticket combinations; short/long passes; **No FX**; **indexable false**; pillar null.

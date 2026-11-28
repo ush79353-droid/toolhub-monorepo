@@ -1047,6 +1047,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TrafficDensityCalculator',
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
+  'TurboSizeCalculator',
   'TylenolDosageCalculator',
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',

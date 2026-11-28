@@ -6225,6 +6225,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TripleDiscountCalculator,
     })),
   ),
+  TurboSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/turbo-size/TurboSizeCalculator').then((mod) => ({
+      default: mod.TurboSizeCalculator,
+    })),
+  ),
   EffectiveAnnualYieldCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/effective-annual-yield/EffectiveAnnualYieldCalculator'

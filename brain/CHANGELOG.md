@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Turbo Size Calculator
+
+Screenshot-first turbo airflow sizing tool (`TurboSizeCalculator`, slug `turbo-size-calculator`, catalog `6af46f19a27d8d1d4e990dde`, pillar null). ṁ≈HP/C (default C=10); hp/L; optional advanced V̇/ρ/ṁ/PR/corrected flow; illustrative examples. Fixture: 2 L · 400 hp → 40 lb/min · 200 hp/L. Mongo `isDeveloped: true`; **indexable** false. Tests 12/12.
+
 ## 2026-11-28 — Traffic Density Calculator
 
 Screenshot-first traffic stream tool (`TrafficDensityCalculator`, slug `traffic-density-calculator`, catalog `6af46f19a27d8d1d4e990ddd`, pillar null). q=N/t; k=N/L; v=q/k; headway 3600/q; spacing 1000/k; observation + direct modes; schematic. Fixture: 100/10 min · 20/2 km → 600 veh/h · 10/km · 60 km/h. Mongo `isDeveloped: true`; **indexable** false. Tests 13/13.

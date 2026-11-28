@@ -1683,6 +1683,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>
     import('@/tools/calculators/triple-discount/detail'),
+  TurboSizeCalculator: () => import('@/tools/calculators/turbo-size/detail'),
   EffectiveAnnualYieldCalculator: () =>
     import('@/tools/calculators/effective-annual-yield/detail'),
   EffectiveInterestRateCalculator: () =>
