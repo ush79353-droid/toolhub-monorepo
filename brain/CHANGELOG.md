@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Wheel Horsepower Calculator
+
+Screenshot-first WHP / drivetrain-loss tool (`WheelHorsepowerCalculator`, slug `wheel-horsepower-calculator`, catalog `6af46f18a27d8d1d4e990d0d`, pillar Horsepower `6af451d6a27d8d1d4e98fa02`). WHP=HP×η; HP=WHP/η; η=Πη_i; Loss%=100(1−η); overall XOR components; FWD/RWD/AWD/4WD/CUSTOM presets; hp|kW|PS. Fixture: 300 hp × 85% → 255 WHP · 45 hp loss. Mongo `isDeveloped: true`; **indexable** false. Tests 13/13.
+
 ## 2026-11-28 — Turbo Size Calculator
 
 Screenshot-first turbo airflow sizing tool (`TurboSizeCalculator`, slug `turbo-size-calculator`, catalog `6af46f19a27d8d1d4e990dde`, pillar null). ṁ≈HP/C (default C=10); hp/L; optional advanced V̇/ρ/ṁ/PR/corrected flow; illustrative examples. Fixture: 2 L · 400 hp → 40 lb/min · 200 hp/L. Mongo `isDeveloped: true`; **indexable** false. Tests 12/12.

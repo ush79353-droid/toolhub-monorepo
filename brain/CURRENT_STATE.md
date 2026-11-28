@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Wheel Horsepower Calculator:** Live at `/tools/wheel-horsepower-calculator` (`WheelHorsepowerCalculator`, catalog `6af46f18a27d8d1d4e990d0d`). WHP↔HP via overall/component η; FWD/RWD/AWD/4WD presets; hp|kW|PS; **indexable false**; pillar Horsepower `6af451d6a27d8d1d4e98fa02`.
 > **2026-11-28 Turbo Size Calculator:** Live at `/tools/turbo-size-calculator` (`TurboSizeCalculator`, catalog `6af46f19a27d8d1d4e990dde`). Airflow heuristic HP/10 + advanced ṁ/PR; **indexable false**; pillar null.
 > **2026-11-28 Traffic Density Calculator:** Live at `/tools/traffic-density-calculator` (`TrafficDensityCalculator`, catalog `6af46f19a27d8d1d4e990ddd`). Flow/density/speed q=k×v; headway/spacing; **indexable false**; pillar null.
 > **2026-11-28 Tire Size Calculator:** Live at `/tools/tire-size-calculator` (`TireSizeCalculator`, catalog `6af46f19a27d8d1d4e990ddc`). Sidewall/diameter/circumference + compare/speedo; **indexable false**; pillar null.

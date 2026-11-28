@@ -1048,6 +1048,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
   'TurboSizeCalculator',
+  'WheelHorsepowerCalculator',
   'TylenolDosageCalculator',
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',
