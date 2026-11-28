@@ -1036,6 +1036,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MilesToDollarsCalculator',
   'MilesToHoursConverter',
   'MpgCalculator',
+  'NauticalMileCalculator',
   'TramadolDosageCalculator',
   'TripleDiscountCalculator',
   'TylenolDosageCalculator',

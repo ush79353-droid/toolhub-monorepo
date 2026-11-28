@@ -6154,6 +6154,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MpgCalculator,
     })),
   ),
+  NauticalMileCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/nautical-mile/NauticalMileCalculator'
+    ).then((mod) => ({
+      default: mod.NauticalMileCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'
