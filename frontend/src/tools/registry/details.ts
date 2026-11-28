@@ -1637,6 +1637,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/discount-rate/detail'),
   DoubleDiscountCalculator: () =>
     import('@/tools/calculators/double-discount/detail'),
+  DriveTimeCalculator: () =>
+    import('@/tools/calculators/drive-time/detail'),
   TramadolDosageCalculator: () =>
     import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>

@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Drive Time Calculator:** Live at `/tools/drive-time-calculator` (`DriveTimeCalculator`, catalog `6af46f19a27d8d1d4e990dc5`). Time=Dist/Speed + breaks; arrival/departure schedule; fuel L/100; trip cost split; denomination CurrencySelect (**No FX**); **indexable false**; pillar null.
 > **2026-11-28 Crosswind Calculator:** Live at `/tools/crosswind-calculator` (`CrosswindCalculator`, catalog `6af46f19a27d8d1d4e990dc4`). θ wrap; X=Vsinθ; Hw=Vcosθ; left/right; diagram+chart; true→magnetic option; **indexable false**; pillar null.
 > **2026-11-28 Compression Ratio to PSI Calculator:** Live at `/tools/compression-ratio-to-psi-calculator` (`CompressionRatioToPsiCalculator`, catalog `6af46f19a27d8d1d4e990dc3`). Simplified P=r·P_atm + polytropic P=P₁rⁿ; PSIA/PSIG; reverse; **indexable false**; pillar null.
 > **2026-11-28 Compression Ratio Calculator:** Live at `/tools/compression-ratio-calculator` (`CompressionRatioCalculator`, catalog `6af46f19a27d8d1d4e990dc2`). Static/dynamic CR; displacement; **indexable false**; pillar null.

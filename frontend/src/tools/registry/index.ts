@@ -6061,6 +6061,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DoubleDiscountCalculator,
     })),
   ),
+  DriveTimeCalculator: lazyTool(() =>
+    import('@/tools/calculators/drive-time/DriveTimeCalculator').then((mod) => ({
+      default: mod.DriveTimeCalculator,
+    })),
+  ),
   TramadolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'
