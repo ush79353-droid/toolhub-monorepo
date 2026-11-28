@@ -5738,6 +5738,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BoatSpeedCalculator,
     })),
   ),
+  BoostHorsepowerCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/boost-horsepower/BoostHorsepowerCalculator'
+    ).then((mod) => ({
+      default: mod.BoostHorsepowerCalculator,
+    })),
+  ),
   BodyFatCalculator: lazyTool(() =>
     import('@/tools/calculators/body-fat/BodyFatCalculator').then((mod) => ({
       default: mod.BodyFatCalculator,

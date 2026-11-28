@@ -1,3 +1,7 @@
+## 2026-11-28 — Boost Horsepower Calculator
+
+Screenshot-first ideal boost model (`BoostHorsepowerCalculator`, slug `boost-horsepower-calculator`, catalog `6af46f18a27d8d1d4e990d0b`, pillar Horsepower). HP_boosted = HP × (P_boost + P_atm) / P_atm; reverse required boost / original HP; hp|PS|kW|W and psi|kPa|bar|mbar|Pa; optional η; chart; guide/FAQ. **No FX**. Registry + tools/embed allowlists; Mongo `isDeveloped: true`; **indexable** false. Fixture: 200 hp · 6 psi · 14.7 atm → ≈281.63 hp. Tests 22/22.
+
 ## 2026-11-28 — Boat Speed Calculator
 
 Screenshot-first Crouch formula tool (`BoatSpeedCalculator`, slug `boat-speed-calculator`, catalog `6af46f19a27d8d1d4e990dbe`). S=C√(P/D) in mph/hp/lb; reverse P/D/C; power/displacement/speed units; horsepower comparison chart; guide/FAQ. **No FX**. Registry + tools/embed allowlists; Mongo `isDeveloped: true`; **indexable** false. Example: 3000 hp · 6000 lb · C=150 → ≈106.07 mph. Tests 20/20.
