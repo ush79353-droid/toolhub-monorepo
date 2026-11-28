@@ -1,5 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
+> **2026-11-28 Glove Size Calculator:** Live at `/tools/glove-size-calculator` (`GloveSizeCalculator`, catalog `6af46f19a27d8d1d4e990e2d`). Palm circumference charts men/unisex & women; reverse lookup; SVG; **indexable false**; pillar null.
 > **2026-11-28 Fabric Calculator:** Live at `/tools/fabric-calculator` (`FabricCalculator`, catalog `6af46f19a27d8d1d4e990e2c`). Pieces across/rows; yardage; gap/edge/shrink/extra; rotation; SVG layout; **indexable false**; pillar null.
 > **2026-11-28 Dress Size Calculator:** Live at `/tools/dress-size-calculator` (`DressSizeCalculator`, catalog `6af46f19a27d8d1d4e990e2b`). Bust/waist/hips chart; US/UK/EU/INT; mixed-size guidance; SVG; **indexable false**; pillar null.
 > **2026-11-28 Curtain Size Calculator:** Live at `/tools/curtain-size-calculator` (`CurtainSizeCalculator`, catalog `6af46f19a27d8d1d4e990e2a`). Sill/café/floor length; rod W+2E; fullness; SVG; **indexable false**; pillar null.

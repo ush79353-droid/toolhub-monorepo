@@ -1825,6 +1825,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GiftOfEquityCalculator: () =>
     import('@/tools/calculators/gift-of-equity/detail'),
   GoldMeltCalculator: () => import('@/tools/calculators/gold-melt/detail'),
+  GloveSizeCalculator: () =>
+    import('@/tools/calculators/glove-size/detail'),
   GoodwillCalculator: () => import('@/tools/calculators/goodwill/detail'),
   IncomeElasticityOfDemandCalculator: () =>
     import('@/tools/calculators/income-elasticity-of-demand/detail'),

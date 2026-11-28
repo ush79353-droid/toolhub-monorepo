@@ -1140,6 +1140,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FixedAssetTurnoverRatioCalculator',
   'GiftOfEquityCalculator',
   'GoldMeltCalculator',
+  'GloveSizeCalculator',
   'GoodwillCalculator',
   'IncomeElasticityOfDemandCalculator',
   'InventoryTurnoverCalculator',
