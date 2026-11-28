@@ -2,6 +2,10 @@
 
 OpenAI schema now caps section paragraphs at 16 and bullets at 12. `clipSeoRaw` merges extra paragraphs into the last slot before Zod parse, so over-split drafts (e.g. Mortgage Comparison Calculator) parse instead of failing.
 
+## 2026-11-28 — Gas Calculator
+
+Screenshot-first trip fuel tool (`GasCalculator`, slug `gas-calculator`, catalog `6af46f18a27d8d1d4e990d06`, pillar `6af451d5a27d8d1d4e98fa01`). FuelRequired=(km×L/100)/100; cost=volume×price/L; round-trip ×2; cost/person & /km; advanced range, recurring (52/12 month), vehicle compare, % consumption reduction. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 250 km · 7.5 · PKR 280 · 3 pax → 18.75 L · 5,250 · 1,750 · 21/km. Tests 21/21.
+
 ## 2026-11-28 — Fuel Pump Calculator
 
 Screenshot-first fuel demand/pressure tool (`FuelPumpCalculator`, slug `fuel-pump-calculator`, catalog `6af46f19a27d8d1d4e990dcd`, pillar null). Q_L/hr=(HP×BSFC×0.45359237)/ρ; rail=base+boost (1:1) or fixed rail; return/returnless defaults; optional margin + outlet loss; optional manufacturer curve interpolate (no extrapolation); fuel×induction BSFC/density estimates; guide/FAQ. **No FX**. Mongo `isDeveloped: true`; **indexable** false. Fixture: 300 hp · 0.50 · 0.745 → ≈91.33 L/hr; 3+1 bar → 4 bar. Tests 17/17.
